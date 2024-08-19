@@ -1,4 +1,5 @@
 class Splat < ApplicationRecord
+  has_many :boosts, dependent: :destroy
   has_many :categorizations
   has_many :categories, through: :categorizations, dependent: :destroy
   has_many :comments, dependent: :destroy

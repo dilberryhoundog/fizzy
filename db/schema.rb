@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_08_14_214252) do
+ActiveRecord::Schema[8.0].define(version: 2024_08_19_192804) do
   create_table "accounts", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_accounts_on_name", unique: true
+  end
+
+  create_table "boosts", force: :cascade do |t|
+    t.string "content"
+    t.integer "creator_id", null: false
+    t.integer "splat_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["splat_id"], name: "index_boosts_on_splat_id"
   end
 
   create_table "categories", force: :cascade do |t|
