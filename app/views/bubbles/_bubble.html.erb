@@ -15,15 +15,15 @@
 
   <time class="bubble__bubble bubble__meta bubble__date"><%= bubble.created_at.strftime("%b <br> %d").html_safe %></time>
 
-  <% bubble.categories.each do | category | %>
-    <%= link_to "##{category.title}", bubbles_path(category_id: category.id), class: "bubble__bubble bubble__meta bubble__category" %>
+  <% bubble.tags.each do |tag| %>
+    <%= link_to "##{tag.title}", bubbles_path(tag_id: tag), class: "bubble__bubble bubble__meta bubble__tag" %>
   <% end %>
 
-  <% if bubble.categories.count < 3 %>
-    <span class="bubble__bubble bubble__meta bubble__category">
-      <turbo-frame id="new_category">
-        <%= link_to "#", new_bubble_category_path(bubble), class: "bubble__category--new" %>
-      </turbo-frame>
+  <% if bubble.tags.size < 3 %>
+    <span class="bubble__bubble bubble__meta bubble__tag">
+      <%= turbo_frame_tag :new_tag do %>
+        <%= link_to "#", new_bubble_tag_path(bubble), class: "bubble__tag--new" %>
+      <% end %>
     </span>
   <% end %>
 

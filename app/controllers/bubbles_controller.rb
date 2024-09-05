@@ -2,9 +2,9 @@ class BubblesController < ApplicationController
   before_action :set_bubble, only: %i[ show edit update ]
 
   def index
-    if params[:category_id]
-      @category = Category.find(params[:category_id])
-      @bubbles = @category.bubbles
+    if params[:tag_id]
+      @tag = Tag.find(params[:tag_id])
+      @bubbles = @tag.bubbles
     else
       @bubbles = Bubble.all
     end
@@ -38,6 +38,6 @@ class BubblesController < ApplicationController
     end
 
     def bubble_params
-      params.require(:bubble).permit(:title, :body, :color, :image, category_ids: [])
+      params.require(:bubble).permit(:title, :body, :color, :image, tag_ids: [])
     end
 end

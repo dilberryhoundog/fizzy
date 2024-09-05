@@ -2,16 +2,16 @@
 
 one:
   bubble: one
-  category: one
+  tag: one
 
 two:
   bubble: two
-  category: two
+  tag: two
 
 three:
   bubble: three
-  category: one
+  tag: one
 
 four:
   bubble: three
-  category: two
+  tag: two

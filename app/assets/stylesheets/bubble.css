@@ -98,7 +98,7 @@
     }
   }
 
-  &.bubble__category {
+  &.bubble__tag {
     inset: auto auto 10cqi -3cqi;
 
     + & {
@@ -109,7 +109,7 @@
       }
     }
 
-    .windshield &:has(.bubble__category--new) {
+    .windshield &:has(.bubble__tag--new) {
       display: none;
     }
   }

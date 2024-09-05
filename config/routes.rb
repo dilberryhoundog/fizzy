@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
   resources :bubbles do
     resources :boosts
-    resources :categories, shallow: true
     resources :comments
+    resources :tags, shallow: true
   end
 
-  resources :categories, only: :index
+  resources :tags, only: :index
 
   get "up", to: "rails/health#show", as: :rails_health_check
 end

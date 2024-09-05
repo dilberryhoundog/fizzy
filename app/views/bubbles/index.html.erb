@@ -8,8 +8,8 @@
     <h1 class="txt-xx-large margin-none flex align-center gap-half">
       Bubbled up
 
-      <% if @category %>
-        in <%= @category.title %>
+      <% if @tag %>
+        in <%= @tag.title %>
 
         <%= link_to bubbles_path, class: "btn txt-small" do %>
           <%= image_tag "remove.svg", aria: { hidden: true }, size: 24 %>
@@ -40,8 +40,8 @@
           <strong><%= bubble.title %></strong>
         <% end %>
         <small class="flex align-center gap flex-item-no-shrink">
-          <% bubble.categories.each do |category| %>
-            <%= link_to "# #{ category.title }", bubbles_path(category_id: category.id), style: "color: #{ bubble.color }" %>
+          <% bubble.tags.each do |tag| %>
+            <%= link_to "##{tag.title}", bubbles_path(tag_id: tag.id), style: "color: #{ bubble.color }" %>
           <% end %>
           <time class="txt-nowrap flex-item-justify-end"><%= bubble.created_at.strftime("%b %d").html_safe %></time>
         </small>

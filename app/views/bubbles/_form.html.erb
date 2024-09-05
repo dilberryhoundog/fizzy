@@ -18,16 +18,16 @@
   </fieldset>
 
   <fieldset class="flex flex-column unpad margin-block-end borderless justify-space-between">
-    <legend class="for-screen-reader">Category</legend>
+    <legend class="for-screen-reader">Tag</legend>
 
     <div class="flex align-center gap flex-wrap">
-      <%= collection_check_boxes(:bubble, :category_ids, Category.all, :id, :title) do | category | %>
-        <%= category.label(class: "btn txt-medium") { category.check_box + tag.span(category.text) } %>
+      <%= collection_check_boxes(:bubble, :tag_ids, Tag.all, :id, :title) do |f| %>
+        <%= f.label(class: "btn txt-medium") { f.checkbox + tag.span(f.text) } %>
       <% end %>
 
       <label class="btn txt-medium" >
         <%= image_tag "add.svg", aria: { hidden: "true" }, size: 24 %>
-        <span class="for-screen-reader">Add a category</span>
+        <span class="for-screen-reader">Add a tag</span>
       </label>
     </div>
   </fieldset>
@@ -36,7 +36,8 @@
     <legend class="for-screen-reader">Attachment</legend>
     <label class="input input--file input--picture unpad" data-controller="upload-preview">
       <%= image_tag bubble.image.attached? ? bubble.image : "default-picture.webp", alt: "Picture",
-          data: { upload_preview_target: "image" } %>
+            data: { upload_preview_target: "image" } %>
+
       <%= form.file_field :image, class: "input", accept: "image/png, image/jpeg, image/jpg, image/webp",
           data: { upload_preview_target: "input", action: "upload-preview#previewImage" } %>
     </label>
