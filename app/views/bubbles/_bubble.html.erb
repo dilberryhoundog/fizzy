@@ -4,7 +4,7 @@
     data-controller="animation upload-preview"
     data-animation-play-class="bubble--wobble" data-animation-play-on-load-value="true" data-action="mouseover->animation#play">
 
-    <h1 class="bubble__title">
+    <h1 class="bubble__title txt-medium">
       <%= turbo_frame_tag bubble, :edit do %>
         <%= link_to bubble.title, edit_bucket_bubble_path(bubble.bucket, bubble), class: "txt-undecorated" %>
       <% end %>

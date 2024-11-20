@@ -2,9 +2,11 @@
     data-controller="animation" data-animation-play-class="bubble--wobble" data-animation-play-on-load-value="true" data-action="mouseover->animation#play">
   <div class="bubble__shape flex-item-no-shrink"></div>
 
-  <%= link_to bucket_bubble_path(bubble.bucket, bubble), class: "bubble__title-link flex align-center gap flex-item-grow min-width" do %>
+  <%= link_to bucket_bubble_path(bubble.bucket, bubble), class: "bubble__title-link flex align-center gap min-width" do %>
     <strong class="bubble__title-text flex--inline gap-half overflow-ellipsis"><%= bubble.title %></strong>
   <% end %>
+
+  <hr class="separator--horizontal flex-item-grow" aria-hidden="true" style="--border-color: var(--color-subtle-dark); --border-style: dashed" />
 
   <% if bubble.due_on.present? %>
     <time class="txt-nowrap txt-small fill-black txt-reversed border-radius" style="background-color: <%= bubble.color %>; padding: 0.4em 1em;">
