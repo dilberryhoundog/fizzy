@@ -15,9 +15,9 @@
     <strong style="font-size: 1.1em;" class="txt-break overflow-line-clamp">
       <%= event.action == "commented" ? "RE: #{ bubble.title }" : bubble.title %>
     </strong>
-    <span class="flex align-center gap-half flex-item-no-shrink align-start">
+    <span class="flex align-center gap-half align-start">
       <% if event_column(event) == 1 %>
-      <span><%= image_tag "#{event_action_icon(event)}.svg", aria: { hidden: true }, size: 14, class: "colorize--black" %></span>
+      <span class="flex-item-no-shrink"><%= image_tag "#{event_action_icon(event)}.svg", aria: { hidden: true }, size: 13, class: "colorize--black" %></span>
       <% end %>
       <span class="txt-break overflow-line-clamp" style="--lines: 3;"><%= event_action_sentence(event) %></span>
     </span>
