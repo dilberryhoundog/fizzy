@@ -4,7 +4,7 @@
 
   block-size: var(--height);
   inline-size: var(--size);
-  inset: auto var(--inline-space) var(--block-space-half) auto;
+  inset: auto auto var(--block-space-half) var(--inline-space);
   padding: var(--block-space-half) var(--inline-space);
   position: fixed;
   z-index: 1;
@@ -61,12 +61,6 @@
     transform: translateY(0);
   }
 
-  .pin-tray:has(.pin) & {
-    .btn img {
-      display: none;
-    }
-  }
-
   .pin-tray:not(:has(.pin)) & {
     opacity: 1;
     scale: 1;
@@ -74,25 +68,6 @@
     transition: none;
 
     .pin-tray__all_action {
-      --btn-border-radius: 50%;
-      --btn-padding: 0;
-
-      aspect-ratio: 1;
-      block-size: var(--btn-size);
-      display: grid;
-      inline-size: var(--btn-size);
-      place-items: center;
-
-      > * {
-        grid-area: 1/1;
-      }
-
-      span {
-        display: none;
-      }
-    }
-
-    .pin-tray__read_action {
       display: none;
     }
   }

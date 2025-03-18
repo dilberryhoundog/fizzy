@@ -1,6 +1,6 @@
 body {
   display: grid;
-  grid-template-rows: auto 1fr auto 6em;
+  grid-template-rows: auto 1fr auto 9em;
   overflow-x: hidden;
 }
 
