@@ -24,3 +24,6 @@ builder:
 env:
   secret:
     - SECRET_KEY_BASE
+
+aliases:
+  console: app exec -i --reuse "bin/rails console"
