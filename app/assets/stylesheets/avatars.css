@@ -24,42 +24,6 @@
     }
   }
 
-  .avatar__group {
-    --avatar-size: 2.5ch;
-
-    block-size: 5ch;
-    display: grid;
-    gap: 1px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: min-content;
-    inline-size: 5ch;
-    place-content: center;
-
-    .avatar {
-      margin: auto;
-    }
-
-    &:where(:has(> :last-child:nth-child(2))) {
-      --avatar-size: 3.5ch;
-
-      > :first-child {
-        margin-block-end: 1.5ch;
-        margin-inline-end: -0.75ch;
-      }
-
-      > :last-child {
-        margin-block-start: 1.5ch;
-        margin-inline-start: -0.75ch;
-      }
-    }
-
-    &:where(:has(> :last-child:nth-child(3))) {
-      > :last-child {
-        margin-inline: 1.25ch -1.25ch;
-      }
-    }
-  }
-
   .avatar__form {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
