@@ -1,0 +1,11 @@
+<div id="<%= dom_id(card, :pin_button) %>">
+  <% if card.pinned_by? Current.user %>
+    <%= button_to card_pin_path(card), method: :delete, class: "btn btn--reversed" do %>
+      <%= icon_tag "pinned" %> <span class="for-screen-reader">Un-pin this card</span>
+    <% end %>
+  <% else %>
+    <%= button_to card_pin_path(card), class: "btn" do %>
+      <%= icon_tag "unpinned" %> <span class="for-screen-reader">Pin this card</span>
+    <% end %>
+  <% end %>
+</div>
