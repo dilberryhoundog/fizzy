@@ -3,11 +3,16 @@ class Cards::GoldnessesController < ApplicationController
 
   def create
     @card.gild
-    redirect_to @card
+    rerender_card_container
   end
 
   def destroy
     @card.ungild
-    redirect_to @card
+    rerender_card_container
   end
+
+  private
+    def rerender_card_container
+      render turbo_stream: turbo_stream.replace([ @card, :card_container ], partial: "cards/container", locals: { card: @card.reload })
+    end
 end
