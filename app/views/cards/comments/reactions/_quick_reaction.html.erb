@@ -15,7 +15,8 @@
 
       <div class="flex-inline" data-controller="soft-keyboard">
         <%= link_to new_card_comment_reaction_path(comment.card, comment), role: "button",
-              class: "btn btn--circle", action: "soft-keyboard#open" do %>
+              class: "btn btn--circle", action: "soft-keyboard#open",
+              data: { turbo_frame: dom_id(comment, :new_reaction), action: "dialog#close" } do %>
           <%= icon_tag "reaction" %> <span class="for-screen-reader">Add a reaction</span>
         <% end %>
       </div>
