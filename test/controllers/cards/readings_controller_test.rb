@@ -22,4 +22,10 @@ class Cards::ReadingsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
   end
+
+  test "create opts-out of writer affinity in the load balancer" do
+    post card_reading_path(cards(:logo)), as: :turbo_stream
+
+    assert_equal "false", response.headers["X-Writer-Affinity"]
+  end
 end

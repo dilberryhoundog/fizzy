@@ -1,12 +1,10 @@
-<div class="card-filter--column flex-inline center position-relative" data-controller="dialog" data-action="keydown.esc->dialog#close click@document->dialog#closeOnClickOutside">
-  <button class="cards__heading input input--select borderless" data-action="click->dialog#open:stop">
-    <strong class="overflow-ellipsis">
-      <% if filter.stages.any? %>
-        <%= filter.stages.map(&:name).to_sentence %>
-      <% else %>
-        Doing
-      <% end %>
-    </strong>
+<div class="cards__heading cards__filter" data-controller="dialog" data-action="keydown.esc->dialog#close click@document->dialog#closeOnClickOutside">
+  <button class="cards__filter input input--select borderless overflow-ellipsis" data-action="click->dialog#open:stop">
+    <% if filter.stages.any? %>
+      <%= filter.stages.map(&:name).to_sentence %>
+    <% else %>
+      Doing
+    <% end %>
   </button>
 
   <dialog class="events__popup popup panel flex-column align-start gap-half fill-white shadow"

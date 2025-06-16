@@ -40,10 +40,9 @@ test:
 production: &production
   primary:
     <<: *default
-    database: file:storage/tenants/<%= Rails.env %>/%{tenant}/db/main.sqlite3
+    database: file:storage/tenants/<%= Rails.env %>/%{tenant}/db/main.sqlite3?vfs=beamer
     tenanted: true
     extensions:
-      - ./bin/lib/beamer.so
       - <%= SqliteVec.loadable_path %>
   primary_original:
     <<: *default

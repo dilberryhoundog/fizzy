@@ -20,6 +20,6 @@ module SessionTestHelper
     Current.session = Session.new(user: user)
     yield
   ensure
-    Current.reset_all
+    Current.clear_all
   end
 end

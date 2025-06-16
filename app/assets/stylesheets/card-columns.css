@@ -1,66 +1,73 @@
 @layer components {
-  /* Coluns
-  /* -------------------------------------------------------------------------- */
+  /* Columns
+  /* ------------------------------------------------------------------------ */
 
   /* Card contents are resized via container queries. We're using #main here as
      the primary container so all cards have the same container reference */
   #main:has(.card-columns) {
+    --cards-gap: min(2cqi, 1rem);
+    --gradient-border: linear-gradient(to right,var(--color-canvas), var(--color-ink-lighter) 3%, var(--color-ink-lighter) 97%, var(--color-canvas));
+    --reserved-bubble-space: calc(var(--bubble-size) + var(--bubble-gap));
+    --bubble-gap: 0.5rem;
+    --bubble-size: 4rem;
+
     container-type: inline-size;
     max-inline-size: 1400px;
+
+    @media (max-width: 639px) {
+      --bubble-gap: -0.5rem;
+      --bubble-size: 3rem;
+      --reserved-bubble-space: calc(var(--bubble-size) / 2 + var(--bubble-gap));
+    }
   }
 
   .card-columns {
-    --bubble-size: 4rem;
-    --bubble-gap: 0.5rem;
-
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
     margin: auto;
-    max-inline-size: calc(100% - (var(--bubble-size) + var(--bubble-gap)) * 2);
+    max-inline-size: 100%;
     position: relative;
 
     &:before {
-      background: linear-gradient(to right,var(--color-canvas), var(--color-ink-lighter) 3%, var(--color-ink-lighter) 97%, var(--color-canvas));
+      background: var(--gradient-border);
       block-size: 1px;
       content: "";
-      display: block;
-      inline-size: calc(100% + 1.2em);
       inset: 0 -0.6em 100% -0.6em;
       position: absolute;
     }
 
-    .cards:first-child {
-      padding-inline-end: var(--cards-gap);
-      position: relative;
-
-      &:after {
-        background: linear-gradient(var(--color-canvas), var(--color-ink-lighter) 1%, var(--color-ink-lighter) 99%, var(--color-canvas));
-        block-size: calc(100% + 1.2em);
-        content: "";
-        display: block;
-        inline-size: 1px;
-        inset: -0.6em 0 -0.6em 100%;
-        position: absolute;
-      }
-    }
-
-    .cards:last-child {
-      padding-inline-start: var(--cards-gap);
+    @media (min-width: 640px) {
+      display: grid;
+      grid-template-columns: repeat(2, 50%);
     }
   }
 
   /* Cards
-  /* -------------------------------------------------------------------------- */
+  /* ------------------------------------------------------------------------ */
 
   .cards {
-    --cards-gap: 2cqi;
-
-    align-items: center;
+    align-items: stretch;
     display: flex;
     flex-direction: column;
     gap: var(--cards-gap);
     justify-content: start;
-    padding-block: calc(var(--cards-gap) * 0.75);
+    padding: 0 var(--reserved-bubble-space) var(--cards-gap) var(--cards-gap);
+    position: relative;
+
+    /* Make sure filter dialogs don't end up behind sticky headers */
+    &:has([open]) {
+      z-index: 3;
+    }
+
+    &:first-child {
+      @media (min-width: 640px) {
+        border-inline-end: 1px solid var(--color-ink-lighter);
+        padding-inline: var(--reserved-bubble-space) var(--cards-gap);
+      }
+    }
+
+    @media (max-width: 639px) {
+      padding-block-end: calc(var(--cards-gap) * 2);
+      padding-inline-start: var(--reserved-bubble-space);
+    }
 
     .card {
       --block-space: 1em;
@@ -90,7 +97,7 @@
         .workflow-stage:not(.workflow-stage--current) {
           opacity: 0;
           transition: opacity 0.2s ease-in-out;
-        
+
           @media (any-hover: hover) {
             .card:hover & {
               opacity: 1;
@@ -98,7 +105,7 @@
           }
         }
       }
-  
+
       @media (any-hover: hover) {
         .card:hover & {
           img:not([src=""]) {
@@ -110,18 +117,46 @@
     }
   }
 
+  /* Column elements
+  /* ------------------------------------------------------------------------ */
+
   .cards__heading {
-    display: inline-flex;
+    background-color: var(--color-canvas);
+    display: flex;
     font-size: var(--text-medium);
-    inline-size: 100%;
+    inset-block-start: 0;
     justify-content: center;
-    text-transform: uppercase;
+    margin-block-start: 1px;
+    margin-inline: calc(-1 * var(--cards-gap) + 1px);
+    padding-block: var(--cards-gap);
+    position: sticky;
+    z-index: 2;
+
+    &, button {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    button {
+      --hover-size: 0;
+
+      inline-size: auto;
+      margin-inline-start: 2em;
+      padding: 0 2em 0 0;
+    }
+
+    dialog {
+      font-weight: normal;
+      text-transform: none;
+    }
   }
 
   /* Considering
   /* ------------------------------------------------------------------------ */
 
   .cards--considering {
+    padding-inline-start: calc(var(--cards-gap) / 2);
+
     .card {
       --text-xx-large: 1.6em;
       --text-small: 1.1em;
@@ -175,8 +210,21 @@
     }
   }
 
+  /* Doing
+  /* ------------------------------------------------------------------------ */
+
+  @media (max-width: 639px) {
+    .cards--doing:before {
+      background: var(--gradient-border);
+      block-size: 1px;
+      content: "";
+      inset: 0 0 auto;
+      position: absolute;
+    }
+  }
+
   /* Closed
-  /* -------------------------------------------------------------------------- */
+  /* ------------------------------------------------------------------------ */
 
   .cards--closed {
     justify-content: center;
@@ -187,20 +235,33 @@
     position: relative;
 
     &:before {
-      background: linear-gradient(to right,var(--color-canvas), var(--color-ink-lighter) 3%, var(--color-ink-lighter) 97%, var(--color-canvas));
+      background: var(--gradient-border);
       block-size: 1px;
       content: "";
-      display: block;
-      inline-size: calc(100% + 1.2em);
       inset: 0 -0.6em 100% -0.6em;
       position: absolute;
     }
 
-    .card {
-      inline-size: calc((100% - var(--cards-gap) * 2) / 3);
+    @media (max-width: 639px) {
+      flex-direction: column;
+      padding-inline: var(--reserved-bubble-space);
+    }
 
-      @media (max-width: 960px) {
+    .cards__heading {
+      min-inline-size: 100%;
+
+      @media (max-width: 639px) {
+        margin-inline-end: calc(-1 * var(--cards-gap));
+      }
+    }
+
+    .card {
+      @media (min-width: 640px) {
         inline-size: calc((100% - var(--cards-gap)) / 2);
+      }
+
+      @media (min-width: 960px) {
+        inline-size: calc((100% - var(--cards-gap) * 2) / 3);
       }
 
       &:nth-of-type(7) {
@@ -229,7 +290,7 @@
           aspect-ratio: unset;
           border-width: 0.5ch;
           font-size: 0.75em;
-          inset: auto 0 auto auto;
+          inset: auto 0 var(--card-padding-block) auto;
           transform: none;
         }
 
@@ -247,5 +308,12 @@
         }
       }
     }
+  }
+
+  /* Doing
+  /* ------------------------------------------------------------------------ */
+
+  .cards--doing {
+    padding-inline-end: calc(var(--cards-gap) / 2);
   }
 }

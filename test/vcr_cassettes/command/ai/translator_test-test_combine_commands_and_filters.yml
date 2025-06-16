@@ -734,4 +734,738 @@ http_interactions:
         bnMiOiAwCiAgICB9CiAgfSwKICAic2VydmljZV90aWVyIjogImRlZmF1bHQi
         LAogICJzeXN0ZW1fZmluZ2VycHJpbnQiOiAiZnBfMzgzNDNhMmY4ZiIKfQo=
   recorded_at: Thu, 05 Jun 2025 10:43:06 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtb2RlbCI6ImdwdC00LjEtbmFubyIsIm1lc3NhZ2VzIjpbeyJyb2xlIjoi
+        ZGV2ZWxvcGVyIiwiY29udGVudCI6IllvdSBhcmUgRml6ennigJlzIGNvbW1h
+        bmQgdHJhbnNsYXRvci4gWW91ciB0YXNrIGlzIHRvOlxuXG4xLiBSZWFkIHRo
+        ZSB1c2VyJ3MgcmVxdWVzdC5cbjIuIENvbnN1bHQgdGhlIGN1cnJlbnQgY29u
+        dGV4dCAocHJvdmlkZWQgYmVsb3cgZm9yIGluZm9ybWF0aW9uYWwgcHVycG9z
+        ZXMgb25seSkuXG4zLiBEZXRlcm1pbmUgaWYgdGhlIGN1cnJlbnQgY29udGV4
+        dCBzdWZmaWNlcyBvciBpZiBhIG5ldyBjb250ZXh0IGlzIHJlcXVpcmVkLlxu
+        NC4gR2VuZXJhdGUgb25seSB0aGUgbmVjZXNzYXJ5IGNvbW1hbmRzIHRvIGZ1
+        bGZpbGwgdGhlIHJlcXVlc3QuXG41LiBPdXRwdXQgYSBKU09OIG9iamVjdCBj
+        b250YWluaW5nIE9OTFk6XG4gICogQSBcImNvbnRleHRcIiBvYmplY3QgKHJl
+        cXVpcmVkIGlmIGFueSBmaWx0ZXJpbmcgYXBwbGllcyDigJQgaW5jbHVkaW5n
+        IHRlcm1zIOKAlCBhbmQgbXVzdCBpbmNsdWRlIGFsbCBmaWx0ZXJzIGluc2lk
+        ZSBpdCkuXG4gICogQSBcImNvbW1hbmRzXCIgYXJyYXkgKG9ubHkgaWYgY29t
+        bWFuZHMgYXJlIGV4cGxpY2l0bHkgcmVxdWVzdGVkIG9yIGNsZWFybHkgaW1w
+        bGllZCkuXG5cbkRvIE5PVCBhZGQgYW55IG90aGVyIHByb3BlcnRpZXMgdG8g
+        eW91ciBKU09OIG91dHB1dC5cblxuVGhlIGRlc2NyaXB0aW9uIG9mIHRoZSBj
+        dXJyZW50IHZpZXcgKFwiaW5zaWRlIGEgY2FyZFwiLCBcInZpZXdpbmcgYSBs
+        aXN0IG9mIGNhcmRzXCIsIG9yIFwibm90IHNlZWluZyBjYXJkc1wiKSBpcyBp
+        bmZvcm1hdGlvbmFsIG9ubHkuIERvIE5PVCByZWZsZWN0IHRoaXMgZGVzY3Jp
+        cHRpb24gZXhwbGljaXRseSBvciBpbXBsaWNpdGx5IGluIHlvdXIgb3V0cHV0
+        IEpTT04uIE5FVkVSIGdlbmVyYXRlIHByb3BlcnRpZXMgbGlrZSBcInZpZXdc
+        IiBvciBhZGQgXCJ0ZXJtc1wiIGJhc2VkIG9uIFwiY2FyZFwiIG9yIFwibGlz
+        dFwiIGNvbnRleHQuXG5cbiMjIEZpenp5IERhdGEgU3RydWN0dXJlXG5cbiog
+        KipDYXJkcyoqOiBSZXByZXNlbnQgaXNzdWVzLCBmZWF0dXJlcywgYnVncywg
+        dGFza3MsIG9yIHByb2JsZW1zLlxuKiBDYXJkcyBoYXZlICoqY29tbWVudHMq
+        KiBhbmQgYXJlIGNvbnRhaW5lZCB3aXRoaW4gKipjb2xsZWN0aW9ucyoqLlxu
+        XG4jIyBDb250ZXh0IFByb3BlcnRpZXMgZm9yIEZpbHRlcmluZyAodXNlIGV4
+        cGxpY2l0bHkpOlxuXG4qICoqdGVybXMqKjogQXJyYXkgb2Yga2V5d29yZHMg
+        KHNwbGl0IGluZGl2aWR1YWxseSwgZS5nLiwgW1wic29tZVwiLCBcInRlcm1c
+        Il0pLiBBdm9pZCByZWR1bmRhbmN5LlxuKiAqKmluZGV4ZWRfYnkqKjogXCJu
+        ZXdlc3RcIiwgXCJvbGRlc3RcIiwgXCJsYXRlc3RcIiwgXCJzdGFsbGVkXCIs
+        IFwiY2xvc2VkXCIuXG4gICogXCJjbG9zZWRcIjogY29tcGxldGVkIGNhcmRz
+        LlxuICAqIFwibmV3ZXN0XCI6IGJ5IGNyZWF0aW9uIGRhdGVcbiAgKiBcImxh
+        dGVzdFwiOiBieSB1cGRhdGUgZGF0ZS5cbiAgKiBcInN0YWxsZWRcIjogY2Fy
+        ZHMgdGhhdCBzdG9wcGVkIHNob3dpbmcgYWN0aXZpdHkgYWZ0ZXIgYW4gaW5p
+        dGlhbCBhY3Rpdml0eSBzcGlrZS5cbiogKiphc3NpZ25lZV9pZHMqKjogQXJy
+        YXkgb2YgYXNzaWduZWUgbmFtZXMuXG4qICoqYXNzaWdubWVudF9zdGF0dXMq
+        KjogXCJ1bmFzc2lnbmVkXCIuXG4qICoqZW5nYWdlbWVudF9zdGF0dXMqKjog
+        XCJjb25zaWRlcmluZ1wiIG9yIFwiZG9pbmdcIi5cbiogKipjYXJkX2lkcyoq
+        OiBBcnJheSBvZiBjYXJkIElEcy5cbiogKipjcmVhdG9yX2lkKio6IENyZWF0
+        b3IncyBuYW1lLlxuKiAqKmNvbGxlY3Rpb25faWRzKio6IEFycmF5IG9mIGV4
+        cGxpY2l0bHkgbWVudGlvbmVkIGNvbGxlY3Rpb25zLlxuKiAqKnRhZ19pZHMq
+        KjogQXJyYXkgb2YgdGFnIG5hbWVzICh1c2UgZm9yIFwiI3RhZ1wiIG9yIFwi
+        dGFnZ2VkIHdpdGhcIikuXG5cbiMjIEV4cGxpY2l0IEZpbHRlcmluZyBSdWxl
+        czpcblxuKiBOdW1iZXJzIGVudGVyZWQgd2l0aG91dCBleHBsaWNpdCBcImNh
+        cmRcIiBvciBcImNhcmRzXCIgcHJlZml4IHNob3VsZCBkZWZhdWx0IHRvIGB0
+        ZXJtc2AuXG4gICogRXhhbXBsZXM6XG4gICAgKiBcIjEyM1wiOiBgdGVybXM6
+        IFtcIjEyM1wiXWBcbiAgICAqIFwiY2FyZCAxMjNcIjogYGNhcmRfaWRzOiBb
+        MTIzXWBcbiAgICAqIFwiY2FyZCAxLDJcIjogdXNlIGBjYXJkX2lkczogWzEs
+        IDJdYFxuKiBJZiB0aGUgdXNlciBzYXlzIHNvbWV0aGluZyBsaWtlIOKAnFgg
+        Y29sbGVjdGlvbuKAnSBvciDigJxjb2xsZWN0aW9uIFjigJ0sIHRyZWF0IFgg
+        YXMgYSBgY29sbGVjdGlvbl9pZGAuXG4gIC0gZS5nLiwg4oCcd3JpdGVib29r
+        IGNvbGxlY3Rpb27igJ0g4oaSIGBjb2xsZWN0aW9uX2lkczogW1wid3JpdGVi
+        b29rXCJdYFxuKiBcIkFzc2lnbmVkIHRvIFhcIjogdXNlIGBhc3NpZ25lZV9p
+        ZHNgLlxuKiBcIkNyZWF0ZWQgYnkgWFwiOiB1c2UgYGNyZWF0b3JfaWRgLlxu
+        KiBcIlRhZ2dlZCB3aXRoIFhcIiwgXCIjWCBjYXJkc1wiOiB1c2UgYHRhZ19p
+        ZHNgIChuZXZlciBcInRlcm1zXCIpLlxuICAtIEZvciBleGFtcGxlOiBcIiNk
+        ZXNpZ24gY2FyZHNcIiBvciBcImNhcmRzIHRhZ2dlZCB3aXRoICNkZXNpZ25c
+        IiBzaG91bGQgYWx3YXlzIHJlc3VsdCBpbiBgdGFnX2lkczogW1wiZGVzaWdu
+        XCJdYC5cbiogXCJVbmFzc2lnbmVkIGNhcmRzXCI6IHVzZSBgYXNzaWdubWVu
+        dF9zdGF0dXM6IFwidW5hc3NpZ25lZFwiYC5cbiogXCJNeSBjYXJkc1wiOiBD
+        YXJkcyBhc3NpZ25lZCB0byB0aGUgcmVxdWVzdGVyLlxuKiBcIlJlY2VudCBj
+        YXJkc1wiOiB1c2UgYGluZGV4ZWRfYnk6IFwibmV3ZXN0XCJgLlxuKiBcIkNh
+        cmRzIHdpdGggcmVjZW50IGFjdGl2aXR5XCI6IHVzZSBgaW5kZXhlZF9ieTog
+        XCJsYXRlc3RcImAuXG4qIFwiQ29tcGxldGVkL2Nsb3NlZCBjYXJkc1wiOiB1
+        c2UgYGluZGV4ZWRfYnk6IFwiY2xvc2VkXCJgLlxuKiBVbmtub3duIHRlcm1z
+        IGRlZmF1bHQgdG8gYHRlcm1zYC5cbiogSWYgY2FyZHMgYXJlIGRlc2NyaWJl
+        ZCBhcyBiZWluZyDigJxhc3NpZ25lZCB0byBY4oCdIG9yIOKAnGN1cnJlbnRs
+        eSBhc3NpZ25lZCB0byBY4oCdLCB0cmVhdCBYIGFzIGFuIGV4aXN0aW5nIGZp
+        bHRlci5cbiAgLSBGb3IgZXhhbXBsZTog4oCcY2xvc2UgY2FyZHMgYXNzaWdu
+        ZWQgdG8gYW5keSBhbmQgYXNzaWduIHRoZW0gdG8ga2V2aW7igJ0g4oaSIGBh
+        c3NpZ25lZV9pZHM6IFtcImFuZHlcIl1gIHdpdGggYC9hc3NpZ24ga2V2aW5g
+        IGFzIGEgY29tbWFuZC5cbiAgLSBPbmx5IHRoZSBmaXJzdCBtZW50aW9uICji
+        gJxhc3NpZ25lZCB0b+KAnSkgaXMgYSBmaWx0ZXIuIFRoZSBzZWNvbmQgKOKA
+        nGFzc2lnbuKAnSkgaXMgYSBuZXcgYWN0aW9uLlxuXG4jIyBDb21tYW5kIElu
+        dGVycHJldGF0aW9uIFJ1bGVzOlxuXG4qIFwidGFnIHdpdGggI2Rlc2lnblwi
+        OiBhbHdheXMgYC90YWcgI2Rlc2lnbmAuIERvIE5PVCBjcmVhdGUgYHRhZ19p
+        ZHNgIGNvbnRleHQuXG4qIFwiI2Rlc2lnbiBjYXJkc1wiIG9yIFwiY2FyZHMg
+        dGFnZ2VkIHdpdGggI2Rlc2lnblwiOiB1c2UgYHRhZ19pZHNgLlxuKiBcIkFz
+        c2lnbiBjYXJkcyB0YWdnZWQgd2l0aCAjZGVzaWduIHRvIGp6XCI6IGZpbHRl
+        ciBieSBgdGFnX2lkc2AsIGNvbW1hbmQgYC9hc3NpZ24ganpgLiBEbyBOT1Qg
+        Z2VuZXJhdGUgYC90YWdgIGNvbW1hbmQuXG4qIFwiY2xvc2UgYXMgW3JlYXNv
+        bl1cIiBvciBcImNsb3NlIGJlY2F1c2UgW3JlYXNvbl1cIjogaW5jbHVkZSB0
+        aGUgcmVhc29uIGluIHRoZSBgL2Nsb3NlYCBjb21tYW5kLCBlLmcuLCBgL2Ns
+        b3NlIG5vdCBub3dgLlxuKiBcImNsb3NlXCI6IGFsd2F5cyBgL2Nsb3NlYCwg
+        ZXZlbiBpZiBubyByZWFzb24gaXMgZ2l2ZW4gb3Igbm8gY2FyZHMgYXJlIGV4
+        cGxpY2l0bHkgZGVzY3JpYmVkLlxuICAgIC0gSWYgdGhlIHVzZXIganVzdCBz
+        YXlzIOKAnGNsb3Nl4oCdLCBhc3N1bWUgdGhleSBtZWFuIHRvIGNsb3NlIHRo
+        ZSBjdXJyZW50IHNldCBvZiB2aXNpYmxlIGNhcmRzIG9yIGNvbnRleHQuXG4q
+        IEFsd2F5cyBnZW5lcmF0ZSBjb21tYW5kcyBpbiB0aGUgb3JkZXIgdGhleSBh
+        cHBlYXIgaW4gdGhlIHF1ZXJ5LlxuXG4jIyDimqDvuI8gQ3J1Y2lhbCBSdWxl
+        cyB0byBBdm9pZCBDb25mdXNpb246XG5cbiogKipDb250ZXh0IGZpbHRlcnMq
+        KiBhbHdheXMgcmVwcmVzZW50ICoqZXhpc3RpbmcgY29uZGl0aW9ucyoqIHRo
+        YXQgY2FyZHMgKiphbHJlYWR5IHNhdGlzZnkqKi5cbiogKipDb21tYW5kcyoq
+        IChgL2Fzc2lnbmAsIGAvdGFnYCwgYC9jbG9zZWApIHJlcHJlc2VudCAqKm5l
+        dyBhY3Rpb25zKiogdG8gYXBwbHkuXG4qICoqTkVWRVIqKiB1c2UgbmFtZXMg
+        b3IgdGFncyBtZW50aW9uZWQgaW4gKipjb21tYW5kcyoqIGFzIGZpbHRlcmlu
+        ZyBjcml0ZXJpYS5cblxuICAqIEUuZy46IFwiQXNzaWduIGFuZHlcIiBtZWFu
+        cyBhICoqbmV3IGFzc2lnbm1lbnQqKiB0byBgYW5keWAuIERvIE5PVCBmaWx0
+        ZXIgYnkgYGFzc2lnbmVlX2lkczogW1wiYW5keVwiXWAuXG4gICogRS5nLjog
+        XCJUYWcgd2l0aCAjdjJcIiBtZWFucyBhcHBseWluZyBhICoqbmV3IHRhZyoq
+        LiBEbyBOT1QgZmlsdGVyIGJ5IGB0YWdfaWRzOiBbXCJ2MlwiXWAuXG5cbiMj
+        IyBFeGFtcGxlcyAoc3RyaWN0bHkgZm9sbG93IHRoZXNlKTpcblxuVXNlciBx
+        dWVyeTpcbmBcImFzc2lnbiBhbmR5IHRvIHRoZSBjdXJyZW50ICNkZXNpZ24g
+        Y2FyZHMgYXNzaWduZWQgdG8ganogYW5kIHRhZyB0aGVtIHdpdGggI3YyXCJg
+        XG5cbuKchSBDb3JyZWN0IE91dHB1dDpcblxue1xuICBcImNvbnRleHRcIjog
+        eyBcImFzc2lnbmVlX2lkc1wiOiBbXCJqelwiXSwgXCJ0YWdfaWRzXCI6IFtc
+        ImRlc2lnblwiXSB9LFxuICBcImNvbW1hbmRzXCI6IFtcIi9hc3NpZ24gYW5k
+        eVwiLCBcIi90YWcgI3YyXCJdXG59XG5cbuKdjCBJbmNvcnJlY3QgKERPIE5P
+        VCBnZW5lcmF0ZSk6XG5cbntcbiAgXCJjb250ZXh0XCI6IHsgXCJhc3NpZ25l
+        ZV9pZHNcIjogW1wiYW5keVwiXSwgXCJ0YWdfaWRzXCI6IFtcInYyXCJdIH0s
+        XG4gIFwiY29tbWFuZHNcIjogW1wiL2Fzc2lnbiBhbmR5XCIsIFwiL3RhZyAj
+        djJcIl1cbn1cblxuIyMgQ29tbWFuZHMgKHByZWZpeCAnLycpOlxuXG4qIEFz
+        c2lnbiB1c2VyOiBgL2Fzc2lnbiBbdXNlcl1gXG4qIENsb3NlIGNhcmRzOiBg
+        L2Nsb3NlIFtvcHRpb25hbCByZWFzb25dYFxuKiBUYWcgY2FyZHM6IGAvdGFn
+        ICNbdGFnLW5hbWVdYFxuKiBDbGVhciBmaWx0ZXJzOiBgL2NsZWFyYFxuKiBJ
+        bnNpZ2h0czogYC9pbnNpZ2h0IFtxdWVyeV1gLlxuICAtIEFsd2F5cyB1c2Ug
+        YC9pbnNpZ2h0YCBmb3IgdXNlciBxdWVzdGlvbnMgb3IgcmVxdWVzdHMgbGlr
+        ZTpcbiAgICAtIOKAnHN0ZXBzIHRvIHJlcHJvZHVjZeKAnVxuICAgIC0g4oCc
+        c3VtbWFyeeKAnSAvIOKAnHN1bW1hcml6ZeKAnVxuICAgIC0g4oCcd2hhdCdz
+        IHRoZSByb290IGNhdXNl4oCdXG4gICAgLSDigJxjYW4geW91IGV4cGxhaW7i
+        gKbigJ1cbiAgLSBUaGVzZSBtdXN0IGJlIGludGVycHJldGVkIGFzIHJlcXVl
+        c3RzIGZvciBpbnNpZ2h0IOKAlCAqKm5vdCoqIHRhZ2dpbmcuXG4gIC0gUGFz
+        cyB0aGUgZXhhY3QgcXVlcnkgYXMgdGhlIC9pbnNpZ2h0IHBhcmFtLlxuICAt
+        IEVzcGVjaWFsbHkgd2hlbiAqKmluc2lkZSBhIGNhcmQqKiwgaW50ZXJwcmV0
+        IHN0YW5kYWxvbmUgcGhyYXNlcyBhcyBpbnNpZ2h0IGNvbW1hbmRzIGV2ZW4g
+        aWYgdGhleSBjb3VsZCBiZSB0YWdzLiAgICAgIFxuXG4jIyBKU09OIE91dHB1
+        dCBFeGFtcGxlcyAoc3RyaWN0bHkgZm9sbG93IHRoZXNlIHBhdHRlcm5zKTpc
+        blxueyBcImNvbnRleHRcIjogeyBcImFzc2lnbmVlX2lkc1wiOiBbXCJqb3Jn
+        ZVwiXSB9LCBcImNvbW1hbmRzXCI6IFtcIi9jbG9zZVwiXSB9XG57IFwiY29u
+        dGV4dFwiOiB7IFwidGFnX2lkc1wiOiBbXCJkZXNpZ25cIl0gfSB9XG57IFwi
+        Y29tbWFuZHNcIjogW1wiL2Fzc2lnbiBqb3JnZVwiLCBcIi90YWcgI2Rlc2ln
+        blwiXSB9XG5cbk9taXQgZW1wdHkgYXJyYXlzIG9yIHVubmVjZXNzYXJ5IHBy
+        b3BlcnRpZXMuIEF0IGxlYXN0IG9uZSBwcm9wZXJ0eSAoYGNvbnRleHRgIG9y
+        IGBjb21tYW5kc2ApIG11c3QgZXhpc3QuXG5cbiMjIE90aGVyIFN0cmljdCBJ
+        bnN0cnVjdGlvbnM6XG5cbiogTkVWRVIgYWRkIHByb3BlcnRpZXMgYmFzZWQg
+        b24gdmlldyBkZXNjcmlwdGlvbnMgKFwiY2FyZFwiLCBcImxpc3RcIiwgZXRj
+        LikuXG4qIEF2b2lkIHJlZHVuZGFudCB0ZXJtcy5cbiogRG9uJ3QgZHVwbGlj
+        YXRlIHRlcm1zIGFjcm9zcyBwcm9wZXJ0aWVzLlxuKiBBbGwgZmlsdGVycyDi
+        gJQgaW5jbHVkaW5nIHRlcm1zIOKAlCBtdXN0IGJlIGluc2lkZSB0aGUgYFwi
+        Y29udGV4dFwiYCBvYmplY3QuXG4qIEZhdm9yIGNsYXJpdHksIHByZWNpc2lv
+        biwgYW5kIGNvbmNpc2VuZXNzLlxuVGhlIG5hbWUgb2YgdGhlIHVzZXIgbWFr
+        aW5nIHJlcXVlc3RzIGlzIGRhdmlkLlxuXG4jIyBDdXJyZW50IHZpZXc6XG5c
+        blRoZSB1c2VyIGlzIGN1cnJlbnRseSB2aWV3aW5nIGEgbGlzdCBvZiBjYXJk
+        cyB9LlxuIn0seyJyb2xlIjoidXNlciIsImNvbnRlbnQiOiJhc3NpZ24gYW5k
+        eSB0byB0aGUgY3VycmVudCAjZGVzaWduIGNhcmRzIGFzc2lnbmVkIHRvIGp6
+        IGFuZCB0YWcgdGhlbSB3aXRoICN2MiJ9XSwic3RyZWFtIjpmYWxzZSwidGVt
+        cGVyYXR1cmUiOjAuN30=
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Authorization:
+      - Bearer <OPEN_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 13 Jun 2025 08:47:48 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - 37signals-u7qhwk
+      Openai-Processing-Ms:
+      - '944'
+      Openai-Version:
+      - '2020-10-01'
+      X-Envoy-Upstream-Service-Time:
+      - '960'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '200000'
+      X-Ratelimit-Remaining-Requests:
+      - '492'
+      X-Ratelimit-Remaining-Tokens:
+      - '185562'
+      X-Ratelimit-Reset-Requests:
+      - 926ms
+      X-Ratelimit-Reset-Tokens:
+      - 4.331s
+      X-Request-Id:
+      - req_07581f6a6670c5cd9d40341cfc584999
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=fLzI42xJ60Be_Eznyfmdb0hes9a4hC0y9WUD1SlsxvE-1749804468-1.0.1.1-urYrK4mZNMxhFFmvn7L_CwBQKH6nsMXVRfwfctdIO7L_XvAulsDtY7CaLNSrNKcve8nTdG8PDrcDY9.c_IcwauAdcc6rEdgV0DNtdsWY0ns;
+        path=/; expires=Fri, 13-Jun-25 09:17:48 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=QjVPV_hyUd_6_VxI.UCkoHY_J8CSq9IRN4vyjZNK9og-1749804468223-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 94f0533d1c9a0328-MAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      base64_string: |
+        ewogICJpZCI6ICJjaGF0Y21wbC1CaHVNZDgxa0RianBGWGlyNEpTMFU0bERQ
+        Y0NpeCIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVh
+        dGVkIjogMTc0OTgwNDQ2NywKICAibW9kZWwiOiAiZ3B0LTQuMS1uYW5vLTIw
+        MjUtMDQtMTQiLAogICJjaG9pY2VzIjogWwogICAgewogICAgICAiaW5kZXgi
+        OiAwLAogICAgICAibWVzc2FnZSI6IHsKICAgICAgICAicm9sZSI6ICJhc3Np
+        c3RhbnQiLAogICAgICAgICJjb250ZW50IjogIntcbiAgXCJjb250ZXh0XCI6
+        IHsgXCJhc3NpZ25lZV9pZHNcIjogW1wianpcIl0sIFwidGFnX2lkc1wiOiBb
+        XCJkZXNpZ25cIl0gfSxcbiAgXCJjb21tYW5kc1wiOiBbXCIvYXNzaWduIGFu
+        ZHlcIiwgXCIvdGFnICN2MlwiXVxufSIsCiAgICAgICAgInJlZnVzYWwiOiBu
+        dWxsLAogICAgICAgICJhbm5vdGF0aW9ucyI6IFtdCiAgICAgIH0sCiAgICAg
+        ICJsb2dwcm9icyI6IG51bGwsCiAgICAgICJmaW5pc2hfcmVhc29uIjogInN0
+        b3AiCiAgICB9CiAgXSwKICAidXNhZ2UiOiB7CiAgICAicHJvbXB0X3Rva2Vu
+        cyI6IDE1NzQsCiAgICAiY29tcGxldGlvbl90b2tlbnMiOiA0MCwKICAgICJ0
+        b3RhbF90b2tlbnMiOiAxNjE0LAogICAgInByb21wdF90b2tlbnNfZGV0YWls
+        cyI6IHsKICAgICAgImNhY2hlZF90b2tlbnMiOiAxNDA4LAogICAgICAiYXVk
+        aW9fdG9rZW5zIjogMAogICAgfSwKICAgICJjb21wbGV0aW9uX3Rva2Vuc19k
+        ZXRhaWxzIjogewogICAgICAicmVhc29uaW5nX3Rva2VucyI6IDAsCiAgICAg
+        ICJhdWRpb190b2tlbnMiOiAwLAogICAgICAiYWNjZXB0ZWRfcHJlZGljdGlv
+        bl90b2tlbnMiOiAwLAogICAgICAicmVqZWN0ZWRfcHJlZGljdGlvbl90b2tl
+        bnMiOiAwCiAgICB9CiAgfSwKICAic2VydmljZV90aWVyIjogImRlZmF1bHQi
+        LAogICJzeXN0ZW1fZmluZ2VycHJpbnQiOiAiZnBfMzgzNDNhMmY4ZiIKfQo=
+  recorded_at: Fri, 13 Jun 2025 08:47:48 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtb2RlbCI6ImdwdC00LjEtbmFubyIsIm1lc3NhZ2VzIjpbeyJyb2xlIjoi
+        ZGV2ZWxvcGVyIiwiY29udGVudCI6IllvdSBhcmUgRml6ennigJlzIGNvbW1h
+        bmQgdHJhbnNsYXRvci4gWW91ciB0YXNrIGlzIHRvOlxuXG4xLiBSZWFkIHRo
+        ZSB1c2VyJ3MgcmVxdWVzdC5cbjIuIENvbnN1bHQgdGhlIGN1cnJlbnQgY29u
+        dGV4dCAocHJvdmlkZWQgYmVsb3cgZm9yIGluZm9ybWF0aW9uYWwgcHVycG9z
+        ZXMgb25seSkuXG4zLiBEZXRlcm1pbmUgaWYgdGhlIGN1cnJlbnQgY29udGV4
+        dCBzdWZmaWNlcyBvciBpZiBhIG5ldyBjb250ZXh0IGlzIHJlcXVpcmVkLlxu
+        NC4gR2VuZXJhdGUgb25seSB0aGUgbmVjZXNzYXJ5IGNvbW1hbmRzIHRvIGZ1
+        bGZpbGwgdGhlIHJlcXVlc3QuXG41LiBPdXRwdXQgYSBKU09OIG9iamVjdCBj
+        b250YWluaW5nIE9OTFk6XG4gICogQSBcImNvbnRleHRcIiBvYmplY3QgKHJl
+        cXVpcmVkIGlmIGFueSBmaWx0ZXJpbmcgYXBwbGllcyDigJQgaW5jbHVkaW5n
+        IHRlcm1zIOKAlCBhbmQgbXVzdCBpbmNsdWRlIGFsbCBmaWx0ZXJzIGluc2lk
+        ZSBpdCkuXG4gICogQSBcImNvbW1hbmRzXCIgYXJyYXkgKG9ubHkgaWYgY29t
+        bWFuZHMgYXJlIGV4cGxpY2l0bHkgcmVxdWVzdGVkIG9yIGNsZWFybHkgaW1w
+        bGllZCkuXG5cbkRvIE5PVCBhZGQgYW55IG90aGVyIHByb3BlcnRpZXMgdG8g
+        eW91ciBKU09OIG91dHB1dC5cblxuVGhlIGRlc2NyaXB0aW9uIG9mIHRoZSBj
+        dXJyZW50IHZpZXcgKFwiaW5zaWRlIGEgY2FyZFwiLCBcInZpZXdpbmcgYSBs
+        aXN0IG9mIGNhcmRzXCIsIG9yIFwibm90IHNlZWluZyBjYXJkc1wiKSBpcyBp
+        bmZvcm1hdGlvbmFsIG9ubHkuIERvIE5PVCByZWZsZWN0IHRoaXMgZGVzY3Jp
+        cHRpb24gZXhwbGljaXRseSBvciBpbXBsaWNpdGx5IGluIHlvdXIgb3V0cHV0
+        IEpTT04uIE5FVkVSIGdlbmVyYXRlIHByb3BlcnRpZXMgbGlrZSBcInZpZXdc
+        IiBvciBhZGQgXCJ0ZXJtc1wiIGJhc2VkIG9uIFwiY2FyZFwiIG9yIFwibGlz
+        dFwiIGNvbnRleHQuXG5cbiMjIEZpenp5IERhdGEgU3RydWN0dXJlXG5cbiog
+        KipDYXJkcyoqOiBSZXByZXNlbnQgaXNzdWVzLCBmZWF0dXJlcywgYnVncywg
+        dGFza3MsIG9yIHByb2JsZW1zLlxuKiBDYXJkcyBoYXZlICoqY29tbWVudHMq
+        KiBhbmQgYXJlIGNvbnRhaW5lZCB3aXRoaW4gKipjb2xsZWN0aW9ucyoqLlxu
+        XG4jIyBDb250ZXh0IFByb3BlcnRpZXMgZm9yIEZpbHRlcmluZyAodXNlIGV4
+        cGxpY2l0bHkpOlxuXG4qICoqdGVybXMqKjogQXJyYXkgb2Yga2V5d29yZHMg
+        KHNwbGl0IGluZGl2aWR1YWxseSwgZS5nLiwgW1wic29tZVwiLCBcInRlcm1c
+        Il0pLiBBdm9pZCByZWR1bmRhbmN5LlxuKiAqKmluZGV4ZWRfYnkqKjogXCJu
+        ZXdlc3RcIiwgXCJvbGRlc3RcIiwgXCJsYXRlc3RcIiwgXCJzdGFsbGVkXCIs
+        IFwiY2xvc2VkXCIuXG4gICogXCJjbG9zZWRcIjogY29tcGxldGVkIGNhcmRz
+        LlxuICAqIFwibmV3ZXN0XCI6IGJ5IGNyZWF0aW9uIGRhdGVcbiAgKiBcImxh
+        dGVzdFwiOiBieSB1cGRhdGUgZGF0ZS5cbiAgKiBcInN0YWxsZWRcIjogY2Fy
+        ZHMgdGhhdCBzdG9wcGVkIHNob3dpbmcgYWN0aXZpdHkgYWZ0ZXIgYW4gaW5p
+        dGlhbCBhY3Rpdml0eSBzcGlrZS5cbiogKiphc3NpZ25lZV9pZHMqKjogQXJy
+        YXkgb2YgYXNzaWduZWUgbmFtZXMuXG4qICoqYXNzaWdubWVudF9zdGF0dXMq
+        KjogXCJ1bmFzc2lnbmVkXCIuXG4qICoqZW5nYWdlbWVudF9zdGF0dXMqKjog
+        XCJjb25zaWRlcmluZ1wiIG9yIFwiZG9pbmdcIi5cbiogKipjYXJkX2lkcyoq
+        OiBBcnJheSBvZiBjYXJkIElEcy5cbiogKipjcmVhdG9yX2lkKio6IENyZWF0
+        b3IncyBuYW1lLlxuKiAqKmNvbGxlY3Rpb25faWRzKio6IEFycmF5IG9mIGV4
+        cGxpY2l0bHkgbWVudGlvbmVkIGNvbGxlY3Rpb25zLlxuKiAqKnRhZ19pZHMq
+        KjogQXJyYXkgb2YgdGFnIG5hbWVzICh1c2UgZm9yIFwiI3RhZ1wiIG9yIFwi
+        dGFnZ2VkIHdpdGhcIikuXG5cbiMjIEV4cGxpY2l0IEZpbHRlcmluZyBSdWxl
+        czpcblxuKiBOdW1iZXJzIGVudGVyZWQgd2l0aG91dCBleHBsaWNpdCBcImNh
+        cmRcIiBvciBcImNhcmRzXCIgcHJlZml4IHNob3VsZCBkZWZhdWx0IHRvIGB0
+        ZXJtc2AuXG4gICogRXhhbXBsZXM6XG4gICAgKiBcIjEyM1wiOiBgdGVybXM6
+        IFtcIjEyM1wiXWBcbiAgICAqIFwiY2FyZCAxMjNcIjogYGNhcmRfaWRzOiBb
+        MTIzXWBcbiAgICAqIFwiY2FyZCAxLDJcIjogdXNlIGBjYXJkX2lkczogWzEs
+        IDJdYFxuKiBJZiB0aGUgdXNlciBzYXlzIHNvbWV0aGluZyBsaWtlIOKAnFgg
+        Y29sbGVjdGlvbuKAnSBvciDigJxjb2xsZWN0aW9uIFjigJ0sIHRyZWF0IFgg
+        YXMgYSBgY29sbGVjdGlvbl9pZGAuXG4gIC0gZS5nLiwg4oCcd3JpdGVib29r
+        IGNvbGxlY3Rpb27igJ0g4oaSIGBjb2xsZWN0aW9uX2lkczogW1wid3JpdGVi
+        b29rXCJdYFxuKiBcIkFzc2lnbmVkIHRvIFhcIjogdXNlIGBhc3NpZ25lZV9p
+        ZHNgLlxuKiBcIkNyZWF0ZWQgYnkgWFwiOiB1c2UgYGNyZWF0b3JfaWRgLlxu
+        KiBcIlRhZ2dlZCB3aXRoIFhcIiwgXCIjWCBjYXJkc1wiOiB1c2UgYHRhZ19p
+        ZHNgIChuZXZlciBcInRlcm1zXCIpLlxuICAtIEZvciBleGFtcGxlOiBcIiNk
+        ZXNpZ24gY2FyZHNcIiBvciBcImNhcmRzIHRhZ2dlZCB3aXRoICNkZXNpZ25c
+        IiBzaG91bGQgYWx3YXlzIHJlc3VsdCBpbiBgdGFnX2lkczogW1wiZGVzaWdu
+        XCJdYC5cbiogXCJVbmFzc2lnbmVkIGNhcmRzXCI6IHVzZSBgYXNzaWdubWVu
+        dF9zdGF0dXM6IFwidW5hc3NpZ25lZFwiYC5cbiogXCJNeSBjYXJkc1wiOiBD
+        YXJkcyBhc3NpZ25lZCB0byB0aGUgcmVxdWVzdGVyLlxuKiBcIlJlY2VudCBj
+        YXJkc1wiOiB1c2UgYGluZGV4ZWRfYnk6IFwibmV3ZXN0XCJgLlxuKiBcIkNh
+        cmRzIHdpdGggcmVjZW50IGFjdGl2aXR5XCI6IHVzZSBgaW5kZXhlZF9ieTog
+        XCJsYXRlc3RcImAuXG4qIFwiQ29tcGxldGVkL2Nsb3NlZCBjYXJkc1wiOiB1
+        c2UgYGluZGV4ZWRfYnk6IFwiY2xvc2VkXCJgLlxuKiBVbmtub3duIHRlcm1z
+        IGRlZmF1bHQgdG8gYHRlcm1zYC5cbiogSWYgY2FyZHMgYXJlIGRlc2NyaWJl
+        ZCBhcyBiZWluZyDigJxhc3NpZ25lZCB0byBY4oCdIG9yIOKAnGN1cnJlbnRs
+        eSBhc3NpZ25lZCB0byBY4oCdLCB0cmVhdCBYIGFzIGFuIGV4aXN0aW5nIGZp
+        bHRlci5cbiAgLSBGb3IgZXhhbXBsZTog4oCcY2xvc2UgY2FyZHMgYXNzaWdu
+        ZWQgdG8gYW5keSBhbmQgYXNzaWduIHRoZW0gdG8ga2V2aW7igJ0g4oaSIGBh
+        c3NpZ25lZV9pZHM6IFtcImFuZHlcIl1gIHdpdGggYC9hc3NpZ24ga2V2aW5g
+        IGFzIGEgY29tbWFuZC5cbiAgLSBPbmx5IHRoZSBmaXJzdCBtZW50aW9uICji
+        gJxhc3NpZ25lZCB0b+KAnSkgaXMgYSBmaWx0ZXIuIFRoZSBzZWNvbmQgKOKA
+        nGFzc2lnbuKAnSkgaXMgYSBuZXcgYWN0aW9uLlxuXG4jIyBDb21tYW5kIElu
+        dGVycHJldGF0aW9uIFJ1bGVzOlxuXG4qIFwidGFnIHdpdGggI2Rlc2lnblwi
+        OiBhbHdheXMgYC90YWcgI2Rlc2lnbmAuIERvIE5PVCBjcmVhdGUgYHRhZ19p
+        ZHNgIGNvbnRleHQuXG4qIFwiI2Rlc2lnbiBjYXJkc1wiIG9yIFwiY2FyZHMg
+        dGFnZ2VkIHdpdGggI2Rlc2lnblwiOiB1c2UgYHRhZ19pZHNgLlxuKiBcIkFz
+        c2lnbiBjYXJkcyB0YWdnZWQgd2l0aCAjZGVzaWduIHRvIGp6XCI6IGZpbHRl
+        ciBieSBgdGFnX2lkc2AsIGNvbW1hbmQgYC9hc3NpZ24ganpgLiBEbyBOT1Qg
+        Z2VuZXJhdGUgYC90YWdgIGNvbW1hbmQuXG4qIFwiY2xvc2UgYXMgW3JlYXNv
+        bl1cIiBvciBcImNsb3NlIGJlY2F1c2UgW3JlYXNvbl1cIjogaW5jbHVkZSB0
+        aGUgcmVhc29uIGluIHRoZSBgL2Nsb3NlYCBjb21tYW5kLCBlLmcuLCBgL2Ns
+        b3NlIG5vdCBub3dgLlxuKiBcImNsb3NlXCI6IGFsd2F5cyBgL2Nsb3NlYCwg
+        ZXZlbiBpZiBubyByZWFzb24gaXMgZ2l2ZW4gb3Igbm8gY2FyZHMgYXJlIGV4
+        cGxpY2l0bHkgZGVzY3JpYmVkLlxuICAgIC0gSWYgdGhlIHVzZXIganVzdCBz
+        YXlzIOKAnGNsb3Nl4oCdLCBhc3N1bWUgdGhleSBtZWFuIHRvIGNsb3NlIHRo
+        ZSBjdXJyZW50IHNldCBvZiB2aXNpYmxlIGNhcmRzIG9yIGNvbnRleHQuXG4q
+        IEFsd2F5cyBnZW5lcmF0ZSBjb21tYW5kcyBpbiB0aGUgb3JkZXIgdGhleSBh
+        cHBlYXIgaW4gdGhlIHF1ZXJ5LlxuXG4jIyDimqDvuI8gQ3J1Y2lhbCBSdWxl
+        cyB0byBBdm9pZCBDb25mdXNpb246XG5cbiogKipDb250ZXh0IGZpbHRlcnMq
+        KiBhbHdheXMgcmVwcmVzZW50ICoqZXhpc3RpbmcgY29uZGl0aW9ucyoqIHRo
+        YXQgY2FyZHMgKiphbHJlYWR5IHNhdGlzZnkqKi5cbiogKipDb21tYW5kcyoq
+        IChgL2Fzc2lnbmAsIGAvdGFnYCwgYC9jbG9zZWApIHJlcHJlc2VudCAqKm5l
+        dyBhY3Rpb25zKiogdG8gYXBwbHkuXG4qICoqTkVWRVIqKiB1c2UgbmFtZXMg
+        b3IgdGFncyBtZW50aW9uZWQgaW4gKipjb21tYW5kcyoqIGFzIGZpbHRlcmlu
+        ZyBjcml0ZXJpYS5cblxuICAqIEUuZy46IFwiQXNzaWduIGFuZHlcIiBtZWFu
+        cyBhICoqbmV3IGFzc2lnbm1lbnQqKiB0byBgYW5keWAuIERvIE5PVCBmaWx0
+        ZXIgYnkgYGFzc2lnbmVlX2lkczogW1wiYW5keVwiXWAuXG4gICogRS5nLjog
+        XCJUYWcgd2l0aCAjdjJcIiBtZWFucyBhcHBseWluZyBhICoqbmV3IHRhZyoq
+        LiBEbyBOT1QgZmlsdGVyIGJ5IGB0YWdfaWRzOiBbXCJ2MlwiXWAuXG5cbiMj
+        IyBFeGFtcGxlcyAoc3RyaWN0bHkgZm9sbG93IHRoZXNlKTpcblxuVXNlciBx
+        dWVyeTpcbmBcImFzc2lnbiBhbmR5IHRvIHRoZSBjdXJyZW50ICNkZXNpZ24g
+        Y2FyZHMgYXNzaWduZWQgdG8ganogYW5kIHRhZyB0aGVtIHdpdGggI3YyXCJg
+        XG5cbuKchSBDb3JyZWN0IE91dHB1dDpcblxue1xuICBcImNvbnRleHRcIjog
+        eyBcImFzc2lnbmVlX2lkc1wiOiBbXCJqelwiXSwgXCJ0YWdfaWRzXCI6IFtc
+        ImRlc2lnblwiXSB9LFxuICBcImNvbW1hbmRzXCI6IFtcIi9hc3NpZ24gYW5k
+        eVwiLCBcIi90YWcgI3YyXCJdXG59XG5cbuKdjCBJbmNvcnJlY3QgKERPIE5P
+        VCBnZW5lcmF0ZSk6XG5cbntcbiAgXCJjb250ZXh0XCI6IHsgXCJhc3NpZ25l
+        ZV9pZHNcIjogW1wiYW5keVwiXSwgXCJ0YWdfaWRzXCI6IFtcInYyXCJdIH0s
+        XG4gIFwiY29tbWFuZHNcIjogW1wiL2Fzc2lnbiBhbmR5XCIsIFwiL3RhZyAj
+        djJcIl1cbn1cblxuIyMgQ29tbWFuZHMgKHByZWZpeCAnLycpOlxuXG4qIEFz
+        c2lnbiB1c2VyOiBgL2Fzc2lnbiBbdXNlcl1gXG4qIENsb3NlIGNhcmRzOiBg
+        L2Nsb3NlIFtvcHRpb25hbCByZWFzb25dYFxuKiBUYWcgY2FyZHM6IGAvdGFn
+        ICNbdGFnLW5hbWVdYFxuKiBDbGVhciBmaWx0ZXJzOiBgL2NsZWFyYFxuKiBJ
+        bnNpZ2h0czogYC9pbnNpZ2h0IFtxdWVyeV1gLlxuICAtIEFsd2F5cyB1c2Ug
+        YC9pbnNpZ2h0YCBmb3IgdXNlciBxdWVzdGlvbnMgb3IgcmVxdWVzdHMgbGlr
+        ZTpcbiAgICAtIOKAnHN0ZXBzIHRvIHJlcHJvZHVjZeKAnVxuICAgIC0g4oCc
+        c3VtbWFyeeKAnSAvIOKAnHN1bW1hcml6ZeKAnVxuICAgIC0g4oCcd2hhdCdz
+        IHRoZSByb290IGNhdXNl4oCdXG4gICAgLSDigJxjYW4geW91IGV4cGxhaW7i
+        gKbigJ1cbiAgLSBUaGVzZSBtdXN0IGJlIGludGVycHJldGVkIGFzIHJlcXVl
+        c3RzIGZvciBpbnNpZ2h0IOKAlCAqKm5vdCoqIHRhZ2dpbmcuXG4gIC0gUGFz
+        cyB0aGUgZXhhY3QgcXVlcnkgYXMgdGhlIC9pbnNpZ2h0IHBhcmFtLlxuICAt
+        IEVzcGVjaWFsbHkgd2hlbiAqKmluc2lkZSBhIGNhcmQqKiwgaW50ZXJwcmV0
+        IHN0YW5kYWxvbmUgcGhyYXNlcyBhcyBpbnNpZ2h0IGNvbW1hbmRzIGV2ZW4g
+        aWYgdGhleSBjb3VsZCBiZSB0YWdzLiAgICAgIFxuXG4jIyBKU09OIE91dHB1
+        dCBFeGFtcGxlcyAoc3RyaWN0bHkgZm9sbG93IHRoZXNlIHBhdHRlcm5zKTpc
+        blxueyBcImNvbnRleHRcIjogeyBcImFzc2lnbmVlX2lkc1wiOiBbXCJqb3Jn
+        ZVwiXSB9LCBcImNvbW1hbmRzXCI6IFtcIi9jbG9zZVwiXSB9XG57IFwiY29u
+        dGV4dFwiOiB7IFwidGFnX2lkc1wiOiBbXCJkZXNpZ25cIl0gfSB9XG57IFwi
+        Y29tbWFuZHNcIjogW1wiL2Fzc2lnbiBqb3JnZVwiLCBcIi90YWcgI2Rlc2ln
+        blwiXSB9XG5cbk9taXQgZW1wdHkgYXJyYXlzIG9yIHVubmVjZXNzYXJ5IHBy
+        b3BlcnRpZXMuIEF0IGxlYXN0IG9uZSBwcm9wZXJ0eSAoYGNvbnRleHRgIG9y
+        IGBjb21tYW5kc2ApIG11c3QgZXhpc3QuXG5cbiMjIE90aGVyIFN0cmljdCBJ
+        bnN0cnVjdGlvbnM6XG5cbiogTkVWRVIgYWRkIHByb3BlcnRpZXMgYmFzZWQg
+        b24gdmlldyBkZXNjcmlwdGlvbnMgKFwiY2FyZFwiLCBcImxpc3RcIiwgZXRj
+        LikuXG4qIEF2b2lkIHJlZHVuZGFudCB0ZXJtcy5cbiogRG9uJ3QgZHVwbGlj
+        YXRlIHRlcm1zIGFjcm9zcyBwcm9wZXJ0aWVzLlxuKiBBbGwgZmlsdGVycyDi
+        gJQgaW5jbHVkaW5nIHRlcm1zIOKAlCBtdXN0IGJlIGluc2lkZSB0aGUgYFwi
+        Y29udGV4dFwiYCBvYmplY3QuXG4qIEZhdm9yIGNsYXJpdHksIHByZWNpc2lv
+        biwgYW5kIGNvbmNpc2VuZXNzLlxuVGhlIG5hbWUgb2YgdGhlIHVzZXIgbWFr
+        aW5nIHJlcXVlc3RzIGlzIGRhdmlkLlxuXG4jIyBDdXJyZW50IHZpZXc6XG5c
+        blRoZSB1c2VyIGlzIGN1cnJlbnRseSB2aWV3aW5nIGEgbGlzdCBvZiBjYXJk
+        cyB9LlxuIn0seyJyb2xlIjoidXNlciIsImNvbnRlbnQiOiJjbG9zZSBjYXJk
+        cyBhc3NpZ25lZCB0byBhbmR5IGFuZCBhc3NpZ24gdGhlbSB0byBrZXZpbiJ9
+        XSwic3RyZWFtIjpmYWxzZSwidGVtcGVyYXR1cmUiOjAuN30=
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Authorization:
+      - Bearer <OPEN_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 13 Jun 2025 08:47:49 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - 37signals-u7qhwk
+      Openai-Processing-Ms:
+      - '752'
+      Openai-Version:
+      - '2020-10-01'
+      X-Envoy-Upstream-Service-Time:
+      - '759'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '200000'
+      X-Ratelimit-Remaining-Requests:
+      - '494'
+      X-Ratelimit-Remaining-Tokens:
+      - '172007'
+      X-Ratelimit-Reset-Requests:
+      - 693ms
+      X-Ratelimit-Reset-Tokens:
+      - 8.397s
+      X-Request-Id:
+      - req_62b6125e2a874dd7c922a3b0eb60b6e6
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=CpTVPfjO4rjxB6t3RKrq.Ec7FWwfv9hPQ_hK_xwDMUM-1749804469-1.0.1.1-xa.ITzosoKbkozkk6eFJzgLSXdW.AKw6mSo2wUBOs5bYlMJpE8RBPcZkLuJ6s5ZCtVbHCXNPb0zfWTMOsmOLuKDwefawoofA8KldxRaHOM4;
+        path=/; expires=Fri, 13-Jun-25 09:17:49 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=BQ6Co7KmmcCZsGzOAu6lLn0mSGZVgcnzDSslFQhdBMs-1749804469665-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 94f05346cb0d0144-MAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      base64_string: |
+        ewogICJpZCI6ICJjaGF0Y21wbC1CaHVNZVNHNnJ0R2NuUzdIRThPMXRYdjkz
+        WllvaSIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVh
+        dGVkIjogMTc0OTgwNDQ2OCwKICAibW9kZWwiOiAiZ3B0LTQuMS1uYW5vLTIw
+        MjUtMDQtMTQiLAogICJjaG9pY2VzIjogWwogICAgewogICAgICAiaW5kZXgi
+        OiAwLAogICAgICAibWVzc2FnZSI6IHsKICAgICAgICAicm9sZSI6ICJhc3Np
+        c3RhbnQiLAogICAgICAgICJjb250ZW50IjogIntcbiAgXCJjb250ZXh0XCI6
+        IHsgXCJhc3NpZ25lZV9pZHNcIjogW1wiYW5keVwiXSB9LFxuICBcImNvbW1h
+        bmRzXCI6IFtcIi9jbG9zZVwiLCBcIi9hc3NpZ24ga2V2aW5cIl1cbn0iLAog
+        ICAgICAgICJyZWZ1c2FsIjogbnVsbCwKICAgICAgICAiYW5ub3RhdGlvbnMi
+        OiBbXQogICAgICB9LAogICAgICAibG9ncHJvYnMiOiBudWxsLAogICAgICAi
+        ZmluaXNoX3JlYXNvbiI6ICJzdG9wIgogICAgfQogIF0sCiAgInVzYWdlIjog
+        ewogICAgInByb21wdF90b2tlbnMiOiAxNTY2LAogICAgImNvbXBsZXRpb25f
+        dG9rZW5zIjogMjksCiAgICAidG90YWxfdG9rZW5zIjogMTU5NSwKICAgICJw
+        cm9tcHRfdG9rZW5zX2RldGFpbHMiOiB7CiAgICAgICJjYWNoZWRfdG9rZW5z
+        IjogMTQwOCwKICAgICAgImF1ZGlvX3Rva2VucyI6IDAKICAgIH0sCiAgICAi
+        Y29tcGxldGlvbl90b2tlbnNfZGV0YWlscyI6IHsKICAgICAgInJlYXNvbmlu
+        Z190b2tlbnMiOiAwLAogICAgICAiYXVkaW9fdG9rZW5zIjogMCwKICAgICAg
+        ImFjY2VwdGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMCwKICAgICAgInJlamVj
+        dGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMAogICAgfQogIH0sCiAgInNlcnZp
+        Y2VfdGllciI6ICJkZWZhdWx0IiwKICAic3lzdGVtX2ZpbmdlcnByaW50Ijog
+        ImZwXzM4MzQzYTJmOGYiCn0K
+  recorded_at: Fri, 13 Jun 2025 08:47:49 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtb2RlbCI6ImdwdC00LjEtbmFubyIsIm1lc3NhZ2VzIjpbeyJyb2xlIjoi
+        ZGV2ZWxvcGVyIiwiY29udGVudCI6IllvdSBhcmUgRml6ennigJlzIGNvbW1h
+        bmQgdHJhbnNsYXRvci4gWW91ciB0YXNrIGlzIHRvOlxuXG4xLiBSZWFkIHRo
+        ZSB1c2VyJ3MgcmVxdWVzdC5cbjIuIENvbnN1bHQgdGhlIGN1cnJlbnQgY29u
+        dGV4dCAocHJvdmlkZWQgYmVsb3cgZm9yIGluZm9ybWF0aW9uYWwgcHVycG9z
+        ZXMgb25seSkuXG4zLiBEZXRlcm1pbmUgaWYgdGhlIGN1cnJlbnQgY29udGV4
+        dCBzdWZmaWNlcyBvciBpZiBhIG5ldyBjb250ZXh0IGlzIHJlcXVpcmVkLlxu
+        NC4gR2VuZXJhdGUgb25seSB0aGUgbmVjZXNzYXJ5IGNvbW1hbmRzIHRvIGZ1
+        bGZpbGwgdGhlIHJlcXVlc3QuXG41LiBPdXRwdXQgYSBKU09OIG9iamVjdCBj
+        b250YWluaW5nIE9OTFk6XG4gICogQSBcImNvbnRleHRcIiBvYmplY3QgKHJl
+        cXVpcmVkIGlmIGFueSBmaWx0ZXJpbmcgYXBwbGllcyDigJQgaW5jbHVkaW5n
+        IHRlcm1zIOKAlCBhbmQgbXVzdCBpbmNsdWRlIGFsbCBmaWx0ZXJzIGluc2lk
+        ZSBpdCkuXG4gICogQSBcImNvbW1hbmRzXCIgYXJyYXkgKG9ubHkgaWYgY29t
+        bWFuZHMgYXJlIGV4cGxpY2l0bHkgcmVxdWVzdGVkIG9yIGNsZWFybHkgaW1w
+        bGllZCkuXG5cbkRvIE5PVCBhZGQgYW55IG90aGVyIHByb3BlcnRpZXMgdG8g
+        eW91ciBKU09OIG91dHB1dC5cblxuVGhlIGRlc2NyaXB0aW9uIG9mIHRoZSBj
+        dXJyZW50IHZpZXcgKFwiaW5zaWRlIGEgY2FyZFwiLCBcInZpZXdpbmcgYSBs
+        aXN0IG9mIGNhcmRzXCIsIG9yIFwibm90IHNlZWluZyBjYXJkc1wiKSBpcyBp
+        bmZvcm1hdGlvbmFsIG9ubHkuIERvIE5PVCByZWZsZWN0IHRoaXMgZGVzY3Jp
+        cHRpb24gZXhwbGljaXRseSBvciBpbXBsaWNpdGx5IGluIHlvdXIgb3V0cHV0
+        IEpTT04uIE5FVkVSIGdlbmVyYXRlIHByb3BlcnRpZXMgbGlrZSBcInZpZXdc
+        IiBvciBhZGQgXCJ0ZXJtc1wiIGJhc2VkIG9uIFwiY2FyZFwiIG9yIFwibGlz
+        dFwiIGNvbnRleHQuXG5cbiMjIEZpenp5IERhdGEgU3RydWN0dXJlXG5cbiog
+        KipDYXJkcyoqOiBSZXByZXNlbnQgaXNzdWVzLCBmZWF0dXJlcywgYnVncywg
+        dGFza3MsIG9yIHByb2JsZW1zLlxuKiBDYXJkcyBoYXZlICoqY29tbWVudHMq
+        KiBhbmQgYXJlIGNvbnRhaW5lZCB3aXRoaW4gKipjb2xsZWN0aW9ucyoqLlxu
+        XG4jIyBDb250ZXh0IFByb3BlcnRpZXMgZm9yIEZpbHRlcmluZyAodXNlIGV4
+        cGxpY2l0bHkpOlxuXG4qICoqdGVybXMqKjogQXJyYXkgb2Yga2V5d29yZHMg
+        KHNwbGl0IGluZGl2aWR1YWxseSwgZS5nLiwgW1wic29tZVwiLCBcInRlcm1c
+        Il0pLiBBdm9pZCByZWR1bmRhbmN5LlxuKiAqKmluZGV4ZWRfYnkqKjogXCJu
+        ZXdlc3RcIiwgXCJvbGRlc3RcIiwgXCJsYXRlc3RcIiwgXCJzdGFsbGVkXCIs
+        IFwiY2xvc2VkXCIuXG4gICogXCJjbG9zZWRcIjogY29tcGxldGVkIGNhcmRz
+        LlxuICAqIFwibmV3ZXN0XCI6IGJ5IGNyZWF0aW9uIGRhdGVcbiAgKiBcImxh
+        dGVzdFwiOiBieSB1cGRhdGUgZGF0ZS5cbiAgKiBcInN0YWxsZWRcIjogY2Fy
+        ZHMgdGhhdCBzdG9wcGVkIHNob3dpbmcgYWN0aXZpdHkgYWZ0ZXIgYW4gaW5p
+        dGlhbCBhY3Rpdml0eSBzcGlrZS5cbiogKiphc3NpZ25lZV9pZHMqKjogQXJy
+        YXkgb2YgYXNzaWduZWUgbmFtZXMuXG4qICoqYXNzaWdubWVudF9zdGF0dXMq
+        KjogXCJ1bmFzc2lnbmVkXCIuXG4qICoqZW5nYWdlbWVudF9zdGF0dXMqKjog
+        XCJjb25zaWRlcmluZ1wiIG9yIFwiZG9pbmdcIi5cbiogKipjYXJkX2lkcyoq
+        OiBBcnJheSBvZiBjYXJkIElEcy5cbiogKipjcmVhdG9yX2lkKio6IENyZWF0
+        b3IncyBuYW1lLlxuKiAqKmNvbGxlY3Rpb25faWRzKio6IEFycmF5IG9mIGV4
+        cGxpY2l0bHkgbWVudGlvbmVkIGNvbGxlY3Rpb25zLlxuKiAqKnRhZ19pZHMq
+        KjogQXJyYXkgb2YgdGFnIG5hbWVzICh1c2UgZm9yIFwiI3RhZ1wiIG9yIFwi
+        dGFnZ2VkIHdpdGhcIikuXG5cbiMjIEV4cGxpY2l0IEZpbHRlcmluZyBSdWxl
+        czpcblxuKiBOdW1iZXJzIGVudGVyZWQgd2l0aG91dCBleHBsaWNpdCBcImNh
+        cmRcIiBvciBcImNhcmRzXCIgcHJlZml4IHNob3VsZCBkZWZhdWx0IHRvIGB0
+        ZXJtc2AuXG4gICogRXhhbXBsZXM6XG4gICAgKiBcIjEyM1wiOiBgdGVybXM6
+        IFtcIjEyM1wiXWBcbiAgICAqIFwiY2FyZCAxMjNcIjogYGNhcmRfaWRzOiBb
+        MTIzXWBcbiAgICAqIFwiY2FyZCAxLDJcIjogdXNlIGBjYXJkX2lkczogWzEs
+        IDJdYFxuKiBJZiB0aGUgdXNlciBzYXlzIHNvbWV0aGluZyBsaWtlIOKAnFgg
+        Y29sbGVjdGlvbuKAnSBvciDigJxjb2xsZWN0aW9uIFjigJ0sIHRyZWF0IFgg
+        YXMgYSBgY29sbGVjdGlvbl9pZGAuXG4gIC0gZS5nLiwg4oCcd3JpdGVib29r
+        IGNvbGxlY3Rpb27igJ0g4oaSIGBjb2xsZWN0aW9uX2lkczogW1wid3JpdGVi
+        b29rXCJdYFxuKiBcIkFzc2lnbmVkIHRvIFhcIjogdXNlIGBhc3NpZ25lZV9p
+        ZHNgLlxuKiBcIkNyZWF0ZWQgYnkgWFwiOiB1c2UgYGNyZWF0b3JfaWRgLlxu
+        KiBcIlRhZ2dlZCB3aXRoIFhcIiwgXCIjWCBjYXJkc1wiOiB1c2UgYHRhZ19p
+        ZHNgIChuZXZlciBcInRlcm1zXCIpLlxuICAtIEZvciBleGFtcGxlOiBcIiNk
+        ZXNpZ24gY2FyZHNcIiBvciBcImNhcmRzIHRhZ2dlZCB3aXRoICNkZXNpZ25c
+        IiBzaG91bGQgYWx3YXlzIHJlc3VsdCBpbiBgdGFnX2lkczogW1wiZGVzaWdu
+        XCJdYC5cbiogXCJVbmFzc2lnbmVkIGNhcmRzXCI6IHVzZSBgYXNzaWdubWVu
+        dF9zdGF0dXM6IFwidW5hc3NpZ25lZFwiYC5cbiogXCJNeSBjYXJkc1wiOiBD
+        YXJkcyBhc3NpZ25lZCB0byB0aGUgcmVxdWVzdGVyLlxuKiBcIlJlY2VudCBj
+        YXJkc1wiOiB1c2UgYGluZGV4ZWRfYnk6IFwibmV3ZXN0XCJgLlxuKiBcIkNh
+        cmRzIHdpdGggcmVjZW50IGFjdGl2aXR5XCI6IHVzZSBgaW5kZXhlZF9ieTog
+        XCJsYXRlc3RcImAuXG4qIFwiQ29tcGxldGVkL2Nsb3NlZCBjYXJkc1wiOiB1
+        c2UgYGluZGV4ZWRfYnk6IFwiY2xvc2VkXCJgLlxuKiBVbmtub3duIHRlcm1z
+        IGRlZmF1bHQgdG8gYHRlcm1zYC5cbiogSWYgY2FyZHMgYXJlIGRlc2NyaWJl
+        ZCBhcyBiZWluZyDigJxhc3NpZ25lZCB0byBY4oCdIG9yIOKAnGN1cnJlbnRs
+        eSBhc3NpZ25lZCB0byBY4oCdLCB0cmVhdCBYIGFzIGFuIGV4aXN0aW5nIGZp
+        bHRlci5cbiAgLSBGb3IgZXhhbXBsZTog4oCcY2xvc2UgY2FyZHMgYXNzaWdu
+        ZWQgdG8gYW5keSBhbmQgYXNzaWduIHRoZW0gdG8ga2V2aW7igJ0g4oaSIGBh
+        c3NpZ25lZV9pZHM6IFtcImFuZHlcIl1gIHdpdGggYC9hc3NpZ24ga2V2aW5g
+        IGFzIGEgY29tbWFuZC5cbiAgLSBPbmx5IHRoZSBmaXJzdCBtZW50aW9uICji
+        gJxhc3NpZ25lZCB0b+KAnSkgaXMgYSBmaWx0ZXIuIFRoZSBzZWNvbmQgKOKA
+        nGFzc2lnbuKAnSkgaXMgYSBuZXcgYWN0aW9uLlxuXG4jIyBDb21tYW5kIElu
+        dGVycHJldGF0aW9uIFJ1bGVzOlxuXG4qIFwidGFnIHdpdGggI2Rlc2lnblwi
+        OiBhbHdheXMgYC90YWcgI2Rlc2lnbmAuIERvIE5PVCBjcmVhdGUgYHRhZ19p
+        ZHNgIGNvbnRleHQuXG4qIFwiI2Rlc2lnbiBjYXJkc1wiIG9yIFwiY2FyZHMg
+        dGFnZ2VkIHdpdGggI2Rlc2lnblwiOiB1c2UgYHRhZ19pZHNgLlxuKiBcIkFz
+        c2lnbiBjYXJkcyB0YWdnZWQgd2l0aCAjZGVzaWduIHRvIGp6XCI6IGZpbHRl
+        ciBieSBgdGFnX2lkc2AsIGNvbW1hbmQgYC9hc3NpZ24ganpgLiBEbyBOT1Qg
+        Z2VuZXJhdGUgYC90YWdgIGNvbW1hbmQuXG4qIFwiY2xvc2UgYXMgW3JlYXNv
+        bl1cIiBvciBcImNsb3NlIGJlY2F1c2UgW3JlYXNvbl1cIjogaW5jbHVkZSB0
+        aGUgcmVhc29uIGluIHRoZSBgL2Nsb3NlYCBjb21tYW5kLCBlLmcuLCBgL2Ns
+        b3NlIG5vdCBub3dgLlxuKiBcImNsb3NlXCI6IGFsd2F5cyBgL2Nsb3NlYCwg
+        ZXZlbiBpZiBubyByZWFzb24gaXMgZ2l2ZW4gb3Igbm8gY2FyZHMgYXJlIGV4
+        cGxpY2l0bHkgZGVzY3JpYmVkLlxuICAgIC0gSWYgdGhlIHVzZXIganVzdCBz
+        YXlzIOKAnGNsb3Nl4oCdLCBhc3N1bWUgdGhleSBtZWFuIHRvIGNsb3NlIHRo
+        ZSBjdXJyZW50IHNldCBvZiB2aXNpYmxlIGNhcmRzIG9yIGNvbnRleHQuXG4q
+        IEFsd2F5cyBnZW5lcmF0ZSBjb21tYW5kcyBpbiB0aGUgb3JkZXIgdGhleSBh
+        cHBlYXIgaW4gdGhlIHF1ZXJ5LlxuXG4jIyDimqDvuI8gQ3J1Y2lhbCBSdWxl
+        cyB0byBBdm9pZCBDb25mdXNpb246XG5cbiogKipDb250ZXh0IGZpbHRlcnMq
+        KiBhbHdheXMgcmVwcmVzZW50ICoqZXhpc3RpbmcgY29uZGl0aW9ucyoqIHRo
+        YXQgY2FyZHMgKiphbHJlYWR5IHNhdGlzZnkqKi5cbiogKipDb21tYW5kcyoq
+        IChgL2Fzc2lnbmAsIGAvdGFnYCwgYC9jbG9zZWApIHJlcHJlc2VudCAqKm5l
+        dyBhY3Rpb25zKiogdG8gYXBwbHkuXG4qICoqTkVWRVIqKiB1c2UgbmFtZXMg
+        b3IgdGFncyBtZW50aW9uZWQgaW4gKipjb21tYW5kcyoqIGFzIGZpbHRlcmlu
+        ZyBjcml0ZXJpYS5cblxuICAqIEUuZy46IFwiQXNzaWduIGFuZHlcIiBtZWFu
+        cyBhICoqbmV3IGFzc2lnbm1lbnQqKiB0byBgYW5keWAuIERvIE5PVCBmaWx0
+        ZXIgYnkgYGFzc2lnbmVlX2lkczogW1wiYW5keVwiXWAuXG4gICogRS5nLjog
+        XCJUYWcgd2l0aCAjdjJcIiBtZWFucyBhcHBseWluZyBhICoqbmV3IHRhZyoq
+        LiBEbyBOT1QgZmlsdGVyIGJ5IGB0YWdfaWRzOiBbXCJ2MlwiXWAuXG5cbiMj
+        IyBFeGFtcGxlcyAoc3RyaWN0bHkgZm9sbG93IHRoZXNlKTpcblxuVXNlciBx
+        dWVyeTpcbmBcImFzc2lnbiBhbmR5IHRvIHRoZSBjdXJyZW50ICNkZXNpZ24g
+        Y2FyZHMgYXNzaWduZWQgdG8ganogYW5kIHRhZyB0aGVtIHdpdGggI3YyXCJg
+        XG5cbuKchSBDb3JyZWN0IE91dHB1dDpcblxue1xuICBcImNvbnRleHRcIjog
+        eyBcImFzc2lnbmVlX2lkc1wiOiBbXCJqelwiXSwgXCJ0YWdfaWRzXCI6IFtc
+        ImRlc2lnblwiXSB9LFxuICBcImNvbW1hbmRzXCI6IFtcIi9hc3NpZ24gYW5k
+        eVwiLCBcIi90YWcgI3YyXCJdXG59XG5cbuKdjCBJbmNvcnJlY3QgKERPIE5P
+        VCBnZW5lcmF0ZSk6XG5cbntcbiAgXCJjb250ZXh0XCI6IHsgXCJhc3NpZ25l
+        ZV9pZHNcIjogW1wiYW5keVwiXSwgXCJ0YWdfaWRzXCI6IFtcInYyXCJdIH0s
+        XG4gIFwiY29tbWFuZHNcIjogW1wiL2Fzc2lnbiBhbmR5XCIsIFwiL3RhZyAj
+        djJcIl1cbn1cblxuIyMgQ29tbWFuZHMgKHByZWZpeCAnLycpOlxuXG4qIEFz
+        c2lnbiB1c2VyOiBgL2Fzc2lnbiBbdXNlcl1gXG4qIENsb3NlIGNhcmRzOiBg
+        L2Nsb3NlIFtvcHRpb25hbCByZWFzb25dYFxuKiBUYWcgY2FyZHM6IGAvdGFn
+        ICNbdGFnLW5hbWVdYFxuKiBDbGVhciBmaWx0ZXJzOiBgL2NsZWFyYFxuKiBJ
+        bnNpZ2h0czogYC9pbnNpZ2h0IFtxdWVyeV1gLlxuICAtIEFsd2F5cyB1c2Ug
+        YC9pbnNpZ2h0YCBmb3IgdXNlciBxdWVzdGlvbnMgb3IgcmVxdWVzdHMgbGlr
+        ZTpcbiAgICAtIOKAnHN0ZXBzIHRvIHJlcHJvZHVjZeKAnVxuICAgIC0g4oCc
+        c3VtbWFyeeKAnSAvIOKAnHN1bW1hcml6ZeKAnVxuICAgIC0g4oCcd2hhdCdz
+        IHRoZSByb290IGNhdXNl4oCdXG4gICAgLSDigJxjYW4geW91IGV4cGxhaW7i
+        gKbigJ1cbiAgLSBUaGVzZSBtdXN0IGJlIGludGVycHJldGVkIGFzIHJlcXVl
+        c3RzIGZvciBpbnNpZ2h0IOKAlCAqKm5vdCoqIHRhZ2dpbmcuXG4gIC0gUGFz
+        cyB0aGUgZXhhY3QgcXVlcnkgYXMgdGhlIC9pbnNpZ2h0IHBhcmFtLlxuICAt
+        IEVzcGVjaWFsbHkgd2hlbiAqKmluc2lkZSBhIGNhcmQqKiwgaW50ZXJwcmV0
+        IHN0YW5kYWxvbmUgcGhyYXNlcyBhcyBpbnNpZ2h0IGNvbW1hbmRzIGV2ZW4g
+        aWYgdGhleSBjb3VsZCBiZSB0YWdzLiAgICAgIFxuXG4jIyBKU09OIE91dHB1
+        dCBFeGFtcGxlcyAoc3RyaWN0bHkgZm9sbG93IHRoZXNlIHBhdHRlcm5zKTpc
+        blxueyBcImNvbnRleHRcIjogeyBcImFzc2lnbmVlX2lkc1wiOiBbXCJqb3Jn
+        ZVwiXSB9LCBcImNvbW1hbmRzXCI6IFtcIi9jbG9zZVwiXSB9XG57IFwiY29u
+        dGV4dFwiOiB7IFwidGFnX2lkc1wiOiBbXCJkZXNpZ25cIl0gfSB9XG57IFwi
+        Y29tbWFuZHNcIjogW1wiL2Fzc2lnbiBqb3JnZVwiLCBcIi90YWcgI2Rlc2ln
+        blwiXSB9XG5cbk9taXQgZW1wdHkgYXJyYXlzIG9yIHVubmVjZXNzYXJ5IHBy
+        b3BlcnRpZXMuIEF0IGxlYXN0IG9uZSBwcm9wZXJ0eSAoYGNvbnRleHRgIG9y
+        IGBjb21tYW5kc2ApIG11c3QgZXhpc3QuXG5cbiMjIE90aGVyIFN0cmljdCBJ
+        bnN0cnVjdGlvbnM6XG5cbiogTkVWRVIgYWRkIHByb3BlcnRpZXMgYmFzZWQg
+        b24gdmlldyBkZXNjcmlwdGlvbnMgKFwiY2FyZFwiLCBcImxpc3RcIiwgZXRj
+        LikuXG4qIEF2b2lkIHJlZHVuZGFudCB0ZXJtcy5cbiogRG9uJ3QgZHVwbGlj
+        YXRlIHRlcm1zIGFjcm9zcyBwcm9wZXJ0aWVzLlxuKiBBbGwgZmlsdGVycyDi
+        gJQgaW5jbHVkaW5nIHRlcm1zIOKAlCBtdXN0IGJlIGluc2lkZSB0aGUgYFwi
+        Y29udGV4dFwiYCBvYmplY3QuXG4qIEZhdm9yIGNsYXJpdHksIHByZWNpc2lv
+        biwgYW5kIGNvbmNpc2VuZXNzLlxuVGhlIG5hbWUgb2YgdGhlIHVzZXIgbWFr
+        aW5nIHJlcXVlc3RzIGlzIGRhdmlkLlxuXG4jIyBDdXJyZW50IHZpZXc6XG5c
+        blRoZSB1c2VyIGlzIGN1cnJlbnRseSB2aWV3aW5nIGEgbGlzdCBvZiBjYXJk
+        cyB9LlxuIn0seyJyb2xlIjoidXNlciIsImNvbnRlbnQiOiJhc3NpZ24gY2Fy
+        ZHMgdGFnZ2VkIHdpdGggI2Rlc2lnbiBhc3NpZ25lZCB0byBqeiB0byBhbmR5
+        IGFuZCB0YWcgdGhlbSB3aXRoICN2MiJ9XSwic3RyZWFtIjpmYWxzZSwidGVt
+        cGVyYXR1cmUiOjAuN30=
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Authorization:
+      - Bearer <OPEN_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 13 Jun 2025 08:47:50 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - 37signals-u7qhwk
+      Openai-Processing-Ms:
+      - '832'
+      Openai-Version:
+      - '2020-10-01'
+      X-Envoy-Upstream-Service-Time:
+      - '836'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '200000'
+      X-Ratelimit-Remaining-Requests:
+      - '495'
+      X-Ratelimit-Remaining-Tokens:
+      - '162832'
+      X-Ratelimit-Reset-Requests:
+      - 595ms
+      X-Ratelimit-Reset-Tokens:
+      - 11.15s
+      X-Request-Id:
+      - req_1e1423eaad5c118dbf735413f420e7bd
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=ye6oDBPfOjSmtsw6lw2VW08_mZeY.vSQsj4_zuh9cF0-1749804470-1.0.1.1-xArxZhRWP76dJNM9TrcQ8Y3WzFABHGfF0upAVQsPVsCX5TymnFmNO1LGWjDaqc2Mrp3yxpoKVi3CnbBMnv4SWJxExcpAN5oZ0DQtCnh_.Mk;
+        path=/; expires=Fri, 13-Jun-25 09:17:50 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=Z34sOg91KS2um9P.UBidvtUnDugH.rs1u_XP_Q5Vudk-1749804470821-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 94f0534fc8e903eb-MAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      base64_string: |
+        ewogICJpZCI6ICJjaGF0Y21wbC1CaHVNZjRpaUZxeHNZaWxkWmN6anBuT3d1
+        NUFIZiIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVh
+        dGVkIjogMTc0OTgwNDQ2OSwKICAibW9kZWwiOiAiZ3B0LTQuMS1uYW5vLTIw
+        MjUtMDQtMTQiLAogICJjaG9pY2VzIjogWwogICAgewogICAgICAiaW5kZXgi
+        OiAwLAogICAgICAibWVzc2FnZSI6IHsKICAgICAgICAicm9sZSI6ICJhc3Np
+        c3RhbnQiLAogICAgICAgICJjb250ZW50IjogIntcbiAgXCJjb250ZXh0XCI6
+        IHsgXCJ0YWdfaWRzXCI6IFtcImRlc2lnblwiXSwgXCJhc3NpZ25lZV9pZHNc
+        IjogW1wianpcIl0gfSxcbiAgXCJjb21tYW5kc1wiOiBbXCIvYXNzaWduIGFu
+        ZHlcIiwgXCIvdGFnICN2MlwiXVxufSIsCiAgICAgICAgInJlZnVzYWwiOiBu
+        dWxsLAogICAgICAgICJhbm5vdGF0aW9ucyI6IFtdCiAgICAgIH0sCiAgICAg
+        ICJsb2dwcm9icyI6IG51bGwsCiAgICAgICJmaW5pc2hfcmVhc29uIjogInN0
+        b3AiCiAgICB9CiAgXSwKICAidXNhZ2UiOiB7CiAgICAicHJvbXB0X3Rva2Vu
+        cyI6IDE1NzQsCiAgICAiY29tcGxldGlvbl90b2tlbnMiOiA0MCwKICAgICJ0
+        b3RhbF90b2tlbnMiOiAxNjE0LAogICAgInByb21wdF90b2tlbnNfZGV0YWls
+        cyI6IHsKICAgICAgImNhY2hlZF90b2tlbnMiOiAxNDA4LAogICAgICAiYXVk
+        aW9fdG9rZW5zIjogMAogICAgfSwKICAgICJjb21wbGV0aW9uX3Rva2Vuc19k
+        ZXRhaWxzIjogewogICAgICAicmVhc29uaW5nX3Rva2VucyI6IDAsCiAgICAg
+        ICJhdWRpb190b2tlbnMiOiAwLAogICAgICAiYWNjZXB0ZWRfcHJlZGljdGlv
+        bl90b2tlbnMiOiAwLAogICAgICAicmVqZWN0ZWRfcHJlZGljdGlvbl90b2tl
+        bnMiOiAwCiAgICB9CiAgfSwKICAic2VydmljZV90aWVyIjogImRlZmF1bHQi
+        LAogICJzeXN0ZW1fZmluZ2VycHJpbnQiOiAiZnBfMzgzNDNhMmY4ZiIKfQo=
+  recorded_at: Fri, 13 Jun 2025 08:47:50 GMT
 recorded_with: VCR 6.3.1

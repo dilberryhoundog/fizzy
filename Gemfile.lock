@@ -42,9 +42,9 @@ GIT
 
 GIT
   remote: https://github.com/crmne/ruby_llm.git
-  revision: 74305703dcdcdcf8b2adefd8236184bcffc83910
+  revision: a35aa111a0bb36b7f0363b1f1f2a25e3d5378fd3
   specs:
-    ruby_llm (1.3.0rc1)
+    ruby_llm (1.3.1)
       base64
       event_stream_parser (~> 1)
       faraday (>= 1.10.0)
@@ -56,7 +56,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 0ac3fba6ee5f7d1680024a4925eee6069095487b
+  revision: fd49d6a3180244969fb5ab9768d0bc7d9e4df9fe
   branch: main
   specs:
     actioncable (8.1.0.alpha)
@@ -162,29 +162,29 @@ GEM
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.3)
-    aws-eventstream (1.3.2)
-    aws-partitions (1.1109.0)
-    aws-sdk-core (3.224.1)
+    aws-eventstream (1.4.0)
+    aws-partitions (1.1115.0)
+    aws-sdk-core (3.225.2)
       aws-eventstream (~> 1, >= 1.3.0)
       aws-partitions (~> 1, >= 1.992.0)
       aws-sigv4 (~> 1.9)
       base64
       jmespath (~> 1, >= 1.6.1)
       logger
-    aws-sdk-kms (1.101.0)
-      aws-sdk-core (~> 3, >= 3.216.0)
+    aws-sdk-kms (1.104.0)
+      aws-sdk-core (~> 3, >= 3.225.0)
       aws-sigv4 (~> 1.5)
-    aws-sdk-s3 (1.188.0)
-      aws-sdk-core (~> 3, >= 3.224.1)
+    aws-sdk-s3 (1.189.1)
+      aws-sdk-core (~> 3, >= 3.225.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.5)
-    aws-sigv4 (1.11.0)
+    aws-sigv4 (1.12.1)
       aws-eventstream (~> 1, >= 1.0.2)
     base64 (0.3.0)
     bcrypt (3.1.20)
     bcrypt_pbkdf (1.1.1)
     benchmark (0.4.1)
-    bigdecimal (3.2.1)
+    bigdecimal (3.2.2)
     bootsnap (1.18.6)
       msgpack (~> 1.2)
     brakeman (7.0.2)
@@ -418,10 +418,10 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sentry-rails (5.24.0)
+    sentry-rails (5.25.0)
       railties (>= 5.0)
-      sentry-ruby (~> 5.24.0)
-    sentry-ruby (5.24.0)
+      sentry-ruby (~> 5.25.0)
+    sentry-ruby (5.25.0)
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.0.2)
     solid_cable (3.0.8)
@@ -445,11 +445,11 @@ GEM
     sqlite-vec (0.1.7.alpha.2-x86_64-darwin)
     sqlite-vec (0.1.7.alpha.2-x86_64-linux)
     sqlite-vec (0.1.7.alpha.2-x86_64-mingw32)
-    sqlite3 (2.6.0)
+    sqlite3 (2.7.0)
       mini_portile2 (~> 2.8.0)
-    sqlite3 (2.6.0-arm64-darwin)
-    sqlite3 (2.6.0-x86_64-darwin)
-    sqlite3 (2.6.0-x86_64-linux-gnu)
+    sqlite3 (2.7.0-arm64-darwin)
+    sqlite3 (2.7.0-x86_64-darwin)
+    sqlite3 (2.7.0-x86_64-linux-gnu)
     sshkit (1.24.0)
       base64
       logger
@@ -471,7 +471,7 @@ GEM
     tiktoken_ruby (0.0.11.1-x86_64-darwin)
     tiktoken_ruby (0.0.11.1-x86_64-linux)
     timeout (0.4.3)
-    turbo-rails (2.0.13)
+    turbo-rails (2.0.16)
       actionpack (>= 7.1.0)
       railties (>= 7.1.0)
     tzinfo (2.0.6)
