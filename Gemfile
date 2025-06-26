@@ -10,7 +10,7 @@ gem "stimulus-rails"
 gem "turbo-rails"
 
 # Deployment and drivers
-gem "active_record-tenanted", bc: "active_record-tenanted"
+gem "active_record-tenanted", bc: "active_record-tenanted", branch: "flavorjones/path-based-tenanting"
 gem "bootsnap", require: false
 gem "kamal", bc: "kamal", ref: "344e2d79", require: false
 gem "puma", ">= 5.0"
