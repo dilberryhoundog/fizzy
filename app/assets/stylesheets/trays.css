@@ -11,7 +11,7 @@
     align-items: end;
     block-size: var(--footer-height);
     display: grid;
-    inset-block: auto 0;
+    inset-block: auto env(safe-area-inset-bottom);
     inline-size: var(--tray-size);
     position: fixed;
     z-index: var(--z-tray);

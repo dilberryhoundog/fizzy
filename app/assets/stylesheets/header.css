@@ -9,7 +9,7 @@
 
     align-items: center;
     display: flex;
-    padding: var(--block-space-half) var(--inline-space);
+    padding: calc(var(--block-space-half) + env(safe-area-inset-top)) var(--inline-space);
 
     /* Change the grid size depending on how many buttons are present */
     &:has(.header__actions > *:nth-child(1)) { --header-button-count: 1; }

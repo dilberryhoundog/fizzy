@@ -7,7 +7,7 @@
     font-family: var(--font-mono);
     font-size: var(--text-normal);
     inset: auto 0 0 0;
-    padding: var(--block-space) calc(var(--tray-size) + calc(var(--inline-space) * 3));
+    padding: var(--block-space) calc(var(--tray-size) + calc(var(--inline-space) * 3)) calc(var(--block-space) + env(safe-area-inset-bottom));
     position: fixed;
     z-index: var(--z-terminal);
 
