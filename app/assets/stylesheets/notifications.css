@@ -39,6 +39,18 @@
     .card {
       box-shadow: 0 0 0 1px var(--color-ink-lighter);
     }
+
+    .card__notification-unread-indicator {
+      --btn-background: transparent;
+
+      &:before {
+        opacity: 0;
+      }
+      
+      .icon { 
+        opacity: 1;
+      }
+    }
   }
 
 
