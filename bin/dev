@@ -8,4 +8,8 @@ if [ -f tmp/solid-queue.txt ]; then
   export SOLID_QUEUE_IN_PUMA=1
 fi
 
+if [ -f tmp/local-auth.txt ]; then
+  export LOCAL_AUTHENTICATION=1
+fi
+
 exec ./bin/rails server -p 3006
