@@ -1,5 +1,6 @@
 class Ai::Tool::OrderClause
-  ALLOWED_DIRECTIONS = %w[ ASC DESC ].freeze
+  ALLOWED_DIRECTIONS = %i[ asc desc ].freeze
+
   attr_reader :order, :defaults
   attr_accessor :permitted_columns
 
@@ -40,12 +41,12 @@ class Ai::Tool::OrderClause
 
   private
     def sanitize_direction(direction)
-      if direction.blank?
-        raise ArgumentError, "Direction can't be blank"
-      elsif ALLOWED_DIRECTIONS.none? { |allowed_direction| direction.casecmp?(allowed_direction) }
+      direction = direction&.downcase&.to_sym
+
+      unless ALLOWED_DIRECTIONS.include?(direction)
         raise ArgumentError, "Invalid direction"
       else
-        direction.downcase.to_sym
+        direction
       end
     end
 end
