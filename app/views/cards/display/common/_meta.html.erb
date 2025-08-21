@@ -1,39 +1,35 @@
 <div class="card__meta" id="<%= dom_id(card, :meta) %>">
-
-  <div class="card__meta-grid card__meta-grid--author">
-    <%= avatar_tag card.creator, class: "card__meta-author", tabindex: (local_assigns.key?(:preview) && local_assigns[:preview]) ? -1 : 0 %>
-
-    <span class="card__meta-text card__meta-text--added overflow-ellipsis">
-      Added <%= local_datetime_tag(card.created_at, style: :daysago) %>
-      <% if card.drafted? %>
-        <strong>(Draft)</strong>
-      <% end %>
-    </span>
-
-    <span class="card__meta-text card__meta-text--author overflow-ellipsis">
-      By <strong><%= card.creator.familiar_name %></strong>
-    </span>
+  <div class="card__meta-avatars card__meta-avatars--author">
+    <%= avatar_tag card.creator, tabindex: (local_assigns.key?(:preview) && local_assigns[:preview]) ? -1 : 0 %>
   </div>
 
-  <div class="card__meta-grid card__meta-grid--assigned">
+  <span class="card__meta-text card__meta-text--added">
+    Added <%= local_datetime_tag(card.created_at, style: :daysago) %>
+    <% if card.drafted? %>
+      <strong>(Draft)</strong>
+    <% end %>
+  </span>
 
-    <span class="card__meta-text card__meta-text--updated overflow-ellipsis">
-      <% if card.creating? %>
-        &nbsp;
-      <% else %>
-        Updated
-        <%= local_datetime_tag(card.last_active_at, style: :daysago) %>
-      <% end %>
-    </span>
+  <span class="card__meta-text card__meta-text--author">
+    By <strong><%= card.creator.familiar_name %></strong>
+  </span>
 
-    <span class="card__meta-text card__meta-text--assigned overflow-ellipsis">
-      <%= card.assignees.any? ? "Assigned to" : "Not assigned" %>
-      <%= card.assignees.map { |assignee| "<strong>#{assignee.familiar_name}</strong>" }.to_sentence.html_safe %>
-    </span>
+  <span class="card__meta-text card__meta-text--updated overflow-ellipsis">
+    <% if card.creating? %>
+      &nbsp;
+    <% else %>
+      Updated
+      <%= local_datetime_tag(card.last_active_at, style: :daysago) %>
+    <% end %>
+  </span>
 
-    <div class="card__meta-assignees">
-      <%= yield %>
-    </div>
+  <span class="card__meta-text card__meta-text--assignees overflow-ellipsis">
+    <%= card.assignees.any? ? "Assigned to" : "Not assigned" %>
+    <%= card.assignees.map { |assignee| "<strong>#{assignee.familiar_name}</strong>" }.to_sentence.html_safe %>
+  </span>
+
+  <div class="card__meta-avatars card__meta-avatars--assignees">
+    <%= yield %>
   </div>
 </div>
 

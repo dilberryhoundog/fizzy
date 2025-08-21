@@ -2,7 +2,7 @@
 
 <div class="flex align-start gap">
   <div class="flex flex-column full-width" style="flex-basis: 48%">
-    <strong>Cards in Considering</strong>
+    <strong>Cards in the Current</strong>
     <p class="txt-x-small margin-none-block-start">Auto-close after…</p>
     <%= form_with model: model, url: url, data: { controller: "form" } do |form| %>
       <%= render "entropy/knob",
@@ -16,8 +16,8 @@
   <div class="separator margin-block-half" style="--border-color: var(--color-ink-light); min-block-size: 3lh;"></div>
 
   <div class="flex flex-column full-width" style="flex-basis: 48%">
-    <strong>Cards in Doing</strong>
-    <p class="txt-x-small margin-none-block-start">Fall back to Considering after…</p>
+    <strong>Cards in Maybe?/Yes!</strong>
+    <p class="txt-x-small margin-none-block-start">Back to the current after…</p>
     <%= form_with model: model, url: url, data: { controller: "form" } do |form| %>
       <%= render "entropy/knob",
             form: form,

@@ -3,7 +3,7 @@
     <%= render "cards/index/workflow_filter", workflow: workflow, filter: filter %>
   <% else %>
     <h2 class="cards__heading">
-      Doing
+      Yes!
     </h2>
   <% end %>
 
@@ -15,7 +15,5 @@
           <%= cards_next_page_link "doing-cards", page: page, filter: filter %>
         </div>
       <% end %>
-    <% else %>
-      <p class="txt-medium translucent">Nothing here</p>
     <% end %>
 </section>

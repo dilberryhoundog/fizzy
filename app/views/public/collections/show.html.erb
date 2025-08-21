@@ -27,6 +27,7 @@
 <% end %>
 
 <div class="card-columns">
+  <%= render "public/collections/show/on_deck", collection: @collection, page: @on_deck %>
   <%= render "public/collections/show/considering", collection: @collection, page: @considering %>
   <%= render "public/collections/show/doing", collection: @collection, page: @doing %>
 </div>

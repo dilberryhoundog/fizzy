@@ -1,9 +1,9 @@
 <div class="cards__heading" data-controller="dialog" data-action="keydown.esc->dialog#close click@document->dialog#closeOnClickOutside">
   <button class="cards__filter btn input input--select borderless overflow-ellipsis" data-action="click->dialog#open:stop">
     <% if filter.stages.any? %>
-      Doing: <%= filter.stages.map(&:name).to_sentence %>
+      Yes!: <%= filter.stages.map(&:name).to_sentence %>
     <% else %>
-      Doing
+      Yes!
     <% end %>
   </button>
 

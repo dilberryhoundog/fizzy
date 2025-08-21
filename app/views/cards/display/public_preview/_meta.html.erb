@@ -1,34 +1,32 @@
 <div class="card__meta" id="<%= dom_id(card, :meta) %>">
-  <div class="card__meta-grid card__meta-grid--author">
+  <div class="card__meta-avatars card__meta-avatars--author">
     <%= avatar_preview_tag card.creator %>
-
-    <span class="card__meta-text card__meta-text--added overflow-ellipsis">
-      Added <%= local_datetime_tag(card.created_at, style: :daysago) %>
-      <% if card.drafted? %>
-        <strong>(Draft)</strong>
-      <% end %>
-    </span>
-
-    <span class="card__meta-text card__meta-text--author overflow-ellipsis">
-      By <strong><%= card.creator.familiar_name %></strong>
-    </span>
   </div>
 
-  <div class="card__meta-grid card__meta-grid--assigned">
-    <span class="card__meta-text card__meta-text--updated overflow-ellipsis">
-      Updated
-      <%= local_datetime_tag(card.last_active_at, style: :daysago) %>
-    </span>
+  <span class="card__meta-text card__meta-text--added">
+    Added <%= local_datetime_tag(card.created_at, style: :daysago) %>
+    <% if card.drafted? %>
+      <strong>(Draft)</strong>
+    <% end %>
+  </span>
 
-    <span class="card__meta-text card__meta-text--assigned overflow-ellipsis">
-      <%= card.assignees.any? ? "Assigned to" : "Not assigned" %>
-      <%= card.assignees.map { |assignee| "<strong>#{assignee.familiar_name}</strong>" }.to_sentence.html_safe %>
-    </span>
+  <span class="card__meta-text card__meta-text--author">
+    By <strong><%= card.creator.familiar_name %></strong>
+  </span>
 
-    <div class="card__meta-assignees" id="<%= dom_id(card, :assignees) %>">
-      <% card.assignees.each do |assignee| %>
-        <%= avatar_preview_tag assignee %>
-      <% end %>
-    </div>
+  <span class="card__meta-text card__meta-text--updated overflow-ellipsis">
+    Updated
+    <%= local_datetime_tag(card.last_active_at, style: :daysago) %>
+  </span>
+
+  <span class="card__meta-text card__meta-text--assignees overflow-ellipsis">
+    <%= card.assignees.any? ? "Assigned to" : "Not assigned" %>
+    <%= card.assignees.map { |assignee| "<strong>#{assignee.familiar_name}</strong>" }.to_sentence.html_safe %>
+  </span>
+
+  <div class="card__meta-avatars card__meta-avatars--assignees" id="<%= dom_id(card, :assignees) %>">
+    <% card.assignees.each do |assignee| %>
+      <%= avatar_preview_tag assignee %>
+    <% end %>
   </div>
 </div>

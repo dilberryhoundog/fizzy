@@ -39,8 +39,8 @@
         drop->drag-and-drop#drop
         dragend->drag-and-drop#dragEnd" } do %>
   <div class="card-columns">
-    <%= render "cards/index/engagement/considering", **@considering.to_h %>
     <%= render "cards/index/engagement/on_deck", **@on_deck.to_h %>
+    <%= render "cards/index/engagement/considering", **@considering.to_h %>
     <%= render "cards/index/engagement/doing", **@doing.to_h %>
   </div>
 

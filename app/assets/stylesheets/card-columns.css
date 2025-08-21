@@ -6,10 +6,10 @@
      the primary container so all cards have the same container reference */
   #main:has(.card-columns) {
     --cards-gap: min(2cqi, 1rem);
-    --gradient-border: linear-gradient(to right,var(--color-canvas), var(--color-ink-lighter) 3%, var(--color-ink-lighter) 97%, var(--color-canvas));
-    --reserved-bubble-space: calc(var(--bubble-size) / 2 + var(--bubble-gap));
+    --gradient-border: linear-gradient(to right,var(--color-canvas), var(--color-ink) 3%, var(--color-ink) 97%, var(--color-canvas));
+    --reserved-bubble-space: 0;
     --bubble-gap: 0.5rem;
-    --bubble-size: 4rem;
+    --bubble-size: 3.5rem;
 
     container-type: inline-size;
     max-inline-size: 1400px;
@@ -23,15 +23,19 @@
   .card-columns {
     margin: auto;
     max-inline-size: 100%;
+    min-block-size: 20lh;
     padding-inline: var(--reserved-bubble-space);
     position: relative;
+    transition: 300ms ease-in-out;
 
     &:before {
       background: var(--gradient-border);
       block-size: 1px;
       content: "";
       inset: 0 -0.6em 100% -0.6em;
+      opacity: 0.15;
       position: absolute;
+      z-index: 1;
     }
 
     @media (min-width: 640px) {
@@ -66,6 +70,7 @@
       --block-space: 1em;
       --block-space-half: 0.5em;
       --text-xx-large: 2em;
+      --text-x-small: 1em;
 
       /* Set lower limit for font size */
       font-size: clamp(0.6rem, 0.85cqi, 100px);
@@ -118,16 +123,20 @@
   /* ------------------------------------------------------------------------ */
 
   .cards__heading {
-    background-color: var(--color-canvas);
     display: flex;
     font-size: var(--text-medium);
     inset-block-start: 0;
     justify-content: center;
     margin-block-start: 1px;
-    margin-inline: calc(-1 * var(--cards-gap) + 1px);
+    margin-inline: -8px; /* enough to cover card shadows, but avoid overlapping bubbles */
     padding-block: var(--cards-gap);
-    position: sticky;
-    z-index: 2;
+
+    /* Cover bubbles and cards on small viewports */
+    @media (max-width: 639px) {
+      &:not(.cards--closed &) {
+        margin-inline: calc(-1 * var(--cards-gap) - var(--reserved-bubble-space) - var(--main-padding));
+      }
+    }
 
     &, .cards__filter {
       font-weight: bold;
@@ -154,19 +163,33 @@
   /* ------------------------------------------------------------------------ */
 
   .cards--considering {
-    @media (min-width: 640px) {
-      padding-inline: var(--cards-gap);
+    background-color: var(--color-canvas);
+    background-image: linear-gradient(90deg,
+      transparent 0%,
+      color-mix(in srgb, var(--color-considering) 25%, transparent) 33%,
+      color-mix(in srgb, var(--color-considering) 25%, transparent) 66%,
+      transparent 100%);
+    padding-block-start: 2em;
 
-      &:after {
-        background: linear-gradient(var(--color-canvas), var(--color-ink-lighter) 1%, var(--color-ink-lighter) 99%, var(--color-canvas));
-        block-size: calc(100% + 1.2em);
+    @supports(mask: radial-gradient(black)) {
+      &:before {
+        background: linear-gradient(90deg,
+          color-mix(in oklch, var(--color-considering) 0%, transparent) 0%,
+          color-mix(in oklch, var(--color-considering) 20%, transparent) 25%,
+          color-mix(in oklch, var(--color-considering) 20%, transparent) 50%,
+          color-mix(in oklch, var(--color-considering) 0%, transparent) 100%);
         content: "";
-        display: block;
-        inline-size: 1px;
-        inset: -0.6em 0 -0.6em 100%;
+        inset: 0;
+        mask: radial-gradient(6px at 50% calc(100% + 3px), transparent calc(99% - 2px), black calc(101% - 2px) 99%, transparent 101%) calc(50% - 8px) calc(50% - 3px + .5px)/16px 6px,
+              radial-gradient(6px at 50% -3px, transparent calc(99% - 2px), black calc(101% - 2px) 99%, transparent 101%) 50% calc(50% + 3px)/16px 6px;
         position: absolute;
-        z-index: 3;
+        z-index: 0;
       }
+    }
+
+    @media (min-width: 640px) {
+      margin-inline: calc(var(--cards-gap) * -1);
+      padding-inline: calc(var(--cards-gap) * 2);
     }
 
     .card {
@@ -178,6 +201,26 @@
 
       @media (min-width: 640px) {
         --text-xx-large: 1.6em;
+      }
+
+      &:nth-child(1n) { rotate: -1deg; }
+      &:nth-child(1) { rotate: 0deg; }
+      &:nth-child(2n) { rotate: 1deg; }
+      &:nth-child(3n) { rotate: -0.5deg; }
+      &:nth-child(4n) { rotate: 0.5deg; }
+    }
+
+    .card--new {
+      --card-padding-block: var(--block-space-double);
+      
+      border: 1px solid var(--color-selected-dark);
+      font-size: 0.8rem !important;
+      rotate: 0 !important;
+      text-align: center;
+
+      .btn {
+        border: 0;
+        color: var(--color-considering);
       }
     }
 
@@ -228,27 +271,6 @@
   .cards--on-deck {
     @media (min-width: 640px) {
       padding-inline: var(--cards-gap);
-
-      &:after {
-        background: linear-gradient(var(--color-canvas), var(--color-ink-lighter) 1%, var(--color-ink-lighter) 99%, var(--color-canvas));
-        block-size: calc(100% + 1.2em);
-        content: "";
-        display: block;
-        inline-size: 1px;
-        inset: -0.6em 0 -0.6em 100%;
-        position: absolute;
-        z-index: 3;
-      }
-    }
-
-    @media (max-width: 639px) {
-      &::before {
-        background: var(--gradient-border);
-        block-size: 1px;
-        content: "";
-        inset: 0 0 auto;
-        position: absolute;
-      }
     }
   }
 
@@ -266,6 +288,7 @@
         block-size: 1px;
         content: "";
         inset: 0 0 auto;
+        opacity: 0.15;
         position: absolute;
       }
     }
@@ -287,6 +310,7 @@
       block-size: 1px;
       content: "";
       inset: 0 -0.6em 100% -0.6em;
+      opacity: 0.15;
       position: absolute;
     }
 

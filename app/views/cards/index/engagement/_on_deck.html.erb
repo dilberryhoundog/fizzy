@@ -1,7 +1,5 @@
 <section id="on-deck-cards" class="cards cards--on-deck" data-drag-and-drop-target="container" data-drop-target="on_deck">
-  <h2 class="cards__heading">
-    Decided to do
-  </h2>
+  <h2 class="cards__heading">Maybe?</h2>
 
   <% if page.used? %>
     <%= render partial: "cards/display/preview", collection: page.records, as: :card, locals: { draggable: true }, cached: true %>
@@ -11,7 +9,5 @@
         <%= cards_next_page_link "on-deck-cards", page: page, filter: filter %>
       </div>
     <% end %>
-  <% else %>
-    <p class="txt-medium translucent">Nothing here</p>
   <% end %>
 </section>

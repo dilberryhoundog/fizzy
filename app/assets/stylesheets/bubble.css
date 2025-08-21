@@ -8,12 +8,13 @@
     block-size: var(--bubble-size, var(--bubble-size-default));
     color: var(--color-ink);
     container-type: inline-size;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     font-weight: bold;
     inline-size: var(--bubble-size, var(--bubble-size-default));
+    inset-block-start: 20%;
     padding: 0.5cqi;
     position: absolute;
-    inset-block-start: 50%;
+    z-index: 1;
 
     &:before {
       background: radial-gradient(
@@ -36,14 +37,14 @@
 
     svg {
       display: block;
-      letter-spacing: 0.1ch;
+      letter-spacing: 0.2ch;
       text-transform: uppercase;
     }
   }
 
   .bubble__number {
     display: grid;
-    font-size: 40cqi;
+    font-size: 50cqi;
     font-weight: 900;
     inset: 0;
     place-content: center;
@@ -52,12 +53,8 @@
   }
 }
 
+.bubble--doing,
 .bubble--considering {
-  inset-inline-start: calc(-1 * var(--bubble-gap));
-  translate: -100% -50%;
-}
-
-.bubble--doing {
-  inset-inline-end: calc(-1 * var(--bubble-gap));
-  translate: 100% -50%;
+  inset-inline-start: 100%;
+  translate: -60% -60%;
 }

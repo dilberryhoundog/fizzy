@@ -1,10 +1,14 @@
-<section id="considering-cards" class="cards cards--considering">
+<section id="considering-cards" class="cards cards--on-deck">
+  <h2 class="cards__heading">
+    Maybe?
+  </h2>
+
   <% if page.used? %>
     <%= render partial: "cards/display/public_preview", collection: page.records, as: :card, cached: true %>
 
     <% unless page.last? %>
       <div class="full-width">
-        <%= public_collection_cards_next_page_link collection, "considering-cards", page: page %>
+        <%= public_collection_cards_next_page_link collection, "on-deck-cards", page: page %>
       </div>
     <% end %>
   <% else %>

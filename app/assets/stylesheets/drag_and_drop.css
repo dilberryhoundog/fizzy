@@ -8,9 +8,10 @@
 
   .drag-and-drop__hover-container {
     background-color: var(--color-selected-light);
-    border-radius: 0.2em;
+    border-radius: 0.1em;
     outline: 2px dashed var(--color-selected-dark);
     transition: background-color 200ms;
+    z-index: 3;
 
     .cards__heading {
       background-color: transparent;
