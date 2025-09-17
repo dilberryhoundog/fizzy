@@ -2,7 +2,10 @@
 
 def system!(*args) system(*args, exception: true) end
 
-puts "== Installing dependencies =="
+puts "\n== Installing Ruby and Node =="
+system("mise install -y")
+
+puts "\n== Installing dependencies =="
 system("gem install bundler --conservative")
 system("bundle config set --local auto_install true")
 system("bundle check") || system!("bundle install")
