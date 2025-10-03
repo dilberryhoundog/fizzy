@@ -1,7 +1,8 @@
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 
-Rails.application.config.active_record_tenanted.default_tenant = ActiveRecord::FixtureSet.identify :'37s_fizzy'
+# there's no fixture for this, we're just generating a stable integer
+Rails.application.config.active_record_tenanted.default_tenant = ActiveRecord::FixtureSet.identify "37s_fizzy"
 
 require "rails/test_help"
 require "webmock/minitest"

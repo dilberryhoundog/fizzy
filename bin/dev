@@ -4,6 +4,7 @@ bin/rails runner - <<EOF
   puts "Login with david@37signals.com / secret123456 to:"
   ApplicationRecord.with_each_tenant do |tenant|
     next unless tenant =~ /\A\d+\z/
+    next unless Account.count > 0
     puts "  - #{Account.sole.name}: http://fizzy.localhost:3006#{Account.sole.slug}"
   end
 EOF
