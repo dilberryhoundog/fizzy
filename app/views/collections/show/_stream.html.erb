@@ -1,4 +1,4 @@
-<% cache [ page.records ] do %>
+<% cache [ collection, page.records ] do %>
   <section id="the-stream" class="cards cards--considering"
     data-drag-and-drop-target="container"
     data-action="turbo:before-morph-attribute->collapsible-columns#preventToggle"
