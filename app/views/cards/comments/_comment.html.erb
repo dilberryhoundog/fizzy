@@ -24,13 +24,6 @@
             <%= icon_tag "menu-dots-horizontal" %>
             <span class="for-screen-reader">Edit this comment</span>
           <% end %>
-
-          <%= render "cards/comments/reactions/quick_reaction", comment: comment do %>
-            <button class="comment__reaction btn btn--circle borderless" data-action="click->dialog#open:stop">
-              <%= icon_tag "menu-dots-horizontal" %>
-              <span class="for-screen-reader">Add a reaction</span>
-            </button>
-          <% end %>
         </div>
 
         <div class="comment__body rich-text-content" data-controller="syntax-highlight retarget-links">

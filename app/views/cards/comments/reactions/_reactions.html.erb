@@ -5,11 +5,7 @@
     </div>
 
     <%= turbo_frame_tag comment, :new_reaction do %>
-      <%= render "cards/comments/reactions/quick_reaction", comment: comment do %>
-        <button class="reaction__action btn btn--circle" data-action="click->dialog#open:stop">
-          <%= icon_tag "reaction" %>
-        </button>
-      <% end %>
+      <%= render "cards/comments/reactions/menu", comment: comment %>
     <% end %>
   </div>
 <% end %>

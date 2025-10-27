@@ -1,8 +1,10 @@
-<div class="quick-reaction" data-controller="dialog" data-action="keydown.esc->dialog#close:stop click@document->dialog#closeOnClickOutside">
-  <%= yield %>
+<div class="reactions__menu" data-controller="dialog" data-action="keydown.esc->dialog#close:stop click@document->dialog#closeOnClickOutside">
+  <button class="reactions__trigger btn btn--circle" data-action="click->dialog#open:stop">
+    <%= icon_tag "reaction" %>
+  </button>
 
-  <dialog class="quick-reaction__popup popup panel fill-white shadow" data-dialog-target="dialog">
-    <div class="quick-reaction__emojis">
+  <dialog class="reactions__popup popup panel fill-white shadow" data-dialog-target="dialog">
+    <div class="reactions__emoji-list">
       <% EmojiHelper::REACTIONS.each do |character, title| %>
         <%= form_with model: [ comment.card, comment, Reaction.new ], data: { turbo_frame: dom_id(comment, :new_reaction), action: "dialog#close"} do |form| %>
           <%= hidden_field_tag "reaction[content]", character %>
@@ -16,7 +18,7 @@
         <%= link_to new_card_comment_reaction_path(comment.card, comment), role: "button",
               class: "btn btn--circle", action: "soft-keyboard#open",
               data: { turbo_frame: dom_id(comment, :new_reaction), action: "dialog#close" } do %>
-          <%= icon_tag "reaction" %> 
+          <%= icon_tag "reaction" %>
           <span class="for-screen-reader">Add your own reaction</span>
         <% end %>
       </div>

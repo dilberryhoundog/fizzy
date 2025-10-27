@@ -24,6 +24,55 @@
     }
   }
 
+  /* Menu
+  /* ------------------------------------------------------------------------ */
+
+  .reactions__menu {
+    position: relative;
+  }
+
+  .reactions__trigger {
+    --btn-border-color: var(--reaction-border-color);
+    --btn-size: var(--reaction-size);
+
+    font-size: 0.75em;
+
+    .reactions:not(:has(.reaction)) & {
+    }
+  }
+
+  .reactions__popup {
+    --panel-border-radius: 1.2em;
+    --panel-padding: 0.5ch;
+    --offset: calc(-1 * var(--panel-padding));
+
+    inset: var(--offset) auto auto var(--offset);
+    min-inline-size: auto;
+    transform: none;
+  }
+
+  .reactions__emoji-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .btn {
+      --btn-icon-size: 1.5ch;
+      --btn-size: var(--reaction-size);
+      --btn-border-color: var(--color-canvas);
+
+      position: relative;
+
+      /* Make sure the selection ring sits on top of adjacent buttons on hover */
+      &:hover,
+      &:focus-visible {
+        z-index: 1;
+      }
+    }
+  }
+
+  /* Single reaction
+  /* -------------------------------------------------------------------------- */
+
   .reaction {
     --btn-size: 100%;
     --reaction-hover-brightness: 0.9;
@@ -110,52 +159,5 @@
 
   .reaction--deleting {
     animation: scale-fade-out 0.2s both;
-  }
-
-  .reaction__action {
-    --btn-border-color: var(--reaction-border-color);
-    --btn-size: var(--reaction-size);
-
-    font-size: 0.75em;
-
-    .reactions:not(:has(.reaction)) & {
-      display: none;
-    }
-  }
-
-  /* Quick reactions
-  /* ------------------------------------------------------------------------ */
-
-  .quick-reaction {
-    position: relative;
-  }
-
-  .quick-reaction__popup {
-    --panel-border-radius: 1.2em;
-    --panel-padding: 0.5ch;
-    --offset: calc(-1 * var(--panel-padding));
-
-    inset: var(--offset) auto auto var(--offset);
-    min-inline-size: auto;
-    transform: none;
-  }
-
-  .quick-reaction__emojis {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-    .btn {
-      --btn-icon-size: 1.5ch;
-      --btn-size: var(--reaction-size);
-      --btn-border-color: var(--color-canvas);
-
-      position: relative;
-
-      /* Make sure the selection ring sits on top of adjacent buttons on hover */
-      &:hover,
-      &:focus-visible {
-        z-index: 1;
-      }
-    }
   }
 }
