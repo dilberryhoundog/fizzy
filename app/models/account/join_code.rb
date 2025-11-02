@@ -3,11 +3,7 @@ class Account::JoinCode < ApplicationRecord
 
   scope :active, -> { where("usage_count < usage_limit") }
 
-  before_validation :generate_code, on: :create, if: -> { code.blank? }
-
-  validates :code, presence: true, uniqueness: true
-  validates :usage_limit, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-  validates :usage_count, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  before_create :generate_code, if: -> { code.blank? }
 
   def redeem
     transaction do

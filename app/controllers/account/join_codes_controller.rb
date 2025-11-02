@@ -8,11 +8,8 @@ class Account::JoinCodesController < ApplicationController
   end
 
   def update
-    if @join_code.update(join_code_params)
-      redirect_to account_join_code_path
-    else
-      render :edit, status: :unprocessable_entity
-    end
+    @join_code.update!(join_code_params)
+    redirect_to account_join_code_path
   end
 
   def destroy
