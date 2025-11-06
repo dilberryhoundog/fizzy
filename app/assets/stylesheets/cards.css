@@ -498,5 +498,9 @@
       margin-inline: auto;
       text-align: start;
     }
+
+    code {
+      text-align: left;
+    }
   }
 }
