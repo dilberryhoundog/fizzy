@@ -6,7 +6,8 @@
       <span class="overflow-ellipsis">Add a board</span>
     <% end %>
   </li>
-  <% if user_filtering.boards.any? %>
-    <%= render partial: "my/menus/boards/board", collection: user_filtering.boards, as: :board %>
+
+  <% if boards.any? %>
+    <%= render partial: "my/menus/boards/board", collection: boards, as: :board %>
   <% end %>
 <% end %>
