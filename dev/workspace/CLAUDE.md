@@ -53,8 +53,6 @@ The destroy/deactivation flow requires careful ordering:
 
 ## Discoveries
 
-- **IMPORTANT FOR MERGE**: Before merging this branch to main, remove the `dev/workspace/** merge=ours` line from `.gitattributes` on THIS branch (otherwise merge will be blocked). After merge completes, ADD the protection line to `.gitattributes` while on main branch.
-
 - Use `&CLAUDE_PROJECT_DIR` to access the project directory inside hooks
 
 - When renaming files. Use the mv command with relative file paths. don't cd to the directory first.
