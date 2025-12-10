@@ -247,4 +247,4 @@ Don't be surprised if your velocity increases. Claude's quality greatly increase
 
 ## Instructions
 
-See the [workspace README.MD](dev/workspace/README.md) for installation and references.
+See the [workspace README.MD](.archive/workspace/README.md) for installation and references.
