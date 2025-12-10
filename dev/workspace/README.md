@@ -61,9 +61,12 @@ gem install claude_hooks
 ### Directory Setup
 
 1. Copy the `dev/workspace/` template to your repository
-2. Copy `.claude/hooks/` directory structure
-3. Copy `.claude/commands/workspace/` slash commands
-4. Copy `.claude/config/config.json` context configuration
+2. Overwrite `.claude/` directory
+3. Overwrite with `.gitattributes` and `.gitignore` to the main branch
+
+If this causes conflicts, copy sections manually. 
+I recommend not mixing hook systems, though.
+Use only 'Claude_hooks' or don't use it all.
 
 ### Hook Configuration
 
@@ -109,6 +112,7 @@ Add to `.claude/settings.json`:
 ### Context Configuration
 
 Create `.claude/config/config.json`:
+( The tree folders are setup for rails codebases, adjust as needed)
 
 ```json
 {
@@ -328,23 +332,14 @@ ls -lt dev/workspace/history/ | head -20
 
 ### Template Preservation
 
-Add to `.gitattributes` on main branch:
+Add to `.gitattributes` on main branch and commit:
 
 ```
 dev/workspace/** merge=ours
 ```
 
 This prevents feature branches from overwriting the workspace template when merged.
-
-### Merge Procedure
-
-**Before merging to main:**
-
-1. Remove the `dev/workspace/** merge=ours` line from `.gitattributes` on your feature branch
-2. Merge the branch
-3. Re-add the protection line while on main
-
-The preflight command validates this automatically.
+Do this before merging anything to main to avoid messing up your clean workspace template.
 
 ## Troubleshooting
 
