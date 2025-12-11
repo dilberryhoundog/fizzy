@@ -18,12 +18,12 @@ Then click on "Generate access token".
 <details>
   <summary>Access token generation guide with screenshots</summary>
 
-  | Step | Description | Screenshot |
-  |:----:|-------------|:----------:|
-  | 1 | Go to your profile | <img width="400" alt="Profile page with API section" src="https://github.com/user-attachments/assets/49e7e12b-2952-4220-84fd-cef99b13bc04" /> |
-  | 2 | In the API section click on "Personal access token" | <img width="400" alt="Personal access tokens page" src="https://github.com/user-attachments/assets/2f026ea0-416f-4fbe-a097-61313f24f180" /> |
-  | 3 | Click on "Generate a new access token" | <img width="400" alt="Generate new access token dialog" src="https://github.com/user-attachments/assets/d766f047-8628-416d-8e21-b89522f6c0d9" /> |
-  | 4 | Give it a description and assign it a permission | <img width="400" alt="Access token created" src="https://github.com/user-attachments/assets/49b8e350-d152-4946-8aad-e13260b983fd" /> |
+  | Step | Description                                         |                                                                    Screenshot                                                                    |
+  |:----:|-----------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------:|
+  |  1   | Go to your profile                                  |  <img width="400" alt="Profile page with API section" src="https://github.com/user-attachments/assets/49e7e12b-2952-4220-84fd-cef99b13bc04" />   |
+  |  2   | In the API section click on "Personal access token" |   <img width="400" alt="Personal access tokens page" src="https://github.com/user-attachments/assets/2f026ea0-416f-4fbe-a097-61313f24f180" />    |
+  |  3   | Click on "Generate a new access token"              | <img width="400" alt="Generate new access token dialog" src="https://github.com/user-attachments/assets/d766f047-8628-416d-8e21-b89522f6c0d9" /> |
+  |  4   | Give it a description and assign it a permission    |       <img width="400" alt="Access token created" src="https://github.com/user-attachments/assets/49b8e350-d152-4946-8aad-e13260b983fd" />       |
 </details>
 
 > [!IMPORTANT]
@@ -87,14 +87,14 @@ end
 
 When a request fails, the API response will communicate the source of the problem through the HTTP status code.
 
-| Status Code | Description |
-|-------------|-------------|
-| `400 Bad Request` | The request was malformed or missing required parameters |
-| `401 Unauthorized` | Authentication failed or access token is invalid |
-| `403 Forbidden` | You don't have permission to perform this action |
-| `404 Not Found` | The requested resource doesn't exist or you don't have access to it |
-| `422 Unprocessable Entity` | Validation failed (see error response format above) |
-| `500 Internal Server Error` | An unexpected error occurred on the server |
+| Status Code                 | Description                                                         |
+|-----------------------------|---------------------------------------------------------------------|
+| `400 Bad Request`           | The request was malformed or missing required parameters            |
+| `401 Unauthorized`          | Authentication failed or access token is invalid                    |
+| `403 Forbidden`             | You don't have permission to perform this action                    |
+| `404 Not Found`             | The requested resource doesn't exist or you don't have access to it |
+| `422 Unprocessable Entity`  | Validation failed (see error response format above)                 |
+| `500 Internal Server Error` | An unexpected error occurred on the server                          |
 
 If a request contains invalid data for fields, such as entering a string into a number field, in most cases the API will respond with a `500 Internal Server Error`. Clients are expected to perform some validation on their end before making a request.
 
@@ -336,12 +336,12 @@ __Response:__
 
 Creates a new Board in the account.
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `name` | string | Yes | The name of the board |
-| `all_access` | boolean | No | Whether any user in the account can access this board. Defaults to `true` |
-| `auto_postpone_period` | integer | No | Number of days of inactivity before cards are automatically postponed |
-| `public_description` | string | No | Rich text description shown on the public board page |
+| Parameter              | Type    | Required | Description                                                               |
+|------------------------|---------|----------|---------------------------------------------------------------------------|
+| `name`                 | string  | Yes      | The name of the board                                                     |
+| `all_access`           | boolean | No       | Whether any user in the account can access this board. Defaults to `true` |
+| `auto_postpone_period` | integer | No       | Number of days of inactivity before cards are automatically postponed     |
+| `public_description`   | string  | No       | Rich text description shown on the public board page                      |
 
 __Request:__
 
@@ -366,13 +366,13 @@ Location: /897362094/boards/03f5v9zkft4hj9qq0lsn9ohcm.json
 
 Updates a Board. Only board administrators can update a board.
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `name` | string | No | The name of the board |
-| `all_access` | boolean | No | Whether any user in the account can access this board |
-| `auto_postpone_period` | integer | No | Number of days of inactivity before cards are automatically postponed |
-| `public_description` | string | No | Rich text description shown on the public board page |
-| `user_ids` | array | No | Array of *all* user IDs who should have access to this board (only applicable when `all_access` is `false`) |
+| Parameter              | Type    | Required | Description                                                                                                 |
+|------------------------|---------|----------|-------------------------------------------------------------------------------------------------------------|
+| `name`                 | string  | No       | The name of the board                                                                                       |
+| `all_access`           | boolean | No       | Whether any user in the account can access this board                                                       |
+| `auto_postpone_period` | integer | No       | Number of days of inactivity before cards are automatically postponed                                       |
+| `public_description`   | string  | No       | Rich text description shown on the public board page                                                        |
+| `user_ids`             | array   | No       | Array of *all* user IDs who should have access to this board (only applicable when `all_access` is `false`) |
 
 __Request:__
 
@@ -413,20 +413,20 @@ Returns a paginated list of cards you have access to. Results can be filtered us
 
 __Query Parameters:__
 
-| Parameter | Description |
-|-----------|-------------|
-| `board_ids[]` | Filter by board ID(s) |
-| `tag_ids[]` | Filter by tag ID(s) |
-| `assignee_ids[]` | Filter by assignee user ID(s) |
-| `creator_ids[]` | Filter by card creator ID(s) |
-| `closer_ids[]` | Filter by user ID(s) who closed the cards |
-| `card_ids[]` | Filter to specific card ID(s) |
-| `indexed_by` | Filter by: `all` (default), `closed`, `not_now`, `stalled`, `postponing_soon`, `golden` |
-| `sorted_by` | Sort order: `latest` (default), `newest`, `oldest` |
-| `assignment_status` | Filter by assignment status: `unassigned` |
-| `creation` | Filter by creation date: `today`, `yesterday`, `thisweek`, `lastweek`, `thismonth`, `lastmonth`, `thisyear`, `lastyear` |
-| `closure` | Filter by closure date: `today`, `yesterday`, `thisweek`, `lastweek`, `thismonth`, `lastmonth`, `thisyear`, `lastyear` |
-| `terms[]` | Search terms to filter cards |
+| Parameter           | Description                                                                                                             |
+|---------------------|-------------------------------------------------------------------------------------------------------------------------|
+| `board_ids[]`       | Filter by board ID(s)                                                                                                   |
+| `tag_ids[]`         | Filter by tag ID(s)                                                                                                     |
+| `assignee_ids[]`    | Filter by assignee user ID(s)                                                                                           |
+| `creator_ids[]`     | Filter by card creator ID(s)                                                                                            |
+| `closer_ids[]`      | Filter by user ID(s) who closed the cards                                                                               |
+| `card_ids[]`        | Filter to specific card ID(s)                                                                                           |
+| `indexed_by`        | Filter by: `all` (default), `closed`, `not_now`, `stalled`, `postponing_soon`, `golden`                                 |
+| `sorted_by`         | Sort order: `latest` (default), `newest`, `oldest`                                                                      |
+| `assignment_status` | Filter by assignment status: `unassigned`                                                                               |
+| `creation`          | Filter by creation date: `today`, `yesterday`, `thisweek`, `lastweek`, `thismonth`, `lastmonth`, `thisyear`, `lastyear` |
+| `closure`           | Filter by closure date: `today`, `yesterday`, `thisweek`, `lastweek`, `thismonth`, `lastmonth`, `thisyear`, `lastyear`  |
+| `terms[]`           | Search terms to filter cards                                                                                            |
 
 __Response:__
 
@@ -487,14 +487,14 @@ Same as the card object in the list response.
 
 Creates a new card in a board.
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `title` | string | Yes | The title of the card |
-| `description` | string | No | Rich text description of the card |
-| `status` | string | No | Initial status: `published` (default), `drafted` |
-| `image` | file | No | Header image for the card |
-| `tag_ids` | array | No | Array of tag IDs to apply to the card |
-| `created_at` | datetime | No | Override creation timestamp (ISO 8601 format) |
+| Parameter     | Type     | Required | Description                                      |
+|---------------|----------|----------|--------------------------------------------------|
+| `title`       | string   | Yes      | The title of the card                            |
+| `description` | string   | No       | Rich text description of the card                |
+| `status`      | string   | No       | Initial status: `published` (default), `drafted` |
+| `image`       | file     | No       | Header image for the card                        |
+| `tag_ids`     | array    | No       | Array of tag IDs to apply to the card            |
+| `created_at`  | datetime | No       | Override creation timestamp (ISO 8601 format)    |
 
 __Request:__
 
@@ -515,13 +515,13 @@ Returns `201 Created` with a `Location` header pointing to the new card.
 
 Updates a card.
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `title` | string | No | The title of the card |
-| `description` | string | No | Rich text description of the card |
-| `status` | string | No | Card status: `drafted`, `published` |
-| `image` | file | No | Header image for the card |
-| `tag_ids` | array | No | Array of tag IDs to apply to the card |
+| Parameter     | Type   | Required | Description                           |
+|---------------|--------|----------|---------------------------------------|
+| `title`       | string | No       | The title of the card                 |
+| `description` | string | No       | Rich text description of the card     |
+| `status`      | string | No       | Card status: `drafted`, `published`   |
+| `image`       | file   | No       | Header image for the card             |
+| `tag_ids`     | array  | No       | Array of tag IDs to apply to the card |
 
 __Request:__
 
@@ -573,9 +573,9 @@ Returns `204 No Content` on success.
 
 Moves a card from triage into a column.
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `column_id` | string | Yes | The ID of the column to move the card into |
+| Parameter   | Type   | Required | Description                                |
+|-------------|--------|----------|--------------------------------------------|
+| `column_id` | string | Yes      | The ID of the column to move the card into |
 
 __Response:__
 
@@ -593,9 +593,9 @@ Returns `204 No Content` on success.
 
 Toggles a tag on or off for a card. If the tag doesn't exist, it will be created.
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `tag_title` | string | Yes | The title of the tag (leading `#` is stripped) |
+| Parameter   | Type   | Required | Description                                    |
+|-------------|--------|----------|------------------------------------------------|
+| `tag_title` | string | Yes      | The title of the tag (leading `#` is stripped) |
 
 __Response:__
 
@@ -605,9 +605,9 @@ Returns `204 No Content` on success.
 
 Toggles assignment of a user to/from a card.
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `assignee_id` | string | Yes | The ID of the user to assign/unassign |
+| Parameter     | Type   | Required | Description                           |
+|---------------|--------|----------|---------------------------------------|
+| `assignee_id` | string | Yes      | The ID of the user to assign/unassign |
 
 __Response:__
 
@@ -697,10 +697,10 @@ __Response:__
 
 Creates a new comment on a card.
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `body` | string | Yes | The comment body (supports rich text) |
-| `created_at` | datetime | No | Override creation timestamp (ISO 8601 format) |
+| Parameter    | Type     | Required | Description                                   |
+|--------------|----------|----------|-----------------------------------------------|
+| `body`       | string   | Yes      | The comment body (supports rich text)         |
+| `created_at` | datetime | No       | Override creation timestamp (ISO 8601 format) |
 
 __Request:__
 
@@ -720,9 +720,9 @@ Returns `201 Created` with a `Location` header pointing to the new comment.
 
 Updates a comment. Only the comment creator can update their comments.
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `body` | string | Yes | The updated comment body |
+| Parameter | Type   | Required | Description              |
+|-----------|--------|----------|--------------------------|
+| `body`    | string | Yes      | The updated comment body |
 
 __Request:__
 
@@ -779,9 +779,9 @@ __Response:__
 
 Adds a reaction to a comment.
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `content` | string | Yes | The reaction text |
+| Parameter | Type   | Required | Description       |
+|-----------|--------|----------|-------------------|
+| `content` | string | Yes      | The reaction text |
 
 __Request:__
 
@@ -827,10 +827,10 @@ __Response:__
 
 Creates a new step on a card.
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `content` | string | Yes | The step text |
-| `completed` | boolean | No | Whether the step is completed (default: `false`) |
+| Parameter   | Type    | Required | Description                                      |
+|-------------|---------|----------|--------------------------------------------------|
+| `content`   | string  | Yes      | The step text                                    |
+| `completed` | boolean | No       | Whether the step is completed (default: `false`) |
 
 __Request:__
 
@@ -850,10 +850,10 @@ Returns `201 Created` with a `Location` header pointing to the new step.
 
 Updates a step.
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `content` | string | No | The step text |
-| `completed` | boolean | No | Whether the step is completed |
+| Parameter   | Type    | Required | Description                   |
+|-------------|---------|----------|-------------------------------|
+| `content`   | string  | No       | The step text                 |
+| `completed` | boolean | No       | Whether the step is completed |
 
 __Request:__
 
@@ -950,10 +950,10 @@ __Response:__
 
 Creates a new column on the board.
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `name` | string | Yes | The name of the column |
-| `color` | string | No | The column color. One of: `var(--color-card-default)` (Blue), `var(--color-card-1)` (Gray), `var(--color-card-2)` (Tan), `var(--color-card-3)` (Yellow), `var(--color-card-4)` (Lime), `var(--color-card-5)` (Aqua), `var(--color-card-6)` (Violet), `var(--color-card-7)` (Purple), `var(--color-card-8)` (Pink) |
+| Parameter | Type   | Required | Description                                                                                                                                                                                                                                                                                                       |
+|-----------|--------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `name`    | string | Yes      | The name of the column                                                                                                                                                                                                                                                                                            |
+| `color`   | string | No       | The column color. One of: `var(--color-card-default)` (Blue), `var(--color-card-1)` (Gray), `var(--color-card-2)` (Tan), `var(--color-card-3)` (Yellow), `var(--color-card-4)` (Lime), `var(--color-card-5)` (Aqua), `var(--color-card-6)` (Violet), `var(--color-card-7)` (Purple), `var(--color-card-8)` (Pink) |
 
 __Request:__
 
@@ -974,10 +974,10 @@ Returns `201 Created` with a `Location` header pointing to the new column.
 
 Updates a column.
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `name` | string | No | The name of the column |
-| `color` | string | No | The column color |
+| Parameter | Type   | Required | Description            |
+|-----------|--------|----------|------------------------|
+| `name`    | string | No       | The name of the column |
+| `color`   | string | No       | The column color       |
 
 __Request:__
 
@@ -1074,10 +1074,10 @@ __Response:__
 
 Updates a user. You can only update users you have permission to change.
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `name` | string | No | The user's display name |
-| `avatar` | file | No | The user's avatar image |
+| Parameter | Type   | Required | Description             |
+|-----------|--------|----------|-------------------------|
+| `name`    | string | No       | The user's display name |
+| `avatar`  | file   | No       | The user's avatar image |
 
 __Request:__
 

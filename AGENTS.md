@@ -19,10 +19,10 @@ Login with: david@example.com (development fixtures), password will appear in th
 
 ### Testing
 ```bash
-bin/rails test                    # Run unit tests (fast)
+bin/rails test                         # Run unit tests (fast)
 bin/rails test test/path/file_test.rb  # Run single test file
-bin/rails test:system             # Run system tests (Capybara + Selenium)
-bin/ci                            # Run full CI suite (style, security, tests)
+bin/rails test:system                  # Run system tests (Capybara + Selenium)
+bin/ci                                 # Run full CI suite (style, security, tests)
 
 # For parallel test execution issues, use:
 PARALLEL_WORKERS=1 bin/rails test

@@ -9,9 +9,9 @@
 # Ignore documentation
 /docs/
 /README.md
-/CLAUDE.md
+/.claude/CLAUDE.md
 /AGENTS.md
-/STYLE.md
+/.claude/rules/STYLE.md
 /CONTRIBUTING.md
 
 # Ignore all environment files (except templates).

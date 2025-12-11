@@ -194,7 +194,7 @@ This gem depends on some private git repositories and it is not meant to be used
 
 ## Contributing
 
-We welcome contributions! Please read our [style guide](STYLE.md) before submitting code.
+We welcome contributions! Please read our [style guide](.claude/rules/STYLE.md) before submitting code.
 
 ## License
 
