@@ -9,7 +9,7 @@
 # Ignore documentation
 /docs/
 /README.md
-/.claude/CLAUDE.md
+/CLAUDE.md
 /AGENTS.md
 /.claude/rules/STYLE.md
 /CONTRIBUTING.md
