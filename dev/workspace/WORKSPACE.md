@@ -1,8 +1,6 @@
 ## Workspace Configuration
 
-This file guides the operational constraints applicable to this workspace.
-
-This is guiding context for Ai Agents when working in this workspace
+This file guides Claude through the operational constraints applicable to this workspace.
 
 ### Track Issues
 
@@ -24,7 +22,7 @@ This is guiding context for Ai Agents when working in this workspace
 
 ### Workflow Type
 
-- [x] Quick (direct implementation)
+- [ ] Quick (direct implementation)
 - [ ] Single plan (plan once, execute)
 - [ ] Multi-stage plan (iterative planning)
 

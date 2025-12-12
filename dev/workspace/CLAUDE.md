@@ -4,8 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 # Workspace
 
-**Branch:** `fix/identity-user-destroy-pattern`
-**Started:** `2025-12-07`
+**Branch:** `**/**`
+**Started:** `yyyy-mm-dd`
 **Status:**
 
 - [x] In Progress
@@ -14,25 +14,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Purpose
 
-Fix and improve how Fizzy handles destroying Identities and Users. The core issue is ensuring proper ordering of callbacks and dependent associations so that user deactivation works correctly before identity links are nullified.
-
-## Key Files
-
-- `app/models/identity.rb` - `before_destroy :deactivate_users, prepend: true`
-- `app/models/user.rb` - `User#deactivate` preserves identity link intentionally
-- `app/models/identity/joinable.rb` - Reactivation relies on preserved identity link
-
-## Pattern Summary
-
-The destroy/deactivation flow requires careful ordering:
-1. Identity#destroy triggers `deactivate_users` callback (prepend: true ensures this runs first)
-2. Each user is deactivated (accesses destroyed, marked inactive, connections closed)
-3. Only then does `dependent: :nullify` sever the identity link
-4. Reactivation via `Identity::Joinable#join` finds existing inactive user by identity
-
+[Claude will place a purpose here when you setup the workspace. Below is an example]
 
 ## Discoveries
-
-- Use `&CLAUDE_PROJECT_DIR` to access the project directory inside hooks
 
 - When renaming files. Use the mv command with relative file paths. don't cd to the directory first.

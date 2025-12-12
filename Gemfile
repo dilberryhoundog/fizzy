@@ -64,3 +64,4 @@ group :test do
   gem "vcr"
   gem "mocha"
 end
+gem 'claude_hooks', '~> 1.0'
