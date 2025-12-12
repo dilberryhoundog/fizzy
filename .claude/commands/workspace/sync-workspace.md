@@ -6,28 +6,33 @@ allowed-tools: bash()
 
 ## Pre-loaded Context
 
+!`git remote -v`  
 !`git branch`
 
 ## Workflow
 
 ### Step 1: Check Git State
 
+**No workspace remote:** Stop, recommend the user add the workspace remote:  
+`git remote add workspace https://github.com/dilberryhoundog/dev-workspace.git`
+
 **Uncommitted changes:** Stop. "Commit or stash before creating new branch."
 
 **Command branch:** If `command` branch is available. Ensure it is checked out. If not, confirm switch to `command`
 
-**Main branch:** If no `command` branch, Ensure `main` is checked out. If not, confirm switch to `main`
+**Main branch:** If no `command` branch, Ensure `main` is checked out. If not, confirm switch to `main`.
 
-### Step 2: Run Script
+### Step 2: Run Command
 
-IF on either a clean `command` or `main` branch:
-run `.claude/scripts/sync-workspace.sh`
-
-IF the bash script fails to run: Stop, recommend the user `CHMOD +x` the script in their terminal and then restart this command.
+IF on either a clean `command` or `main` branch run:
+```bash
+git merge workspace main --squash --allow-unrelated-histories
+git commit -m "🔄 chore: sync workspace from upstream"
+```
 
 ### Step 3: Merge Conflicts
 
-IF merge conflicts exist, work through them interactively with the user.
+IF merge conflicts exist, work through them interactively with the user. Then continue.
 
 ### Step 4: Confirm Success
 
