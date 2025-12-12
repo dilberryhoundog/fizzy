@@ -4,8 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 # Workspace
 
-**Branch:** `**/**`
-**Started:** `yyyy-mm-dd`
+**Branch:** `fix/accounts-menu-name-update`
+**Started:** `2025-12-13`
 **Status:**
 
 - [x] In Progress
@@ -14,7 +14,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Purpose
 
-[Claude will place a purpose here when you setup the workspace. Below is an example]
+Fix a bug where the accounts menu (likely in the navigation/sidebar) does not update to reflect the new name after an account is renamed. The menu should reactively display the updated account name without requiring a full page refresh.
 
 ## Discoveries
 
