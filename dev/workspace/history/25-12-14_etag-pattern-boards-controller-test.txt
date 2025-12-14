@@ -1,7 +1,7 @@
 Session: 46d049a6-6a4b-4a8d-867f-02c932a2acce
 Date: 2025-12-14 14:48
 Branch: fix/accounts-menu-name-update
-CWD: /Users/dylangraham/Projects/37signals/fizzy
+CWD: ~/Projects/37signals/fizzy
 
 ============================================================
 [SUMMARY]
@@ -44,7 +44,7 @@ Let me check the current state of boards_controller.rb and understand the patter
 ------------------------------------------------------------
 
 [READ TOOL]
-File: /Users/dylangraham/Projects/37signals/fizzy/app/controllers/boards_controller.rb
+File: ~/Projects/37signals/fizzy/app/controllers/boards_controller.rb
 
 ------------------------------------------------------------
 
@@ -116,7 +116,7 @@ Let me also check the show view and how `Current.account` is used there:
 ------------------------------------------------------------
 
 [READ TOOL]
-File: /Users/dylangraham/Projects/37signals/fizzy/app/views/boards/show.html.erb
+File: ~/Projects/37signals/fizzy/app/views/boards/show.html.erb
 
 ------------------------------------------------------------
 
@@ -345,7 +345,7 @@ The user wants me to read the boards_controller_test.rb file to see what's alrea
 ------------------------------------------------------------
 
 [READ TOOL]
-File: /Users/dylangraham/Projects/37signals/fizzy/test/controllers/boards_controller_test.rb
+File: ~/Projects/37signals/fizzy/test/controllers/boards_controller_test.rb
 
 ------------------------------------------------------------
 
@@ -616,7 +616,7 @@ Yes - from reading `boards_controller_test.rb` I picked up:
 ------------------------------------------------------------
 
 [WRITE TOOL]
-File: /Users/dylangraham/Projects/37signals/fizzy/dev/workspace/filebox/fix_files/boards_controller_etag_test_snippet.rb
+File: ~/Projects/37signals/fizzy/dev/workspace/filebox/fix_files/boards_controller_etag_test_snippet.rb
 
 ------------------------------------------------------------
 
