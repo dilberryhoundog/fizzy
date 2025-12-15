@@ -1,34 +1,70 @@
 dev
 ├── branches
-│   └── 251207_[docs]_extract-rails-patterns
+│   ├── 251207_[docs]_extract-rails-patterns
+│   │   ├── context
+│   │   │   └── tree.md
+│   │   ├── filebox
+│   │   │   ├── joinable_refactor
+│   │   │   │   ├── identity.rb
+│   │   │   │   ├── joinable.rb
+│   │   │   │   └── user.rb
+│   │   │   ├── CAULDE.md
+│   │   │   └── README.txt
+│   │   ├── history
+│   │   │   ├── 25-12-03_fizzy-patterns-workspace-setup.txt
+│   │   │   ├── 25-12-03_identity-user-split-pattern-extraction.txt
+│   │   │   ├── 25-12-03_layout-shell-pattern-extraction.txt
+│   │   │   ├── 25-12-04_user-reactivation-pattern-analysis.txt
+│   │   │   ├── 25-12-05_create-pattern-extractor-skill.txt
+│   │   │   ├── 25-12-05_css-finder-agent-eval.txt
+│   │   │   └── 25-12-06_user-reactivation-joinable-pattern.txt
+│   │   ├── plans
+│   │   │   ├── architectural.md
+│   │   │   └── prd.md
+│   │   ├── prompts
+│   │   │   ├── discover_prompt.md
+│   │   │   ├── fix.xml
+│   │   │   ├── plan.xml
+│   │   │   ├── README.md
+│   │   │   ├── research_prompt.md
+│   │   │   ├── setup_prompt.txt
+│   │   │   └── task.xml
+│   │   ├── CLAUDE.md
+│   │   ├── README.md
+│   │   └── WORKSPACE.md
+│   └── 251214_[fix]_accounts-menu-name-update
 │       ├── context
+│       │   ├── .keep
 │       │   └── tree.md
 │       ├── filebox
-│       │   ├── joinable_refactor
-│       │   │   ├── identity.rb
-│       │   │   ├── joinable.rb
-│       │   │   └── user.rb
-│       │   ├── CAULDE.md
+│       │   ├── fix_files
+│       │   │   ├── boards_controller_etag_test_snippet.rb
+│       │   │   ├── boards_controller.rb
+│       │   │   ├── menus_controller_test_comprehensive.rb
+│       │   │   ├── menus_controller_test_minimal.rb
+│       │   │   └── menus_controller.rb
 │       │   └── README.txt
 │       ├── history
-│       │   ├── 25-12-03_fizzy-patterns-workspace-setup.txt
-│       │   ├── 25-12-03_identity-user-split-pattern-extraction.txt
-│       │   ├── 25-12-03_layout-shell-pattern-extraction.txt
-│       │   ├── 25-12-04_user-reactivation-pattern-analysis.txt
-│       │   ├── 25-12-05_create-pattern-extractor-skill.txt
-│       │   ├── 25-12-05_css-finder-agent-eval.txt
-│       │   └── 25-12-06_user-reactivation-joinable-pattern.txt
+│       │   ├── .keep
+│       │   ├── 25-12-12_investigate-account-menu-cache.txt
+│       │   ├── 25-12-13_standardize-accounts-menu-instance-var.txt
+│       │   ├── 25-12-14_etag-pattern-boards-controller-test.txt
+│       │   └── 25-12-14_write-menus-controller-tests.txt
 │       ├── plans
+│       │   ├── .keep
 │       │   ├── architectural.md
 │       │   └── prd.md
 │       ├── prompts
+│       │   ├── .keep
 │       │   ├── discover_prompt.md
-│       │   ├── fix.xml
-│       │   ├── plan.xml
 │       │   ├── README.md
-│       │   ├── research_prompt.md
-│       │   ├── setup_prompt.txt
-│       │   └── task.xml
+│       │   └── research_prompt.md
+│       ├── research
+│       │   └── .keep
+│       ├── reviews
+│       │   └── .keep
+│       ├── tasks
+│       │   └── .keep
 │       ├── CLAUDE.md
 │       ├── README.md
 │       └── WORKSPACE.md
@@ -43,6 +79,8 @@ dev
 │   │   │   ├── menus_controller_test_comprehensive.rb
 │   │   │   ├── menus_controller_test_minimal.rb
 │   │   │   └── menus_controller.rb
+│   │   ├── PR_description_v2.md
+│   │   ├── PR_description.md
 │   │   └── README.txt
 │   ├── history
 │   │   ├── .keep
@@ -1529,4 +1567,4 @@ public
 ├── opengraph.png
 └── robots.txt
 
-324 directories, 1206 files
+334 directories, 1234 files
