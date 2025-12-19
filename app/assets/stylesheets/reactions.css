@@ -24,6 +24,10 @@
       margin: 0;
       position: absolute;
 
+      @media (max-width: 640px) {
+        inset-inline-end: calc(var(--comment-padding-inline) / 3);
+      }
+
       .reactions__list {
         display: none;
       }

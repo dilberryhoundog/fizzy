@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/basecamp/lexxy
-  revision: d292280b6d2c5d8a924327adf8bb9f0b25953539
+  revision: 7c197c0afc7095c89df9cb6e24484df9e7212ac8
   specs:
-    lexxy (0.1.23.beta)
+    lexxy (0.1.24.beta)
       rails (>= 8.0.2)
 
 GIT
@@ -190,6 +190,7 @@ GEM
     ffi (1.17.2-arm-linux-gnu)
     ffi (1.17.2-arm-linux-musl)
     ffi (1.17.2-arm64-darwin)
+    ffi (1.17.2-x86_64-darwin)
     ffi (1.17.2-x86_64-linux-gnu)
     ffi (1.17.2-x86_64-linux-musl)
     fugit (1.12.1)
@@ -267,7 +268,7 @@ GEM
       railties (>= 7.1)
       stimulus-rails
       turbo-rails
-    mittens (0.3.0)
+    mittens (0.3.1)
     mocha (2.8.2)
       ruby2_keywords (>= 0.0.5)
     msgpack (1.8.0)
@@ -297,6 +298,8 @@ GEM
     nokogiri (1.18.10-arm-linux-musl)
       racc (~> 1.4)
     nokogiri (1.18.10-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.18.10-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.10-x86_64-linux-gnu)
       racc (~> 1.4)
@@ -422,6 +425,7 @@ GEM
     sqlite3 (2.8.0-arm-linux-gnu)
     sqlite3 (2.8.0-arm-linux-musl)
     sqlite3 (2.8.0-arm64-darwin)
+    sqlite3 (2.8.0-x86_64-darwin)
     sqlite3 (2.8.0-x86_64-linux-gnu)
     sqlite3 (2.8.0-x86_64-linux-musl)
     sshkit (1.24.0)
@@ -435,10 +439,11 @@ GEM
       railties (>= 6.0.0)
     stringio (3.1.9)
     thor (1.4.0)
-    thruster (0.1.16)
-    thruster (0.1.16-aarch64-linux)
-    thruster (0.1.16-arm64-darwin)
-    thruster (0.1.16-x86_64-linux)
+    thruster (0.1.17)
+    thruster (0.1.17-aarch64-linux)
+    thruster (0.1.17-arm64-darwin)
+    thruster (0.1.17-x86_64-darwin)
+    thruster (0.1.17-x86_64-linux)
     timeout (0.4.4)
     trilogy (2.9.0)
     tsort (0.2.0)
@@ -481,6 +486,7 @@ PLATFORMS
   arm-linux-gnu
   arm-linux-musl
   arm64-darwin
+  x86_64-darwin-25
   x86_64-linux
   x86_64-linux-gnu
   x86_64-linux-musl

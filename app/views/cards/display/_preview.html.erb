@@ -30,8 +30,9 @@
     </div>
   </div>
 
-  <footer class="card__footer">
+  <footer class="card__footer flex gap-half">
     <%= render "cards/display/preview/meta", card: card, preview: true %>
+    <%= render "cards/display/preview/comments", card: card %>
     <%= render "cards/display/common/background", card: card %>
   </footer>
 

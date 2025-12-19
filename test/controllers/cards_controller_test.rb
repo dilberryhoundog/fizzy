@@ -50,15 +50,12 @@ class CardsControllerTest < ActionDispatch::IntegrationTest
       card: {
         title: "Logo needs to change",
         image: fixture_file_upload("moon.jpg", "image/jpeg"),
-        description: "Something more in-depth",
-        tag_ids: [ tags(:mobile).id ] } }
+        description: "Something more in-depth" } }
     assert_response :success
 
     card = cards(:logo).reload
     assert_equal "Logo needs to change", card.title
     assert_equal "moon.jpg", card.image.filename.to_s
-    assert_equal [ tags(:mobile) ], card.tags
-
     assert_equal "Something more in-depth", card.description.to_plain_text.strip
   end
 
@@ -145,13 +142,14 @@ class CardsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
 
     assert_equal card.title, @response.parsed_body["title"]
+    assert_equal card.closed?, @response.parsed_body["closed"]
     assert_equal 2, @response.parsed_body["steps"].size
   end
 
   test "create as JSON" do
     assert_difference -> { Card.count }, +1 do
       post board_cards_path(boards(:writebook)),
-        params: { card: { title: "My new card", description: "Big if true", tag_ids: [ tags(:web).id, tags(:mobile).id ] } },
+        params: { card: { title: "My new card", description: "Big if true" } },
         as: :json
       assert_response :created
     end
@@ -161,7 +159,6 @@ class CardsControllerTest < ActionDispatch::IntegrationTest
 
     assert_equal "My new card", card.title
     assert_equal "Big if true", card.description.to_plain_text
-    assert_equal [ tags(:mobile), tags(:web) ].sort, card.tags.sort
   end
 
   test "create as JSON with custom created_at" do

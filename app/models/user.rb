@@ -6,6 +6,8 @@ class User < ApplicationRecord
   belongs_to :account
   belongs_to :identity, optional: true
 
+  validates :name, presence: true
+
   has_many :comments, inverse_of: :creator, dependent: :destroy
 
   has_many :filters, foreign_key: :creator_id, inverse_of: :creator, dependent: :destroy
@@ -14,14 +16,6 @@ class User < ApplicationRecord
   has_many :pinned_cards, through: :pins, source: :card
   has_many :exports, class_name: "Account::Export", dependent: :destroy
 
-  scope :with_avatars, -> { preload(:account, :avatar_attachment) }
-
-  # Deactivates the user within this account while preserving the identity link.
-  #
-  # The identity reference is intentionally kept so that:
-  #   1. Identity#destroy triggers this via `dependent: :nullify` (which severs the link)
-  #   2. UsersController#destroy preserves the link, allowing reactivation if the
-  #      user rejoins via join code (see Identity::Joinable#join)
   def deactivate
     accesses.destroy_all
     update! active: false
