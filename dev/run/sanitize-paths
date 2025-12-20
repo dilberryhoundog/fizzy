@@ -1,0 +1,23 @@
+#!/bin/bash
+
+### Sanitize user paths in a file: /Users/{username}/ -> ~/
+# Usage: ./dev/run/sanitize-paths <file>
+#
+# Replace {username} with your actual username for local use.
+
+set -e
+
+file="$1"
+
+if [[ -z "$file" ]]; then
+  echo "Usage: $0 <file>"
+  exit 1
+fi
+
+if [[ ! -f "$file" ]]; then
+  echo "Error: File not found: $file"
+  exit 1
+fi
+
+# Replace {username} with your actual username for local use.
+sed -i '' 's|/Users/{username}/|~/|g' "$file"
