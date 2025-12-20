@@ -43,7 +43,7 @@ module ColumnsHelper
   end
 
   def column_frame_tag(id, src: nil, data: {}, **options, &block)
-    data = data.reverse_merge \
+    data = data.with_defaults \
       drag_and_drop_refresh: true,
       controller: "frame",
       action: "turbo:before-frame-render->frame#morphRender turbo:before-morph-element->frame#morphReload"

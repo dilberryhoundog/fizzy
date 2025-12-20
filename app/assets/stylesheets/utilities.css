@@ -184,6 +184,23 @@
   .fill-highlight { background-color: var(--color-highlight); }
   .fill-transparent { background-color: transparent; }
 
+  .fill-highlighter {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      background-color: var(--color-highlight);
+      border-radius: 0.2em;
+      content: "";
+      inset-block: 0;
+      inset-inline: -0.1em;
+      position: absolute;
+      transform: skewX(-10deg) rotate(1deg);
+      z-index: -1;
+    }
+  }
+
   .translucent { opacity: var(--opacity, 0.66); }
 
   /* Borders */
@@ -249,6 +266,12 @@
 
     @media (any-hover: none) {
       display: unset;
+    }
+  }
+
+  .show-on-native {
+    body:not([data-platform~=native]) & {
+      display: none;
     }
   }
 
