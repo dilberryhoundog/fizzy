@@ -1,3 +1,8 @@
+---
+remote: fork
+parent_branch: command
+---
+
 ## Workspace Configuration
 
 This file guides Claude through the operational constraints applicable to this workspace.
