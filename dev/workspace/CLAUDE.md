@@ -2,10 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-# Workspace
+# [Feature] Advanced Fizzy Exploration
 
-**Branch:** `fix/accounts-menu-name-update`
-**Started:** `2025-12-13`
+**Branch:** `feature/advanced-fizzy-exploration`
+**Started:** `2025-12-21`
 **Status:**
 
 - [x] In Progress
@@ -14,7 +14,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Purpose
 
-Fix a bug where the accounts menu (likely in the navigation/sidebar) does not update to reflect the new name after an account is renamed. The menu should reactively display the updated account name without requiring a full page refresh.
+Explore possibilities to create an advanced version of Fizzy by leveraging and extending the existing infrastructure: tags, comments, steps, and columns. This workspace will investigate how these building blocks can be combined or enhanced to support more sophisticated workflows, project management patterns, or collaboration features.
 
 ## Discoveries
 
