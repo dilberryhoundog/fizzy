@@ -1,6 +1,6 @@
-# Workspace
+# Workspace Guidance
 
-## Guidance
+## Guide
 
 Workspaces are Claude's primary source of truth. Prioritise searching and revealing workspace knowledge before focusing directly on the codebase. Some important places:
 

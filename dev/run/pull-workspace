@@ -56,9 +56,8 @@ echo "🔄 Checking out $PARENT_BRANCH..."
 git checkout "$PARENT_BRANCH"
 
 echo "🔄 Pulling from workspace/main..."
-# --no-rebase: explicitly merge (avoids "divergent branches" warning)
-# --allow-unrelated-histories: needed when repo wasn't forked from workspace
-git pull workspace main --no-rebase --no-edit --allow-unrelated-histories
+# --allow-unrelated-histories needed when repo wasn't forked from workspace
+git pull workspace main --no-edit --allow-unrelated-histories
 
 echo "✓ Pulled workspace updates into $PARENT_BRANCH"
 

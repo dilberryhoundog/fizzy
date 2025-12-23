@@ -47,9 +47,11 @@ Find existing archive for this branch (matching pattern `*_\[type\]_description`
 `ls -d dev/branches/*_\{type\s}_{description} 2>/dev/null`
 
 If found:
+
 - Rename to current date: `mv "{existing}" "dev/branches/{archive-name}"`
 
 If not found:
+
 - Create: `mkdir -p dev/branches/{archive-name}`
 
 Sync workspace:

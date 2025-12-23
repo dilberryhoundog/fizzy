@@ -27,7 +27,6 @@ allowed-tools: bash()
 IF checked out on a clean `command` or `main` branch run:
 
 ```bash
-git fetch workspace main
 git merge workspace/main --allow-unrelated-histories --squash
 ```
 
