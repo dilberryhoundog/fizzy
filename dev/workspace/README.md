@@ -81,6 +81,7 @@ Add to `.gitattributes` on Main branch:
 
 ```gitattributes
 dev/workspace/** merge=protect
+dev/workspace/project/** -merge
 .claude/config/** merge=ours
 README.md merge=ours
 ```

@@ -28,7 +28,7 @@ Exit
 Check the working tree is clean.
 
 If uncommitted changes:
-Note for report: ⚠️ Uncommitted changes exist 
+Note for report: ⚠️ Uncommitted changes exist
 (ignore merge-preflight.md review)
 
 ### Step 2: Archive Workspace (Conditional)

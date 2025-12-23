@@ -2,13 +2,14 @@
 
 ### Sanitize user paths in a file: /Users/{username}/ -> ~/
 # Usage: ./dev/run/sanitize-paths <file>
-#
-# Replace {username} with your actual username for local use.
+# Uncomment the appropriate line for your environment.
+
 
 set -e
 
 file="$1"
 
+# Error handling
 if [[ -z "$file" ]]; then
   echo "Usage: $0 <file>"
   exit 1
@@ -19,5 +20,9 @@ if [[ ! -f "$file" ]]; then
   exit 1
 fi
 
-# Replace {username} with your actual username for local use.
-sed -i '' 's|/Users/{username}/|~/|g' "$file"
+# Rename script using sed.
+# Linux
+#sed -i "s|$HOME/|~/|g" "$file"
+
+# macOS
+sed -i '' "s|$HOME/|~/|g" "$file"
