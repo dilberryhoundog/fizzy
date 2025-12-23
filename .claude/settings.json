@@ -1,6 +1,7 @@
 {
   "permissions": {
     "allow": [
+      "Bash(curl -s:*)",
       "Bash(git add:*)",
       "Bash(git checkout:*)",
       "Bash(git fetch:*)",
@@ -44,6 +45,9 @@
       "Edit(./db/schema.rb)"
     ],
     "ask": [
+      "Bash(curl -s -X POST:*)",
+      "Bash(curl -s -X PUT:*)",
+      "Bash(curl -s -X DELETE:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(gh pr merge:*)",
