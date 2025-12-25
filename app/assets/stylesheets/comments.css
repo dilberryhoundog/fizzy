@@ -23,20 +23,15 @@
   }
 
   .comment {
-    display: flex;
-    margin-inline: auto;
-    max-inline-size: var(--comment-max);
-    position: relative;
-
-    house-md-toolbar {
-      margin-block-start: calc(var(--comment-padding-block) * -0.5);
+    /* Distinguish from the .comment class used for code formatting without extra specificity */
+    &:where(.comments &) {
+      display: flex;
+      margin-inline: auto;
+      max-inline-size: var(--comment-max);
+      position: relative;
     }
 
-    .house-md-content {
-      padding: var(--comment-padding-block) 0 0;
-    }
-
-    .comment--system & {
+    .comment-by-system & {
       --comment-padding-block: var(--block-space-half);
 
       text-align: center;
@@ -72,7 +67,7 @@
           var(--stripe-color) 1px 10px);
         padding-inline: var(--comment-padding-inline);
 
-        .comments--system-expanded .comment--system & {
+        .comments--system-expanded .comment-by-system & {
           --stripe-color: color-mix(in srgb, var(--card-color) 10%, var(--color-canvas));
         }
 
@@ -144,7 +139,7 @@
     position: absolute;
   }
 
-  .comment--system {
+  .comment-by-system {
     display: none;
     transition: var(--dialog-duration) allow-discrete;
     transition-property: display;
@@ -155,7 +150,7 @@
   }
 
   /* Show the last system comment */
-  :nth-last-child(1 of .comment--system) {
+  :nth-last-child(1 of .comment-by-system) {
     display: contents;
 
     .comment__history {
@@ -164,7 +159,7 @@
   }
 
   /* Hide the "Show history" button if there's only one system comment */
-  :nth-child(1 of .comment--system) {
+  :nth-child(1 of .comment-by-system) {
     .comment__history {
       display: none;
     }

@@ -10,9 +10,9 @@
   <% end %>
 </h3>
 
-<p class="margin-block-start-half">To keep using Fizzy <%= "past #{ number_with_delimiter(Plan.free.card_limit) } cards," unless Current.account.exceeding_storage_limit? %> it’s only <strong><%= number_to_currency(Plan.paid.price, strip_insignificant_zeros: true) %>/month</strong> for <strong>unlimited cards</strong>, <strong>unlimited users</strong>, and <strong><%= storage_to_human_size(Plan.paid.storage_limit) %></strong> of storage.</p>
+<p class="margin-block-start-half">To keep using Fizzy <%= "past #{ number_with_delimiter(Plan.free.card_limit) } cards," unless Current.account.exceeding_storage_limit? %> it’s only <strong><%= format_currency(Plan.paid.price) %>/month</strong> for <strong>unlimited cards</strong>, <strong>unlimited users</strong>, and <strong><%= storage_to_human_size(Plan.paid.storage_limit) %></strong> of storage.</p>
 
-<%= button_to "Upgrade to #{Plan.paid.name} for #{ number_to_currency(Plan.paid.price, strip_insignificant_zeros: true) }/month", account_subscription_path, class: "btn settings-subscription__button txt-medium", form: { data: { turbo: false } } %>
+<%= button_to "Upgrade to #{Plan.paid.name} for #{ format_currency(Plan.paid.price) }/month", account_subscription_path, class: "btn settings-subscription__button txt-medium", form: { data: { turbo: false } } %>
 
 <p>Cancel anytime, no contracts, take your data with you whenever.</p>
 <p class="settings-subscription__footer txt-small margin-none-block-end">Right now you’re on the <strong><%= Current.account.plan.name %></strong> plan which includes <%= number_with_delimiter(Plan.free.card_limit) %> cards, unlimited users, and <%= storage_to_human_size(Plan.free.storage_limit) %> of storage.</p>

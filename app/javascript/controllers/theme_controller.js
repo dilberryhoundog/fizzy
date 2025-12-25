@@ -26,13 +26,27 @@ export default class extends Controller {
   set #theme(theme) {
     localStorage.setItem("theme", theme)
 
-    if (theme === "auto") {
-      document.documentElement.removeAttribute("data-theme")
-    } else {
-      document.documentElement.setAttribute("data-theme", theme)
+    const currentTheme = document.documentElement.getAttribute("data-theme") || "auto"
+    const hasChanged = currentTheme !== theme
+
+    const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches
+    const animate = hasChanged && !prefersReducedMotion
+
+    const applyTheme = () => {
+      if (theme === "auto") {
+        document.documentElement.removeAttribute("data-theme")
+      } else {
+        document.documentElement.setAttribute("data-theme", theme)
+      }
+
+      this.#updateButtons()
     }
 
-    this.#updateButtons()
+    if (animate && document.startViewTransition) {
+      document.startViewTransition(applyTheme)
+    } else {
+      applyTheme()
+    }
   }
 
   #applyStoredTheme() {

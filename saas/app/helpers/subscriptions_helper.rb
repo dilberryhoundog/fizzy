@@ -9,7 +9,11 @@ module SubscriptionsHelper
     elsif subscription.canceled?
       "Your Fizzy subscription ended on"
     else
-      "Your next payment is <b>#{ number_to_currency(subscription.next_amount_due, strip_insignificant_zeros: true) }</b> on".html_safe
+      "Your next payment is <b>#{ format_currency(subscription.next_amount_due) }</b> on".html_safe
     end
+  end
+
+  def format_currency(amount)
+    number_to_currency(amount, precision: (amount % 1).zero? ? 0 : 2)
   end
 end

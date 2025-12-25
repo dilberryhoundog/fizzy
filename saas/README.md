@@ -64,9 +64,14 @@ This environment uses a FlashBlade bucket for blob storage.
 
 Beta is primarily intended for testing product features. It uses the same production database and Active Storage configuration.
 
-Beta tenant is:
+There are 4 beta environments:
 
-- https://fizzy-beta.37signals.com
+- https://beta1.fizzy-beta.com
+- https://beta2.fizzy-beta.com
+- https://beta3.fizzy-beta.com
+- https://beta4.fizzy-beta.com
+
+Deploy with: `bin/kamal deploy -d beta1` (or `-d beta2`, `-d beta3`, `-d beta4`)
 
 ### Staging
 

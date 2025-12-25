@@ -16,6 +16,7 @@
   .txt-ink { color: var(--color-ink); }
   .txt-reversed { color: var(--color-ink-inverted); }
   .txt-negative { color: var(--color-negative); }
+  .txt-positive { color: var(--color-positive); }
   .txt-subtle { color: var(--color-ink-dark); }
   .txt-alert { color: var(--color-marker); }
   .txt-undecorated { text-decoration: none; }

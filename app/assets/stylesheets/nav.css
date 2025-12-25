@@ -3,7 +3,7 @@
   /* ------------------------------------------------------------------------ */
 
   .nav__trigger {
-    --input-background: var(--color-canvas);
+    --input-background: transparent;
     --input-border-color: transparent;
     --input-padding: 0.3em 2em 0.3em 0.75em;
 
@@ -17,20 +17,10 @@
 
     @media (any-hover: hover) {
       &:hover {
-        filter: brightness(0.9);
+        --input-background: var(--color-ink-lighter);
 
         span {
           background: var(--color-ink-lighter);
-        }
-
-        html[data-theme="dark"] & {
-          --input-background: var(--color-ink-lighter);
-        }
-
-        @media (prefers-color-scheme: dark) {
-          html:not([data-theme]) & {
-            --input-background: var(--color-ink-lighter);
-          }
         }
       }
     }

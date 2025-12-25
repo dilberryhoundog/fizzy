@@ -23,9 +23,7 @@
       <% end %>
       <%= render collection: @assigned_to, partial: "user", locals: { card: @card } %>
       <% @users.each do |user| %>
-        <span data-assignment-limit-target="unassigned">
-          <%= render "user", card: @card, user: user %>
-        </span>
+        <%= render "user", card: @card, user: user, data: { assignment_limit_target: "unassigned" } %>
       <% end %>
     </ul>
 
