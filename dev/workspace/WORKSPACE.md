@@ -16,7 +16,7 @@ This file guides Claude through the operational constraints applicable to this w
 
 _Default: Full history merge_
 
-- [x] Squash merge
+- [ ] Squash merge
 - [ ] Rebase merge
 
 ## Post-Merge
