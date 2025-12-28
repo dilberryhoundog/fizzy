@@ -1,6 +1,6 @@
 ---
-remote: origin
-parent_branch: main
+remote: fork
+parent_branch: command
 ---
 
 # Workspace Management & Configuration
