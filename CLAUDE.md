@@ -29,6 +29,7 @@ cargo-culting patterns. The current setup works well as a prompt scaffold:
 - dev/patterns/README.md - Lists what we could extract, guides future sessions.
 
 When you're ready to dive into a specific pattern, just mention it and we can:
+
 1. Discuss what makes it interesting/useful
 2. Explore the actual implementation in Fizzy
 3. Decide what's worth extracting vs. what's too Fizzy-specific
@@ -41,7 +42,7 @@ Each pattern below links to detailed documentation in `dev/patterns/`. Use these
 ### Identity & User Management
 
 | Pattern                  | Summary                                                                           | Detail                                                                                |
-|--------------------------|-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| ------------------------ | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | **Identity/User Split**  | Global identity (auth) + per-account User (authz) enables multi-tenant membership | [identity-user-split.md](dev/patterns/identity-user-split.md)                         |
 | **Role-Based Access**    | Owner → Admin → Member hierarchy with resource-level checks                       | [identity-user-split.md](dev/patterns/identity-user-split.md#userole-concern)         |
 | **Board Access Control** | Explicit Access records with involvement levels (watching/access_only)            | [identity-user-split.md](dev/patterns/identity-user-split.md#access-model)            |
@@ -49,6 +50,7 @@ Each pattern below links to detailed documentation in `dev/patterns/`. Use these
 | **URL Path Tenancy**     | `/{account_id}/...` middleware extracts and sets Current.account                  | [identity-user-split.md](dev/patterns/identity-user-split.md#account-slug-middleware) |
 
 **Quick reference - Identity/User relationship:**
+
 ```ruby
 # Identity: global person (email-based auth)
 # User: account membership (per-tenant authz)
@@ -63,6 +65,7 @@ Current.account = account         # set by middleware
 ```
 
 **Quick reference - Joining an account:**
+
 ```ruby
 identity = Identity.find_or_create_by!(email_address: "alice@example.com")
 identity.join(account, role: :member, name: "Alice")
@@ -71,16 +74,17 @@ identity.join(account, role: :member, name: "Alice")
 
 ### View & Layout
 
-| Pattern                    | Summary                                                                         | Detail                                                    |
-|----------------------------|---------------------------------------------------------------------------------|-----------------------------------------------------------|
-| **Minimal Shell Layout**   | Layout provides zones + injection points; pages own their width/structure       | [layout-shell.md](dev/patterns/layout-shell.md)           |
-| **Content Injection**      | `content_for` slots + instance variables for page-specific layout customization | [layout-shell.md](dev/patterns/layout-shell.md#injection) |
-| **CSS-Driven Widths**      | `.panel` classes with `:has()` let pages control their container width          | [layout-shell.md](dev/patterns/layout-shell.md#widths)    |
-| **User-Scoped CSS**        | Dynamic `<style>` block for visibility based on current user                    | [layout-shell.md](dev/patterns/layout-shell.md#user-css)  |
+| Pattern                  | Summary                                                                         | Detail                                                    |
+| ------------------------ | ------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| **Minimal Shell Layout** | Layout provides zones + injection points; pages own their width/structure       | [layout-shell.md](dev/patterns/layout-shell.md)           |
+| **Content Injection**    | `content_for` slots + instance variables for page-specific layout customization | [layout-shell.md](dev/patterns/layout-shell.md#injection) |
+| **CSS-Driven Widths**    | `.panel` classes with `:has()` let pages control their container width          | [layout-shell.md](dev/patterns/layout-shell.md#widths)    |
+| **User-Scoped CSS**      | Dynamic `<style>` block for visibility based on current user                    | [layout-shell.md](dev/patterns/layout-shell.md#user-css)  |
 
 Fizzy's layout is a minimal shell that provides page zones (header, main, footer) and injection points, but delegates width constraints and content structure to individual pages. This avoids layout proliferation (`narrow.html.erb`, `wide.html.erb`) by pushing those decisions to CSS classes in views.
 
 **Layout structure:**
+
 ```erb
 <%# application.html.erb - the shell %>
 <body>
@@ -103,6 +107,7 @@ Fizzy's layout is a minimal shell that provides page zones (header, main, footer
 ```
 
 **Page injection points:**
+
 - `@page_title` → document `<title>` via helper
 - `@header_class` → modifier class on `<header>` element
 - `@hide_footer_frames` / `@disable_view_transition` → boolean flags
@@ -111,6 +116,7 @@ Fizzy's layout is a minimal shell that provides page zones (header, main, footer
 - `yield :footer` → page-specific footer content
 
 **Width control via CSS classes (not layout variants):**
+
 ```erb
 <%# sessions/new.html.erb - narrow centered form %>
 <div class="panel panel--centered">
@@ -127,6 +133,7 @@ Fizzy's layout is a minimal shell that provides page zones (header, main, footer
 ```
 
 **The `.panel--centered` trick uses `:has()` to modify its parent:**
+
 ```css
 .panel--centered {
   --panel-size: 42ch;
@@ -139,6 +146,7 @@ Fizzy's layout is a minimal shell that provides page zones (header, main, footer
 ```
 
 **User-scoped CSS for visibility control:**
+
 ```erb
 <%# _user_css.html.erb - injected in <head> %>
 <style>
@@ -150,4 +158,5 @@ Fizzy's layout is a minimal shell that provides page zones (header, main, footer
   }
 </style>
 ```
+
 This enables "Only visible to you" badges without JavaScript - views mark elements with data attributes, CSS handles visibility.
