@@ -225,6 +225,11 @@
     padding-block: calc(var(--events-gap) * 3) var(--events-gap);
     position: sticky;
     z-index: var(--z-events-column-header);
+
+    @media (max-width: 639px) {
+      margin-inline: calc(var(--main-padding) * -1);
+      padding-inline: var(--main-padding);
+    }
   }
 
   .events__column-footer {
@@ -282,6 +287,7 @@
 
   .event {
     --column-gap: 0.7ch;
+    --event-padding: 0.6em;
 
     background-color: color-mix(in srgb, var(--card-color) 10%, var(--color-canvas));
     border-radius: 0.2em;
@@ -291,7 +297,7 @@
     max-inline-size: 100%;
     min-inline-size: 0;
     overflow: clip;
-    padding: 0.6em;
+    padding: var(--event-padding);
     position: relative;
     z-index: 0;
 
@@ -316,12 +322,15 @@
       z-index: 0;
     }
 
+    .card__header {
+      inline-size: 100%;
+      margin-block-start: calc(-1 * var(--event-padding));
+    }
+
     .card__board {
       background-color: transparent;
       color: color-mix(in srgb, var(--card-color) 40%, var(--color-ink));
       font-size: 0.7em;
-      padding: 0;
-      translate: 0 -0.3em;
     }
 
     .card__board-name {
@@ -368,16 +377,11 @@
   }
 
   .event__icon {
+    color: var(--card-color);
     display: grid;
-    margin: -0.3em -0.3em auto auto;
+    margin-inline-start: auto;
     place-content: center;
-
-    .icon {
-      background-color: var(--card-color);
-      block-size: 1em;
-      inline-size: 1em;
-      grid-area: 1 / 1;
-    }
+    translate: calc(var(--event-padding) / 2);
   }
 
   .event__timestamp {
