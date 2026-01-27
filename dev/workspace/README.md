@@ -158,15 +158,3 @@ Create `.claude/config/config.json`:
 ### Other Tricks
 
 - Load previous conversations into context using `@` tool. This allows you to keep conversations singular focused and then reuse for next steps. Prevents context bloat
-
-## Other Commands
-
-### Replace user paths in your conversations with ~/
-
-Claude Automatically outputs your user paths in transcript records. This small script sanitizes them to ~/
-
-From the dev/ directory run:
-
-```bash
-./replace_user_path.sh
-```
