@@ -41,6 +41,6 @@ module Account::Cancellable
   end
 
   def cancellable?
-    Account.accepting_signups?
+    Account.accepting_signups? || Current.identity&.accounts&.active&.many?
   end
 end

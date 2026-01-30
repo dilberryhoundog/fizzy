@@ -1,10 +1,13 @@
-<% if accounts.many? %>
-  <% cache [ Current.identity, accounts, Current.account ] do %>
-    <%= collapsible_nav_section "Accounts" do %>
-      <%# Bust cache 1 Dec 2025 %>
-      <% accounts.each do |account| %>
-        <%= filter_place_menu_item landing_path(script_name: account.slug), account.name, "marker", current: account == Current.account, turbo: false %>
-      <% end %>
+<%= collapsible_nav_section "Accounts" do %>
+  <li class="popup__item" data-filter-target="item" data-navigable-list-target="item">
+    <%= icon_tag "add", class: "popup__icon" %>
+    <%= link_to new_signup_path, class: "popup__btn btn" do %>
+      <span class="overflow-ellipsis">Create a new account</span>
+    <% end %>
+  </li>
+  <% if accounts.many? %>
+    <% accounts.each do |account| %>
+      <%= filter_place_menu_item landing_path(script_name: account.slug), account.name, "marker", current: account == Current.account, turbo: false %>
     <% end %>
   <% end %>
 <% end %>
