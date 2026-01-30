@@ -21,6 +21,7 @@ Investigate and evaluate the current multi-tenancy implementation in Fizzy. Expl
 1. **Enable multi-tenant mode via deploy.yml** — Investigate the single-tenant vs multi-tenant deploy setting, document what it controls, and switch the deployed app to multi-tenant.
 2. **Add signup restriction mode** — Prevent general user signups for self-hosted private usage while preserving the account invite flow.
 3. **Make signup restriction configurable** — Provide a choice to enable/disable general signups, either on the account selection screen (for the original user) or via deploy.yml.
+4. **Change current account slug** - The users current account slug is 000000001 (not sure if it's a valid slug), this is easily guessable and should be changed to a more secure and random value, like when an account is created in the dev server.
 
 ## Constraints
 
