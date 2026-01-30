@@ -1,7 +1,7 @@
 <%= collapsible_nav_section "Accounts" do %>
   <li class="popup__item" data-filter-target="item" data-navigable-list-target="item">
     <%= icon_tag "add", class: "popup__icon" %>
-    <%= link_to new_signup_path, class: "popup__btn btn" do %>
+    <%= link_to new_signup_path(script_name: nil), class: "popup__btn btn" do %>
       <span class="overflow-ellipsis">Create a new account</span>
     <% end %>
   </li>
