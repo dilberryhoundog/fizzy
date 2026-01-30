@@ -2,10 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-# Workspace
+# Refactor Multi-Tenant Investigation
 
-**Branch:** `**/**`
-**Started:** `yyyy-mm-dd`
+**Branch:** `refactor/multi-tenant-investigation`
+**Started:** `2026-01-30`
 **Status:**
 
 - [x] In Progress
@@ -14,7 +14,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Purpose
 
-[Claude will place a purpose here when you setup the workspace. Below is an example]
+Investigate and evaluate the current multi-tenancy implementation in Fizzy. Explore the URL path-based tenancy architecture (AccountSlug middleware, Current.account context, account_id scoping) and identify opportunities for refactoring to improve usability for self hosting.
 
 ## Discoveries
 
