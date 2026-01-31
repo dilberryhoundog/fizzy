@@ -35,6 +35,25 @@ class Account::CancellableTest < ActiveSupport::TestCase
     assert_not @account.cancelled?
   end
 
+  test "cancellable when identity has multiple active accounts in single-tenant mode" do
+    Account.stubs(:accepting_signups?).returns(false)
+
+    another_account = Account.create!(name: "Another Account")
+    @user.identity.join(another_account, role: :owner)
+
+    Current.set(identity: @user.identity) do
+      assert @account.cancellable?
+    end
+  end
+
+  test "not cancellable when identity has one account in single-tenant mode" do
+    Account.stubs(:accepting_signups?).returns(false)
+
+    Current.set(identity: @user.identity) do
+      assert_not @account.cancellable?
+    end
+  end
+
   test "cancelled? returns true when cancellation exists" do
     assert_not @account.cancelled?
 

@@ -43,4 +43,17 @@ class Account::CancellationsControllerTest < ActionDispatch::IntegrationTest
       assert_not @account.reload.cancelled?
     end
   end
+
+  test "an owner can cancel when identity has multiple accounts in single-tenant mode" do
+    another_account = Account.create!(name: "Another Account")
+    @user.identity.join(another_account, role: :owner)
+
+    with_multi_tenant_mode(false) do
+      assert_difference -> { Account::Cancellation.count }, 1 do
+        post account_cancellation_url
+      end
+
+      assert @account.reload.cancelled?
+    end
+  end
 end
