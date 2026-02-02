@@ -10,3 +10,5 @@ vendor/* linguist-vendored
 dev/workspace/** merge=protect
 .claude/config/** merge=ours
 README.md merge=ours
+.claude/config/** merge=protect
+README.md merge=protect
