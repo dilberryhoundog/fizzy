@@ -1,4 +1,5 @@
 <% @page_title = "Create a new board" %>
+<% @body_class = "compact-on-touch" %>
 
 <div class="panel panel--centered">
   <%= bridged_form_with model: @board, class: "flex flex-column gap", data: { controller: "form", action: "submit->form#preventEmptySubmit" } do |form| %>

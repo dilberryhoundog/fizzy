@@ -1,10 +1,12 @@
 GIT
   remote: https://github.com/basecamp/audits1984
-  revision: c790eaec0716c8df56b3d0ab5bf5d75e3e1b0ed0
+  revision: 422b8ff25820c828b7cf09aff4923fd8cc2c6795
+  branch: flavorjones/coworker-api
   specs:
     audits1984 (0.1.7)
       console1984
       importmap-rails (>= 1.2.1)
+      jbuilder
       rinku
       rouge
       turbo-rails
@@ -626,6 +628,7 @@ GEM
       railties
       yabeda (~> 0.8)
     zeitwerk (2.7.4)
+    zip_kit (6.3.4)
 
 PLATFORMS
   aarch64-linux
@@ -676,7 +679,6 @@ DEPENDENCIES
   rouge
   rqrcode
   rubocop-rails-omakase
-  rubyzip
   selenium-webdriver
   sentry-rails
   sentry-ruby
@@ -703,6 +705,7 @@ DEPENDENCIES
   yabeda-prometheus-mmap
   yabeda-puma-plugin
   yabeda-rails
+  zip_kit
 
 BUNDLED WITH
    2.7.2

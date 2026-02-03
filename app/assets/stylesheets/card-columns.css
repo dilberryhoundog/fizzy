@@ -232,7 +232,7 @@
     overflow-y: auto;
 
     .is-expanded & {
-      padding: var(--column-padding);
+      padding: var(--column-padding) var(--column-padding) calc(var(--column-padding) + var(--custom-safe-inset-bottom));
 
       /* Use the rest of the column height for scrolling */
       @media (max-width: 639px) {
