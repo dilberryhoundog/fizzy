@@ -17,9 +17,8 @@ gem install claude_hooks
 
 1. Copy the `dev/workspace/` template to a main or "parent" branch of your repository
 2. Overwrite `.claude/` directory in your main or "parent" branch
-3. Overwrite with `.gitattributes` and `.gitignore` to the main branch also.
-4. If using Rails, place `gem "claude_hooks", "~> 1.0"` in a Gemfile in the root of your project and run `bundle install`
-5. run `chmod +x ./dev/setup.sh && ./setup.sh` to initialise the setup script. This is a one-time setup only, can delete the file afterwards. Sets up a 'workspace' remote and merge protection rules for .gitattributes
+3. If using Rails, place `gem "claude_hooks"` in a Gemfile in the root of your project and run `bundle install`
+4. run `chmod +x ./dev/run/setup-workspace && ./dev/run/setup-workspace` to initialise the setup script. This is a one-time setup only, can delete the file afterwards. Sets up a 'workspace' remote and merge protection rules for .gitattributes
 
 If this causes conflicts, copy sections manually.
 I recommend not mixing hook systems.
@@ -27,8 +26,7 @@ Use only 'Claude_hooks' or don't use it all.
 
 ### Keeping workspace up to date
 
-run `git merge workspace/main --allow-unrelated-histories --squash` on your main or parent branch. To merge in the latest changes from upstream.
-run `git commit -m "🔄 chore: sync workspace from upstream"` to commit the merge.
+In a project root terminal session. run `dev/run/pull-workspace` to pull the latest changes from upstream.
 
 Or alternatively use the `workspace:sync-workspace` command in Claude Code.
 
@@ -90,6 +88,7 @@ Add to `.gitignore` on main branch:
 
 ```gitignore
 dev/workspace/context/tree.md
+dev/project/
 ```
 
 ### Context Configuration
