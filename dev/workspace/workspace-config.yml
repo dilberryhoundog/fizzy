@@ -1,0 +1,118 @@
+# workspace-config.yml — Dev Workspace Configuration
+#
+# Location: dev/workspace/workspace-config.yml
+# Created by: dev-workspace init --write
+#
+# Machine-read by the dev-workspace script. Drives all automation.
+# For branch context, status, and notes see: workspace.yml
+#
+# Two repo types supported:
+#   Fork:    upstream is set, main_branch ≠ parent_branch (main stays pristine)
+#   Vanilla: upstream commented out, main_branch = parent_branch
+
+# ==============================================================================
+# REPO CONFIG
+# ==============================================================================
+
+repo_config:
+  main_branch: main
+  parent_branch: command             # set to 'main' for vanilla repos
+  origin: https://github.com/dilberryhoundog/fizzy.git
+  upstream: https://github.com/basecamp/fizzy.git
+  # upstream: false                  # uncomment for vanilla repos (no fork)
+  workspace: https://github.com/dilberryhoundog/dev-workspace.git
+
+  # Which local branch gets reset by 'dev-workspace latest --upstream'.
+  # Comment out to disable the --upstream flag entirely.
+  upstream_latest_to: main
+
+# ==============================================================================
+# INIT — Settings applied by 'dev-workspace init --write'
+# ==============================================================================
+# All settings are idempotent — safe to re-run after changes.
+# Comment out any section to skip it during init.
+
+init:
+  merge_protection:
+    # Directories protected from being overwritten during merges to parent.
+    # Uses git merge driver 'protect' via .gitattributes.
+    directories:
+      - "dev/workspace/**"
+      - ".claude/config/**"
+      - "README.md"
+
+  git_ignore:
+    # Paths added to .git/info/exclude (local gitignore, not committed).
+    directories:
+      - "/dev/workspace/context/tree.md"
+      - "/dev/project/"
+      - "/dev/run/"
+      - "/.claude/*"
+      - "!/.claude/config/"
+      - "!/.claude/rules/"
+
+  exclude_workspace_from_docker:
+    # Paths added to .dockerignore if it exists.
+    directories:
+      - "/dev/"
+
+  setup_workspace_origin:
+    # Adds a 'workspace' git remote pointing to repo_config.workspace.
+    # Used by 'dev-workspace rebuild' to pull workspace updates.
+    pull_workspace_on_init: false
+
+# ==============================================================================
+# MERGE
+# ==============================================================================
+
+merge:
+  # Strategy for merging feature branches back to parent.
+  strategy: "--merge"
+  # strategy: "--squash"
+  # strategy: "--rebase"
+
+  # If set, 'merge --check' verifies archive is up to date before merge.
+  archive_before_merge: true
+
+  # delete_branch_after_merge: true
+
+# ==============================================================================
+# COMMIT WORKSPACE
+# ==============================================================================
+
+commit_workspace:
+  message: "📝 Workspace files updated!"
+  # Only these paths are staged and committed — everything else is unstaged first.
+  directories:
+    - "dev/workspace"
+    - ".claude/config/"
+    - ".gitattributes"
+
+# ==============================================================================
+# ARCHIVE
+# ==============================================================================
+
+archive:
+  directory: "dev/branches"
+
+# ==============================================================================
+# DEPLOY
+# ==============================================================================
+# Push source branch to a deploy target.
+#
+#   Remote deploy: Push to a separate deploy repo (e.g. fork → upstream).
+#   Local deploy:  Push/merge to a branch in the same repo.
+#                  Comment out 'remote' section for local deploys.
+#
+# Docker handles excluding workspace dirs from the image via .dockerignore.
+# No worktree or directory stripping needed.
+#
+# Comment out entire deploy section to disable deploy commands.
+
+deploy:
+  deploy_source: command             # 'main' if vanilla repo or local deploy
+  deploy_branch: deploy              # 'staging' or 'production' if local
+
+  remote:
+    deploy_remote_url: https://github.com/dilberryhoundog/bizzy.git
+    deploy_remote_branch: command-mirror
