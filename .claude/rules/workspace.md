@@ -1,5 +1,11 @@
 # Workspace Guidance
 
+## Dev Workspace CLI
+
+This project uses dev-workspace CLI for all git and gh workflow operations. These two CLI's are combined into a useful command based CLI providing a streamlined toolset for efficiently and safely managing the users Dev workspace. Enjoy.
+Run 'dev-workspace help' to see available commands.
+USE THE SKILL dude. It will help you massively.
+
 ## Guide
 
 Workspaces are Claude's primary source of truth. Prioritise searching and revealing workspace knowledge before focusing directly on the codebase. Some important places:

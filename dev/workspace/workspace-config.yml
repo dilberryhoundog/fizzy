@@ -59,7 +59,7 @@ init:
   setup_workspace_origin:
     # Adds a 'workspace' git remote pointing to repo_config.workspace.
     # Used by 'dev-workspace rebuild' to pull workspace updates.
-    pull_workspace_on_init: false
+    pull_workspace_on_init: true
 
 # ==============================================================================
 # MERGE
