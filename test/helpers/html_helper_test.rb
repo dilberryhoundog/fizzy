@@ -104,6 +104,38 @@ class HtmlHelperTest < ActionView::TestCase
       format_html(%(<p>Contact us at <a href="mailto:support@example.com">support@example.com</a></p>))
   end
 
+  test "gracefully handle regexp timeout by skipping auto-linking" do
+    input = "<p>Check this: https://example.com</p>"
+
+    String.class_eval do
+      alias_method :original_scan, :scan
+      define_method(:scan) do |*args, &block|
+        if args.first == AutoLinkScrubber::AUTOLINK_REGEXP
+          raise Regexp::TimeoutError
+        end
+        original_scan(*args, &block)
+      end
+    end
+
+    assert_equal_html %(<p>Check this: https://example.com</p>), format_html(input)
+  ensure
+    String.class_eval do
+      alias_method :scan, :original_scan
+      remove_method :original_scan
+    end
+  end
+
+  test "skip auto-linking in very large text nodes" do
+    url = "https://example.com"
+    large_text = "x" * 5_000 + " #{url} " + "y" * 5_000
+    input = "<p>#{large_text}</p>"
+
+    result = format_html(input)
+
+    assert_no_match(/<a/, result)
+    assert_includes result, url
+  end
+
   test "don't autolink content in excluded elements" do
     %w[ figcaption pre code ].each do |element|
       assert_equal_html \
@@ -118,5 +150,30 @@ class HtmlHelperTest < ActionView::TestCase
 
     assert_no_match(/<img/, output, "should not create an img element")
     assert_includes output, "&lt;img"
+  end
+
+  test "card_html_title renders backticks as code elements" do
+    assert_equal "Fix the <code>bug</code> in production", card_html_title(cards(:logo).tap { _1.title = "Fix the `bug` in production" })
+  end
+
+  test "card_html_title renders multiple code spans" do
+    assert_equal "<code>foo</code> and <code>bar</code>", card_html_title(cards(:logo).tap { _1.title = "`foo` and `bar`" })
+  end
+
+  test "card_html_title renders code spans without surrounding spaces" do
+    assert_equal "what<code>about</code>this", card_html_title(cards(:logo).tap { _1.title = "what`about`this" })
+  end
+
+  test "card_html_title escapes HTML tags" do
+    assert_equal "&lt;script&gt;alert(1)&lt;/script&gt;", card_html_title(cards(:logo).tap { _1.title = "<script>alert(1)</script>" })
+  end
+
+  test "card_html_title escapes HTML inside backticks" do
+    assert_equal "<code>&lt;script&gt;</code>", card_html_title(cards(:logo).tap { _1.title = "`<script>`" })
+  end
+
+  test "card_html_title returns blank title as-is" do
+    assert_nil card_html_title(cards(:logo).tap { _1.title = nil })
+    assert_equal "", card_html_title(cards(:logo).tap { _1.title = "" })
   end
 end

@@ -2,13 +2,23 @@ class Cards::ReadingsController < ApplicationController
   include CardScoped
 
   def create
-    @notifications = @card.read_by(Current.user)
+    @notification = @card.read_by(Current.user)
     record_board_access
+
+    respond_to do |format|
+      format.turbo_stream
+      format.json { head :created }
+    end
   end
 
   def destroy
-    @notifications = @card.unread_by(Current.user)
+    @notification = @card.unread_by(Current.user)
     record_board_access
+
+    respond_to do |format|
+      format.turbo_stream
+      format.json { head :no_content }
+    end
   end
 
   private

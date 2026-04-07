@@ -1,4 +1,6 @@
 class ZipFile
+  class InvalidFileError < StandardError; end
+
   class << self
     def create_for(attachment, filename:)
       raise ArgumentError, "No block given" unless block_given?
@@ -57,6 +59,12 @@ class ZipFile
 
         blob.update!(byte_size: writer.byte_size, checksum: writer.checksum)
         attachment.attach(blob)
+      rescue Aws::S3::MultipartUploadError => e
+        if e.errors.any?
+          raise e.errors.first
+        else
+          raise e
+        end
       end
 
       def create_for_disk(attachment, filename:)
@@ -76,7 +84,8 @@ class ZipFile
 
       def read_from_s3(blob)
         url = blob.url(expires_in: 6.hour)
-        remote_io = RemoteIO.new(url)
+        ssl_verify_peer = blob.service.client.client.config.ssl_verify_peer
+        remote_io = RemoteIO.new(url, ssl_verify_peer: ssl_verify_peer)
         reader = Reader.new(remote_io)
         yield reader
       end

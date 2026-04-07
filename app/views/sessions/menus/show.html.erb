@@ -14,7 +14,7 @@
           <li class="popup__item txt-medium">
             <%= icon_tag "marker", class: "popup__icon" %>
             <%= link_to landing_path(script_name: account.slug), class: "btn overflow-ellipsis fill-transparent popup__btn" do %>
-              <strong><%= account.name %></strong>
+              <strong class="overflow-ellipsis"><%= account.name %></strong>
             <% end %>
           </li>
         <% end %>
@@ -26,10 +26,6 @@
 
     <%= link_to new_signup_path, class: "btn center txt-small margin-block-start", data: { turbo_prefetch: false } do %>
       <span>Sign up for a new Fizzy account</span>
-    <% end %>
-
-    <%= link_to new_account_import_path, class: "btn btn--plain txt-link center txt-small", data: { turbo_prefetch: false } do %>
-      <span>Import an exported account</span>
     <% end %>
   </section>
 <% end %>

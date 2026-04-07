@@ -1,14 +1,18 @@
 class Account::DataTransfer::RecordSet
   class IntegrityError < StandardError; end
+  class ConflictError < IntegrityError; end
 
   IMPORT_BATCH_SIZE = 100
+  INTERNAL_RECORD_TYPES = %w[Export Account::Import].freeze
 
+  attr_accessor :importable_model_names
   attr_reader :account, :model, :attributes
 
-  def initialize(account:, model:, attributes: nil)
+  def initialize(account:, model:, attributes: nil, importable_model_names: nil)
     @account = account
     @model = model
     @attributes = (attributes || model.column_names).map(&:to_s)
+    @importable_model_names = importable_model_names || [ model.name ]
   end
 
   def export(to:, start: nil)
@@ -61,7 +65,7 @@ class Account::DataTransfer::RecordSet
     end
 
     def export_record(record)
-      zip.add_file "data/#{model_dir}/#{record.id}.json", record.to_json
+      zip.add_file "data/#{model_dir}/#{record.id}.json", record.attributes.slice(*attributes).to_json
     end
 
     def files
@@ -93,7 +97,7 @@ class Account::DataTransfer::RecordSet
       end
 
       if model.exists?(id: data["id"])
-        raise IntegrityError, "#{model} record with ID #{data['id']} already exists"
+        raise ConflictError, "#{model} record with ID #{data['id']} already exists"
       end
 
       check_associations_dont_exist(data)
@@ -112,13 +116,21 @@ class Account::DataTransfer::RecordSet
     def check_association_doesnt_exist(data, association, associated_id)
       if association.polymorphic?
         type_column = association.foreign_type.to_s
-        associated_class = data[type_column].constantize
+        associated_class = verify_model_type(data[type_column])
       else
         associated_class = association.klass
       end
 
       if associated_class.exists?(id: associated_id)
-        raise IntegrityError, "#{model} record references existing #{association.name} (#{associated_class}) with ID #{associated_id}"
+        raise ConflictError, "#{model} record references existing #{association.name} (#{associated_class}) with ID #{associated_id}"
+      end
+    end
+
+    def verify_model_type(type_name)
+      if importable_model_names.include?(type_name)
+        type_name.constantize
+      else
+        raise IntegrityError, "Unrecognized model type: #{type_name}"
       end
     end
 
