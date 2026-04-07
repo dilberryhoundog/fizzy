@@ -135,12 +135,12 @@ archive:
 
 
 deploy:
-  deploy_source: command
-  deploy_branch: deploy
+  source: command
+  branch: deploy
 
   remote:
-    deploy_remote_url: https://github.com/dilberryhoundog/bizzy.git
-    deploy_remote_branch: command-mirror
+    repo_url: https://github.com/dilberryhoundog/bizzy.git
+    receiving_branch: command-mirror
 
 # ==============================================================================
 # TREE — Directory tree views for agent context
