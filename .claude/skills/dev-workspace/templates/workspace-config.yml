@@ -133,14 +133,14 @@ archive:
 # Comment out entire deploy section to disable deploy commands.
 # Comment out remote section to disable remote deploy.
 
-
 #deploy:
-#  deploy_source: command             # 'main' if vanilla repo or local deploy
-#  deploy_branch: deploy              # 'staging' or 'production' if local
+#  source: command                    # 'main' if vanilla repo or local deploy
+#  branch: deploy                     # 'staging' or 'production' if local
 #
 #  remote:
-#    deploy_remote_url: https://github.com/<username>/<repo>.git
-#    deploy_remote_branch: command-mirror
+#    repo_url: https://github.com/<user>/<repo>.git
+#    receiving_branch: command-mirror
+
 
 # ==============================================================================
 # TREE — Directory tree views for agent context
