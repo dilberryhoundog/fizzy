@@ -26,11 +26,11 @@
 
 repo_config:
   main_branch: main
-  parent_branch: command
-  upstream_latest_to: main
+  parent_branch: main            # set to 'main' for vanilla repos
+  #  upstream_latest_to: main           # comment out for non forked repos
 
-  origin: https://github.com/dilberryhoundog/fizzy.git
-  upstream: https://github.com/basecamp/fizzy.git
+  origin: https://github.com/dilberryhoundog/agents.git
+  #  upstream: https://github.com/<username>/<repo>.git       # comment out for non forked repos
   workspace: https://github.com/dilberryhoundog/dev-workspace.git
 
 # ==============================================================================
@@ -67,8 +67,8 @@ init:
       - "/dev/workspace/context/*tree.md"
       - "/dev/project/"
       - "/dev/run/"
-      - "/.claude/*"
-      - "!/.claude/rules/"
+      # - "/.claude/*"               # uncomment for fork repos to keep workflow tools out of upstream
+      # - "!/.claude/rules/"         # re-include rules if .claude/* is ignored
 
   # exclude_workspace_from_docker: Paths appended to .dockerignore if it exists.
   exclude_workspace_from_docker:
@@ -134,13 +134,13 @@ archive:
 # Comment out remote section to disable remote deploy.
 
 
-deploy:
-  deploy_source: command
-  deploy_branch: deploy
-
-  remote:
-    deploy_remote_url: https://github.com/dilberryhoundog/bizzy.git
-    deploy_remote_branch: command-mirror
+#deploy:
+#  deploy_source: command             # 'main' if vanilla repo or local deploy
+#  deploy_branch: deploy              # 'staging' or 'production' if local
+#
+#  remote:
+#    deploy_remote_url: https://github.com/<username>/<repo>.git
+#    deploy_remote_branch: command-mirror
 
 # ==============================================================================
 # TREE — Directory tree views for agent context
@@ -179,6 +179,11 @@ tree:
     description: Core workspace and project structure
     paths:
       - dev/workspace
+      #      - .claude
+      - skills
+      - dev-workspace
+      - hetzner-server
+      - openclaw
     # depth: 3
     # ignores:
     #   - "*.log"

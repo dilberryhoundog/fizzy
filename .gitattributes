@@ -12,3 +12,4 @@ dev/workspace/** merge=protect
 README.md merge=ours
 .claude/config/** merge=protect
 README.md merge=protect
+dev/workspace/workspace-config.yml merge=protect
