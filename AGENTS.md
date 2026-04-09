@@ -9,29 +9,26 @@ Fizzy is a collaborative project management and issue tracking application built
 ## Development Commands
 
 ### Setup and Server
-
 ```bash
 bin/setup              # Initial setup (installs gems, creates DB, loads schema)
 bin/dev                # Start development server (runs on port 3006)
 ```
 
-Development URL: <http://fizzy.localhost:3006>
-Login with: <david@example.com> (development fixtures), password will appear in the browser console
+Development URL: http://app.fizzy.localhost:3006
+Login with: david@example.com (development fixtures), password will appear in the browser console
 
 ### Testing
-
 ```bash
-bin/rails test                         # Run unit tests (fast)
+bin/rails test                    # Run unit tests (fast)
 bin/rails test test/path/file_test.rb  # Run single test file
-bin/rails test:system                  # Run system tests (Capybara + Selenium)
-bin/ci                                 # Run full CI suite (style, security, tests)
+bin/rails test:system             # Run system tests (Capybara + Selenium)
+bin/ci                            # Run full CI suite (style, security, tests)
 
 # For parallel test execution issues, use:
 PARALLEL_WORKERS=1 bin/rails test
 ```
 
 CI pipeline (`bin/ci`) runs:
-
 1. Rubocop (style)
 2. Bundler audit (gem security)
 3. Importmap audit
@@ -40,7 +37,6 @@ CI pipeline (`bin/ci`) runs:
 6. System tests
 
 ### Database
-
 ```bash
 bin/rails db:fixtures:load   # Load fixture data
 bin/rails db:migrate          # Run migrations
@@ -48,7 +44,6 @@ bin/rails db:reset            # Drop, create, and load schema
 ```
 
 ### Other Utilities
-
 ```bash
 bin/rails dev:email          # Toggle letter_opener for email preview
 bin/jobs                     # Manage Solid Queue jobs
@@ -68,7 +63,6 @@ Note: `beta` is a template requiring `BETA_NUMBER` env var; typical targets are 
 ### Multi-Tenancy (URL-Based)
 
 Fizzy uses **URL path-based multi-tenancy**:
-
 - Each Account (tenant) has a unique `external_account_id` (7+ digits)
 - URLs are prefixed: `/{account_id}/boards/...`
 - Middleware (`AccountSlug::Extractor`) extracts the account ID from the URL and sets `Current.account`
@@ -81,7 +75,6 @@ Fizzy uses **URL path-based multi-tenancy**:
 ### Authentication & Authorization
 
 **Passwordless magic link authentication**:
-
 - Global `Identity` (email-based) can have `Users` in multiple Accounts
 - Users belong to an Account and have roles: owner, admin, member, system
 - Sessions managed via signed cookies
@@ -90,36 +83,30 @@ Fizzy uses **URL path-based multi-tenancy**:
 ### Core Domain Models
 
 **Account** → The tenant/organization
-
 - Has users, boards, cards, tags, webhooks
 - Has entropy configuration for auto-postponement
 
 **Identity** → Global user (email)
-
 - Can have Users in multiple Accounts
 - Session management tied to Identity
 
 **User** → Account membership
-
 - Belongs to Account and Identity
 - Has role (owner/admin/member/system)
 - Board access via explicit `Access` records
 
 **Board** → Primary organizational unit
-
 - Has columns for workflow stages
 - Can be "all access" or selective
 - Can be published publicly with shareable key
 
 **Card** → Main work item (task/issue)
-
 - Sequential number within each Account
 - Rich text description and attachments
 - Lifecycle: triage → columns → closed/not_now
 - Automatically postpones after inactivity ("entropy")
 
 **Event** → Records all significant actions
-
 - Polymorphic association to changed object
 - Drives activity timeline, notifications, webhooks
 - Has JSON `particulars` for action-specific data
@@ -127,7 +114,6 @@ Fizzy uses **URL path-based multi-tenancy**:
 ### Entropy System
 
 Cards automatically "postpone" (move to "not now") after inactivity:
-
 - Account-level default entropy period
 - Board-level entropy override
 - Prevents endless todo lists from accumulating
@@ -136,7 +122,6 @@ Cards automatically "postpone" (move to "not now") after inactivity:
 ### UUID Primary Keys
 
 All tables use UUIDs (UUIDv7 format, base36-encoded as 25-char strings):
-
 - Custom fixture UUID generation maintains deterministic ordering for tests
 - Fixtures are always "older" than runtime records
 - `.first`/`.last` work correctly in tests
@@ -144,13 +129,11 @@ All tables use UUIDs (UUIDv7 format, base36-encoded as 25-char strings):
 ### Background Jobs (Solid Queue)
 
 Database-backed job queue (no Redis):
-
 - Custom `FizzyActiveJobExtensions` prepended to ActiveJob
 - Jobs automatically capture/restore `Current.account`
 - Mission Control::Jobs for monitoring
 
 Key recurring tasks (via `config/recurring.yml`):
-
 - Deliver bundled notifications (every 30 min)
 - Auto-postpone stale cards (hourly)
 - Cleanup jobs for expired links, deliveries
@@ -158,7 +141,6 @@ Key recurring tasks (via `config/recurring.yml`):
 ### Sharded Full-Text Search
 
 16-shard MySQL full-text search instead of Elasticsearch:
-
 - Shards determined by account ID hash (CRC32)
 - Search records denormalized for performance
 - Models in `app/models/search/`
@@ -174,8 +156,8 @@ Allow people to move between OSS and SAAS Fizzy instances:
 
 ### Chrome MCP (Local Dev)
 
-URL: `http://fizzy.localhost:3006`
-Login: <david@example.com> (passwordless magic link auth - check rails console for link)
+URL: `http://app.fizzy.localhost:3006`
+Login: david@example.com (passwordless magic link auth - check rails console for link)
 
 Use Chrome MCP tools to interact with the running dev app for UI testing and debugging.
 
