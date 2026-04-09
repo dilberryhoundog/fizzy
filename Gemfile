@@ -38,7 +38,6 @@ gem "mittens"
 gem "useragent", bc: "useragent"
 
 # Operations
-gem "claude_hooks", "~> 1.0"
 gem "autotuner"
 gem "mission_control-jobs"
 gem "stackprof"
