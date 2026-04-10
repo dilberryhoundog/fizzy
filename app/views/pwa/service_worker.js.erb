@@ -43,6 +43,7 @@ TurboOffline.addRule({
     networkTimeout: 2,
     maxEntrySize: 2 * 1024 * 1024, // 2MB covers about 95% of all Fizzy blobs
     maxEntries: 500,
+    // [fix/rich-text-images] same-origin strips credentials on cross-origin redirect to S3/R2
     fetchOptions: { mode: "cors", credentials: "same-origin" }
   })
 })
