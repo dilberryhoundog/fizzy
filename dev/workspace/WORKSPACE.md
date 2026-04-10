@@ -1,6 +1,9 @@
 ---
 remote: fork
 parent_branch: command
+branch: fix/rich-text-images
+started: 2026-04-10
+purpose: Fix rich text image handling - images were breaking for multiple reasons. Fix tested in deploy repo, implementing here for upstream contribution to Fizzy and to prevent deploy pushes from overwriting staging fixes.
 ---
 
 # Workspace Management & Configuration
